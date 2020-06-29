@@ -1,0 +1,12 @@
+package com.rap.common.login.service;
+
+import com.rap.common.login.model.UserInfoVO;
+import com.rap.common.login.model.UserSession;
+
+public interface LoginService {
+    public boolean checkUserId(UserInfoVO input);
+    public boolean checkUser(UserInfoVO input);
+    public UserInfoVO retrieveUser(UserInfoVO input);
+    public void refreshUserSession(String userId, String userType );
+    public void refreshThreadLocalFromSession(UserSession userSession);
+}

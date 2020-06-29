@@ -1,0 +1,283 @@
+package com.rap.omc.util.core;
+
+import java.text.DecimalFormat;
+/*     */ import java.text.ParsePosition;
+/*     */ import java.util.HashMap;
+/*     */ import java.util.Map;
+
+@SuppressWarnings({ "rawtypes", "unchecked" })
+/*     */ public class CurrencyConverterUtil
+/*     */ {
+
+    /*  59 */ private static final String[] HANGUL_A = { "", "일", "이", "삼", "사", "오", "육", "칠", "팔", "구" };
+
+    /*     */
+    /*  64 */ private static final String[] BASIC_A = { "", "십", "백", "천" };
+
+    /*     */
+    /*  69 */ private static final String[] BASE_A = { "", "만", "억", "조", "경" };
+
+    /*     */
+    /*  74 */ private static final Map<String, String> MONEY_DATA = new HashMap();
+    /*     */
+    /*     */ static {
+        /*  77 */ MONEY_DATA.put("일", "壹");
+        /*  78 */ MONEY_DATA.put("이", "貳");
+        /*  79 */ MONEY_DATA.put("삼", "參");
+        /*  80 */ MONEY_DATA.put("사", "四");
+        /*  81 */ MONEY_DATA.put("오", "五");
+        /*  82 */ MONEY_DATA.put("육", "六");
+        /*  83 */ MONEY_DATA.put("칠", "七");
+        /*  84 */ MONEY_DATA.put("팔", "八");
+        /*  85 */ MONEY_DATA.put("구", "九");
+        /*  86 */ MONEY_DATA.put("십", "拾");
+        /*  87 */ MONEY_DATA.put("백", "百");
+        /*  88 */ MONEY_DATA.put("천", "阡");
+        /*  89 */ MONEY_DATA.put("만", "萬");
+        /*  90 */ MONEY_DATA.put("억", "億");
+        /*  91 */ MONEY_DATA.put("조", "兆");
+        /*  92 */ MONEY_DATA.put("경", "京");
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toCommaFormat(int piMoney)
+    /*     */ {
+        /* 107 */ return toCommaFormat(piMoney, false);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toCommaFormat(int piMoney, boolean isWon)
+    /*     */ {
+        /* 118 */ return toCommaFormat(piMoney, isWon);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toCommaFormat(float pfMoney)
+    /*     */ {
+        /* 128 */ return toCommaFormat(pfMoney, false);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toCommaFormat(float pfMoney, boolean isWon)
+    /*     */ {
+        /* 139 */ return toCommaFormat(pfMoney, isWon);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toCommaFormat(long plMoney)
+    /*     */ {
+        /* 149 */ return toCommaFormat(plMoney, false);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toCommaFormat(long plMoney, boolean isWon)
+    /*     */ {
+        /* 160 */ return toCommaFormat(plMoney, isWon);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toCommaFormat(String psMoney)
+    /*     */ {
+        /* 170 */ return toCommaFormat(psMoney, false);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toCommaFormat(String psMoney, boolean isWon)
+    /*     */ {
+        /* 181 */ String tempMoney = maskClear2(psMoney);
+        /* 182 */ return toCommaFormat(Double.parseDouble(tempMoney), isWon);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toCommaFormat(double pdMoney)
+    /*     */ {
+        /* 192 */ return toCommaFormat(pdMoney, false);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toCommaFormat(double pdMoney, boolean isWon)
+    /*     */ {
+        /* 205 */ String preMark = "";
+        /* 206 */ double dMoney = pdMoney;
+        /* 207 */ if (dMoney < 0.0D) {
+            /* 208 */ dMoney *= -1.0D;
+            /* 209 */ preMark = "-";
+            /*     */ }
+        /* 211 */ DecimalFormat form = new DecimalFormat("#,###");
+        /* 212 */ form.setDecimalSeparatorAlwaysShown(false);
+        /* 213 */ if (isWon) {
+            /* 214 */ return "\\" + form.format(dMoney);
+            /*     */ }
+        /* 216 */ return preMark + form.format(dMoney);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toHanMoney(int piMoney)
+    /*     */ {
+        /* 227 */ return toHanMoney(piMoney);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toHanMoney(float pfMoney)
+    /*     */ {
+        /* 237 */ return toHanMoney(pfMoney);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toHanMoney(long plMoney)
+    /*     */ {
+        /* 247 */ return toHanMoney(plMoney);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toHanMoney(String psMoney)
+    /*     */ {
+        /* 257 */ String tempMoney = maskClear2(psMoney);
+        /* 258 */ return toHanMoney(Double.parseDouble(tempMoney));
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toHanMoney(double pdMoney)
+    /*     */ {
+        /* 268 */ String sMoney = removeComma(toCommaFormat(pdMoney));
+        /* 269 */ int size = sMoney.length();
+        /* 270 */ int base = size / 4;
+        /* 271 */ int basic = size % 4;
+        /*     */
+        /* 273 */ if (basic == 0) --base;
+        /*     */
+        /* 275 */ StringBuilder hanMoney = new StringBuilder();
+        /*     */
+        /* 277 */ int i = 0;
+        /* 278 */ while (base >= 0)
+        /*     */ {
+            /* 280 */ String tempBasic = "";
+            /* 281 */ if (basic == 0)/* 282 */ tempBasic = sMoney.substring(i, i + 4);
+            /*     */ else {
+                /* 284 */ tempBasic = sMoney.substring(i, (i == 0) ? basic : i + 4);
+                /*     */ }
+            /*     */
+            /* 287 */ if (basic == 0)/* 288 */ i += 4;
+            /*     */ else {
+                /* 290 */ i += ((i == 0) ? basic : 4);
+                /*     */ }
+            /* 292 */ for (int j = 0; j < tempBasic.length(); ++j) {
+                /* 293 */ int curnum = Integer.parseInt((new StringBuffer(tempBasic.charAt(j)).toString()));
+                /* 294 */ if (curnum == 0) {
+                    /*     */ continue;
+                    /*     */ }
+                /* 297 */ hanMoney.append(HANGUL_A[curnum]);
+                /* 298 */ hanMoney.append(BASIC_A[(tempBasic.length() - j - 1)]);
+                /*     */ }
+            /*     */
+            /* 301 */ if (Integer.parseInt(tempBasic) == 0)/* 302 */ --base;
+            /*     */ else {
+                /* 304 */ hanMoney.append(BASE_A[(base--)]);
+                /*     */ }
+            /*     */ }
+        /*     */
+        /* 308 */ return hanMoney.toString();
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toKanjiMoney(int piMoney)
+    /*     */ {
+        /* 318 */ return toKanjiMoney(piMoney);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toKanjiMoney(float pfMoney)
+    /*     */ {
+        /* 328 */ return toKanjiMoney(pfMoney);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toKanjiMoney(long plMoney)
+    /*     */ {
+        /* 338 */ return toKanjiMoney(plMoney);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toKanjiMoney(String psMoney)
+    /*     */ {
+        /* 348 */ String tempMoney = maskClear2(psMoney);
+        /* 349 */ return toKanjiMoney(Double.parseDouble(tempMoney));
+        /*     */ }
+
+    /*     */
+    /*     */ public static String toKanjiMoney(double pdMoney)
+    /*     */ {
+        /* 359 */ String sMoney = toHanMoney(removeComma(toCommaFormat(pdMoney)));
+        /*     */
+        /* 361 */ StringBuilder kanjiMoney = new StringBuilder();
+        /*     */
+        /* 363 */ for (int i = 0; i < sMoney.length(); ++i) {
+            /* 364 */ if (MONEY_DATA.get(sMoney.charAt(i)) == null) continue;
+            kanjiMoney.append((String)MONEY_DATA.get(sMoney.charAt(i)));
+            /*     */ }
+        /* 366 */ return kanjiMoney.toString();
+        /*     */ }
+
+    /*     */
+    /*     */ private static String removeComma(String string)
+/*     */   {
+/* 376 */     if (string == null) return null;
+/* 377 */     if (string.indexOf(",") != -1) {
+/* 378 */       StringBuilder buf = new StringBuilder();
+/* 379 */       int i = 0;
+/*     */       while (true) { 
+	                char c = string.charAt(i);
+/* 381 */           if (c != ',') buf.append(c);
+/* 379 */           ++i; 
+                    if (i >= string.length())
+/*     */           {
+	                    return buf.toString(); 
+                    } 
+                }
+/*     */     }else {
+	return string;
+    }
+/* 387 */     
+/*     */   }
+
+    /*     */
+    /*     */ private static String maskClear2(String string)
+    /*     */ {
+        /* 397 */ StringBuilder buffer = new StringBuilder("");
+        /* 398 */ if (string == null) return "";
+        /*     */
+        /* 400 */ for (int i = 0; i < string.length(); ++i) {
+            /* 401 */ char c = string.charAt(i);
+            /* 402 */ if (Character.isDigit(c)) {
+                /* 403 */ buffer.append(c);
+                /*     */ }
+            /*     */ }
+        /* 406 */ return buffer.toString();
+        /*     */ }
+
+    /*     */
+    /*     */ public static String money(String string)
+    /*     */ {
+        /* 416 */ if (string == null) return null;
+        /* 417 */ DecimalFormat df = new DecimalFormat("#,##0");
+        /* 418 */ Long m = (Long)df.parse(string, new ParsePosition(0));
+        /* 419 */ if (m != null) {
+            /* 420 */ return m.toString();
+            /*     */ }
+        /* 422 */ return null;
+        /*     */ }
+
+    /*     */
+    /*     */ public static String money(long number)
+    /*     */ {
+        /* 433 */ DecimalFormat df = new DecimalFormat("#,##0");
+        /* 434 */ return df.format(number);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String money(Long number)
+    /*     */ {
+        /* 444 */ if (number == null) return "";
+        /* 445 */ return money(number.longValue());
+        /*     */ }
+    /*     */ }

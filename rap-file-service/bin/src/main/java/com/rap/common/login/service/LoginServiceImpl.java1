@@ -1,0 +1,156 @@
+/**
+ * ===========================================
+ * System Name : LGE GPDM Project
+ * Program ID : LoginServiceImpl.java
+ * ===========================================
+ * Modify Date Modifier Description
+ * -------------------------------------------
+ * 2015. 1. 30. hyeyoung.park Initial
+ * ===========================================
+ */
+package com.rap.common.login.service;
+
+import java.util.Map;
+import java.util.Set;
+
+import javax.annotation.Resource;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.omc.api.util.ThreadLocalUtil;
+import com.omc.api.util.general.UserControl;
+import com.omc.config.dao.MasterDao;
+import com.omc.util.NullUtil;
+import com.rap.common.login.model.UserInfoVO;
+import com.rap.common.login.model.UserSession;
+
+@Service("loginService")
+public class LoginServiceImpl implements LoginService {
+
+    @Resource(name = "masterDao")
+    private MasterDao masterDao;
+    
+    @Autowired
+    private UserSession userSession;
+   
+    @Override
+    public boolean checkUserId(UserInfoVO input){
+        int checkUserCnt = masterDao.select("Com.Login.checkUserId", input);
+        if (checkUserCnt > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    @Override
+    public boolean checkUser(UserInfoVO input){
+        // TODO : HASH 적용 시 활성화!!
+//         String digestedPw = DigestManager.digest(input.getPassword(), "SHA-512");
+//         input.setPassword(digestedPw);
+        int checkUserCnt = masterDao.select("Com.Login.checkUser", input);
+        if (checkUserCnt > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    @Override
+    public UserInfoVO retrieveUser(UserInfoVO input){
+        UserInfoVO userInfo = masterDao.select("Com.Login.retrieveUserInfo", input);
+        return userInfo;
+    }
+    @Override
+    public void refreshUserSession(String userId, String userType ) {
+        UserInfoVO userInfo = new UserInfoVO();
+        userInfo.setUserId(userId);
+        userInfo = retrieveUser(userInfo);
+
+        /************************* User Property and Access Info*******************************/
+        Map<String,String> propertyMap = UserControl.getPropertyList(userInfo.getUserId());
+        Set<String> roleSet            = UserControl.getRoleList(userInfo.getUserId());
+        roleSet.add("General User Role");
+        
+        //Schema(PSYSSITE)정보에서 사용되어지는 Site임
+        //userSession(userInfo.getSite());
+//        userSession.setPlantUnitCode("");
+//        
+//        userSession.setPropertyMap(propertyMap);
+//        userSession.setRoleSet(roleSet);
+//        
+//        if("Normal".equals(userType)){
+//            Set<String> groupSet           = UserControl.getGroupList(userInfo.getUserId());
+//            Set<String> managementRoleSet  = Users.getMyManagementRoleSet(userId);            
+//            Set<String> accessibleMenuSet  = UserControl.getMenuSet(userInfo.getUserId(),roleSet,groupSet);
+//            
+//            userSession.setGroupSet(groupSet);
+//            userSession.setAccessibleMenuSet(accessibleMenuSet);
+//            userSession.setManagementRoleSet(managementRoleSet);
+//        }
+//        
+//        /************************* User Property and Access Info*******************************/
+//            userSession.setWorkGroup(propertyMap.get(UserPropertyConstants.USER_PROPERTY_WORK_GROUP));
+//            
+//            String division = propertyMap.get(PlmConstants.USER_PROP_DIVISION);
+//            String businessUnitCode = propertyMap.get(PlmConstants.USER_PROP_BUSINESS_UNIT);
+//            
+//            if ( !StringUtils.isEmpty(division) ) {
+//                if ( StringUtils.isEmpty(businessUnitCode) ) {
+//                    businessUnitCode = BusinessUnitUtil.getBusinessUnit(division);
+//                }
+//            }
+//            
+//        userSession.setDivisionUnitCode(division);
+//        userInfo.setDivisionUnitCode(propertyMap.get(PlmConstants.USER_PROP_DIVISION));
+//        
+//        UserControl.setUserProperty( userId, PlmConstants.USER_PROP_BUSINESS_UNIT, businessUnitCode );
+//        userSession.setBusinessUnitCode(businessUnitCode);
+//        userInfo.setBusinessUnitCode(businessUnitCode);
+//        
+//        String locale = propertyMap.get(UserPropertyConstants.USER_PROPERTY_LOCALE);
+//        String timeZone = propertyMap.get(UserPropertyConstants.USER_PROPERTY_TIME_ZONE);
+//        
+//        if(!StrUtil.isEmpty(locale)) userSession.setUserLocale(locale);
+//        if(StrUtil.isEmpty(timeZone)) timeZone = "Asia/Seoul";
+//        
+//        userSession.setUserTimeZone(timeZone);
+//        
+//        userSession.setDaylightSavings(propertyMap.get(UserPropertyConstants.USER_PROPERTY_DAYLIGHT_SAVINGS));
+//        
+//        userSession.setDefaultProject(propertyMap.get(UserPropertyConstants.USER_PROPERTY_DEFAULT_PROJECT));
+//        userSession.setPrivateFolder(propertyMap.get(UserPropertyConstants.USER_PROPERTY_PRIVATE_FOLDER));
+//        userSession.setDefaultPrivateFolder(propertyMap.get(UserPropertyConstants.USER_PROPERTY_DEFAULT_PRIVATE_FOLDER));
+//        userSession.setDefaultProjectFolder(propertyMap.get(UserPropertyConstants.USER_PROPERTY_DEFAULT_PROJECT_FOLDER));
+//        
+//        userSession.setLoginUrl(propertyMap.get(UserPropertyConstants.USER_PROPERTY_MR));
+//        userSession.setLoginUrl(propertyMap.get(UserPropertyConstants.USER_PROPERTY_RR));
+//        userSession.setLoginUrl(propertyMap.get(UserPropertyConstants.USER_PROPERTY_DR));
+//        userSession.setLoginUrl(propertyMap.get(UserPropertyConstants.USER_PROPERTY_LOGIN_URL));
+        
+        userSession.setExecutor(userInfo.getUserId());
+        BeanUtils.copyProperties(userInfo, userSession);
+        refreshThreadLocalFromSession(userSession);
+    }
+    @Override
+    public void refreshThreadLocalFromSession(UserSession userSession){
+        ThreadLocalUtil.set(ThreadLocalUtil.KEY.userLoginSite, userSession.getUserLoginSite());
+        ThreadLocalUtil.set(ThreadLocalUtil.KEY.userId, userSession.getUserId());
+        ThreadLocalUtil.set(ThreadLocalUtil.KEY.executor, userSession.getExcutorId());
+        if (!NullUtil.isNone(userSession.getUserTimeZone())) {
+            ThreadLocalUtil.set(ThreadLocalUtil.KEY.timeZone, userSession.getUserTimeZone());
+        }
+        if (!NullUtil.isNone(userSession.getOrganizationCode())) {
+            ThreadLocalUtil.set(ThreadLocalUtil.KEY.organizationCode, userSession.getOrganizationCode());
+        }
+        if (!NullUtil.isNone(userSession.getOrganizationCodeUpper())) {
+            ThreadLocalUtil.set(ThreadLocalUtil.KEY.organizationCodeUpper, userSession.getOrganizationCodeUpper());
+        }
+        if (!NullUtil.isNone(userSession.getBusinessUnitCode())) {
+            ThreadLocalUtil.set(ThreadLocalUtil.KEY.businessUnit, userSession.getBusinessUnitCode());
+        }
+        if (!NullUtil.isNone(userSession.getUserLocale())) {
+            ThreadLocalUtil.set(ThreadLocalUtil.KEY.locale, userSession.getUserLocale());
+        }
+    }
+}

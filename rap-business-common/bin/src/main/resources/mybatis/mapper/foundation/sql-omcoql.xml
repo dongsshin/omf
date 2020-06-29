@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="OmcOql">
+   
+    <select id="getObject" resultType="com.rap.omc.api.object.model.CastMap">
+        <![CDATA[
+             ${sql}
+        ]]>
+    </select>
+    <select id="getTotalCount" resultType="java.lang.Integer">
+        <![CDATA[
+             ${sql}
+        ]]>
+    </select>
+    
+	<select id="omcOqlDynamicSelectForString" resultType="java.lang.String">
+        <![CDATA[
+             ${sql}
+        ]]>
+    </select>
+    
+    
+    <select id="omcOqlUniqueClassName" resultType="java.lang.String">
+    select distinct pclass_name class_name from ptobjecttable a
+    where a.obid in
+    <choose>
+	    <when test="obidList != null">
+	        <foreach collection="obidList" item="item" index="index" open="(" separator="," close=")">
+	            #{item}
+	        </foreach>
+	    </when>
+	    <when test="obid != null">
+	            (#{obid})
+	    </when>
+	    </choose>
+    </select>
+    
+	<select id="getStringList" resultType="java.lang.String">
+        <![CDATA[
+             ${sql}
+        ]]>
+    </select>
+	<select id="getTableAndClassList" resultType="com.rap.omc.api.oql.model.OmcOQLTableAndClass">
+        <![CDATA[
+             ${sql}
+        ]]>
+    </select>
+	<select id="getClassAttributeList" resultType="com.rap.omc.api.oql.model.schema.OmcOQLClassAttribute">
+        <![CDATA[
+             ${sql}
+        ]]>
+    </select>
+    
+	<select id="getAPILogByKeyValue" resultType="com.rap.omc.api.oql.model.OmcOQLApiLogVO">
+        <![CDATA[
+			select  pkey_value                 key_value         , 
+			        ppattern_where             pattern_where     , 
+			        ppattern_parameter         pattern_parameter , 
+			        sql_total_cnt              sql_total_cnt     , 
+			        sql_total_select           sql_total_select  , 
+			        sql_orderby_clause         sql_orderby_clause, 
+			        pcreator                   creator           , 
+			        pcreated                   created           , 
+			        pmodifier                  modifier          , 
+			        pmodified                  modified
+			from psyssearchllog a
+			where a.pkey_value = #{keyValue} and rownum = 1
+        ]]>
+    </select>
+    
+    <select id="getAPIRelateLogByKeyValue" resultType="com.rap.omc.api.oql.model.OmcOQLApiRelatedLogVO">
+        <![CDATA[
+			select a.pkey_value                  as key_value                
+			      ,a.ppattern_where              as pattern_where 
+			      ,a.ppattern_parameter          as pattern_where 
+			      ,a.join_clause_to              as join_clause_to 
+			      ,a.join_clause_from            as join_clause_from 
+			      ,a.total_select_sql            as sql_total_select 
+			      ,a.sql_select_this_last        as sql_this_last_select 
+			      ,a.sql_select_clause_last      as sql_added_select
+			      ,a.subquery_select             as sql_sub_query_select 
+			      ,a.sql_select_rel_last         as sql_rel_last_select
+			from psysgetlatedllog a
+			where a.pkey_value = #{keyValue}
+        ]]>
+    </select>
+    
+    <select id="getBusinessClassList" resultType="com.rap.omc.api.oql.model.schema.OmcOQLBusinessClass">
+        <![CDATA[
+             ${sql}
+        ]]>
+    </select>
+    <select id="getRelationClassList" resultType="com.rap.omc.api.oql.model.schema.OmcOQLRelationClass">
+        <![CDATA[
+             ${sql}
+        ]]>
+    </select>
+    <select id="getRelationShipInfoList" resultType="com.rap.omc.api.oql.model.schema.OmcOQLRelationShipInfo">
+        <![CDATA[
+             ${sql}
+        ]]>
+    </select>
+    <select id="getRelatedInfoList" resultType="com.rap.omc.api.oql.model.schema.OmcOQLRelatedClassInfo">
+        <![CDATA[
+             ${sql}
+        ]]>
+    </select>
+    
+	
+</mapper>

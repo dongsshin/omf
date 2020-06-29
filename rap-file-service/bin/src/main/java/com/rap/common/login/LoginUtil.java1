@@ -1,0 +1,50 @@
+/**
+ * ===========================================
+ * System Name : LGE PLM Project
+ * Program ID : LoginUtil.java
+ * ===========================================
+ * Modify Date    Modifier    Description 
+ * -------------------------------------------
+ * 2017. 8. 1.  s_dongsshin   Initial
+ * ===========================================
+ */
+package com.rap.common.login;
+
+import com.omc.framework.util.SpringFactoryUtil;
+import com.rap.common.login.model.UserSession;
+import com.rap.common.login.service.LoginService;
+
+/**
+ * <pre>
+ * Class : LoginUtil
+ * Description : TODO
+ * </pre>
+ * 
+ * @author s_dongsshin
+ */
+public class LoginUtil {
+    private LoginService loginService;
+
+    private static LoginUtil cInstance;
+    /**
+     * Singleton을 구성된 getInstance() method
+     */
+    private synchronized static LoginUtil getInstance(){
+        if (cInstance == null) {
+            cInstance = new LoginUtil();
+            cInstance.loginService = (LoginService)SpringFactoryUtil.getBean("loginService");
+        }
+        return cInstance;
+    }
+
+    public static void refreshUserSession(String userId){
+        getInstance().loginService.refreshUserSession(userId, "Normal");
+    }
+    
+    public static void refreshUserSession(String userId, String usertype ){
+        getInstance().loginService.refreshUserSession(userId, usertype);
+    }
+    public static void refreshThreadLocalFromSession(UserSession userSession){
+        getInstance().loginService.refreshThreadLocalFromSession(userSession);
+    }
+}

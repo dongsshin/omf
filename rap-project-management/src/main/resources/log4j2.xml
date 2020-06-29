@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="6" packages="devonframe.log.log4j">
+	<!-- <Configuration status="error" monitorInterval="6" packages="devonframe.log.log4j"> -->
+
+	<Appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="[%X{logKey}] %d{HH:mm:ss.SSS} %-5level [%C{0}.%M:%L] %m%n" />
+		</Console>
+
+		<RollingFile name="file" fileName="logs/plm-debug.log" filePattern="logs/plm-debug.log.%d{yyyy-MM-dd}.%i">
+			<!-- <PatternLayout pattern="[%X{testKey}] %d %5p [%c] %m%n" /> -->
+			<PatternLayout pattern="[%X{logKey}] %d{HH:mm:ss.SSS} %-5level [%C{0}.%M:%L] %m%n" />
+			<Policies>
+				<!-- interval(default 1)이므로 1초 간격으로 rolling 수행 -->
+				<TimeBasedTriggeringPolicy />
+				<!-- size 단위: Byte(default), KB, MB, or GB, 10MB=10485760 -->
+				<SizeBasedTriggeringPolicy size="10485760" />
+			</Policies>
+		</RollingFile>
+
+		<RollingFile name="dbwrap" fileName="logs/plm-dbwrap.log" filePattern="logs/plm-dbwrap.log.%d{yyyy-MM-dd}.%i">
+			<PatternLayout pattern="[%X{logKey}] %d{HH:mm:ss.SSS} %-5level [%C{0}.%M:%L] %m%n" />
+			<Policies>
+				<!-- interval(default 1)이므로 1초 간격으로 rolling 수행 -->
+				<TimeBasedTriggeringPolicy />
+				<!-- size 단위: Byte(default), KB, MB, or GB, 10MB=10485760 -->
+				<SizeBasedTriggeringPolicy size="10485760" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+
+		<!-- TraceLog -->
+		<Logger name="org.trace" level="trace" additivity="false">
+			<AppenderRef ref="STDOUT" />
+			<AppenderRef ref="dbwrap" />
+		</Logger>
+
+		<!-- file log -->
+		<Logger name="org.springframework" level="info" additivity="false">
+			<AppenderRef ref="STDOUT" />
+			<AppenderRef ref="file" />
+		</Logger>
+
+<!-- 		<Logger name="devonframe" level="info" additivity="false"> -->
+<!-- 			<AppenderRef ref="STDOUT" /> -->
+<!-- 			<AppenderRef ref="file" /> -->
+<!-- 		</Logger> -->
+
+		<!-- Project -->
+		
+
+		<Logger name="com.rap" level="debug" additivity="false">
+			<AppenderRef ref="STDOUT" />
+			<AppenderRef ref="file" />
+		</Logger>
+
+		<Root level="error">
+			<AppenderRef ref="STDOUT" />
+		</Root>
+	</Loggers>
+</Configuration>
+
+

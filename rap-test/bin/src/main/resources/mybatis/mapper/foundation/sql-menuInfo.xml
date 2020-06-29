@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MenuInfo">
+	<select id="retrieveDynamicMenuItemInfo"
+		resultType="com.rap.omc.foundation.menu.model.MenuItemInfo">
+        <![CDATA[
+            ${sql}
+        ]]>
+	</select>
+	<select id="retrieveDynamicSubMenuInfo"
+		resultType="com.rap.omc.foundation.menu.model.MenuSubMenuInfo">
+        <![CDATA[
+            ${sql}
+        ]]>
+	</select>
+	<select id="getMenuName" resultType="String">
+    <![CDATA[
+        select pnames as names from psysmenu 
+        where omcBitAnd(pflags,#{flags}) = #{flags}
+        and   pnames in
+    ]]>
+		<choose>
+			<when test="namesList != null">
+				<foreach collection="namesList" item="item" index="index"
+					open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</when>
+			<when test="names != null">
+				(#{obid})
+			</when>
+		</choose>
+	</select>
+	<select id="getMenuNameWithKind" resultType="String">
+	    <![CDATA[
+	        select pnames as names from psysmenu 
+	        where omcBitAnd(pflags,#{flags}) = #{flags}
+	        and   omcBitAnd(pobject_kind,#{objectKind}) = #{objectKind}
+	        and   pnames in
+	    ]]>
+		<choose>
+			<when test="namesList != null">
+				<foreach collection="namesList" item="item" index="index"
+					open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</when>
+			<when test="names != null">
+				(#{obid})
+			</when>
+		</choose>
+	</select>
+</mapper>

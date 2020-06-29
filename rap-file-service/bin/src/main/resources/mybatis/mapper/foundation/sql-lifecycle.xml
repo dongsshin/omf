@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="LifeCycle">
+	<select id="dynamicRetrieveApiLifeCycle" resultType="com.rap.omc.foundation.lifecycle.model.LifeCycleInfo">
+     <![CDATA[
+           ${sql}
+     ]]>
+	</select>
+
+	<select id="dynamicRetrieveApiState" resultType="com.rap.omc.foundation.lifecycle.model.StateInfo">
+     <![CDATA[
+           ${sql}
+     ]]>
+    </select>
+    
+     <select id="dynamicRetrieveApiFormat" resultType="com.rap.omc.foundation.lifecycle.model.FormatInfo">
+     <![CDATA[
+           ${sql}
+     ]]>
+     </select>
+     
+     <select id="dynamicRetrieveBranch" resultType="com.rap.omc.foundation.lifecycle.model.BranchInfo">
+     <![CDATA[
+           ${sql}
+     ]]>
+     </select>
+     
+     <select id="dynamicRetrieveStore" resultType="com.rap.omc.foundation.file.model.FcsLocationVO">
+     <![CDATA[
+           ${sql}
+     ]]>
+     </select>
+     
+     
+     <select id="dynamicRetrieveApiString" resultType="java.lang.String">
+     <![CDATA[
+           ${sql}
+     ]]>
+	</select>
+
+     <select id="dynamicRetrieveStateTrigger" resultType="com.rap.omc.foundation.lifecycle.model.StateTriggerInfo">
+     <![CDATA[
+           ${sql}
+     ]]>
+	</select>
+
+	<select id="selectLatestPromoteRoutingLog" parameterType="hashMap" resultType="com.rap.omc.foundation.lifecycle.model.RoutingLogVO">
+        <![CDATA[
+            SELECT
+            	OBID					AS OBID
+			    , PLIFE_CYCLE			AS LIFE_CYCLE
+			    , PFROM_STATES			AS FROM_STATES
+			    , PTO_STATES			AS TO_STATES
+			    , PACTION_METHOD		AS ACTION_METHOD
+			    , PACTIONED				AS ACTIONED
+			    , PACTIONED_BY			AS ACTIONED_BY
+			    , PCOMMENTS				AS COMMENTS
+			    , PCREATOR				AS CREATOR
+			    , PCREATED				AS CREATED
+			    , PMODIFIER				AS MODIFIER
+			    , PMODIFIED				AS MODIFIED
+              FROM PSYSROUTINGLOG P
+              WHERE P.PACTION_METHOD = 'Promote'
+              AND P.OBID = 	#{obid}
+              AND P.PLIFE_CYCLE = #{lifeCycle}
+              AND P.PTO_STATES = #{states}
+              ORDER BY P.PCREATED DESC
+		]]>
+	</select>
+	
+	<insert id="insertRoutingLog">
+		<![CDATA[
+			INSERT INTO PSYSROUTINGLOG(
+			      OBID
+			    , PLIFE_CYCLE
+			    , PFROM_STATES
+			    , PTO_STATES
+			    , PACTION_METHOD
+			    , PACTIONED
+			    , PACTIONED_BY
+			    , PCOMMENTS
+			    , PCREATOR
+			    , PCREATED
+			    , PMODIFIER
+			    , PMODIFIED
+			) VALUES (
+			      #{obid}
+			    , #{lifeCycle}
+			    , #{fromStates}
+			    , #{toStates}
+			    , #{actionMethod}
+			    , now()
+			    , #{actionedBy}
+			    , #{comments}
+			    , #{creator}
+			    , now()
+			    , #{modifier}
+			    , now()
+			)
+		]]>
+    </insert>
+
+</mapper>

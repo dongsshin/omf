@@ -1,0 +1,1185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="SchemaNew">
+
+	<insert id="createSystemKeyTable">
+        <![CDATA[
+            insert into psyskeytable(obid,pkinds)
+            values(#{obid},#{kinds})
+        ]]>
+	</insert>
+
+	<insert id="createSystemKeyTableBatch"
+		parameterType="java.util.Map">
+	<![CDATA[
+        insert into psyskeytable(obid,pkinds)values
+    ]]>
+		<foreach collection="list" item="key" separator=",">
+			(#{key.obid},#{key.kinds})
+		</foreach>
+	</insert>
+
+	<insert id="forEachTest" parameterType="java.util.Map">
+   <![CDATA[
+        insert into test_each (id, value) values
+   ]]>
+		<foreach collection="list" item="item" separator=",">
+			( #{item.id}, #{item.value} )
+		</foreach>
+	</insert>
+
+	<insert id="insertTest" parameterType="java.util.Map">
+    <![CDATA[
+        insert into test_each (id, value) values ( #{id}, #{value} )
+    ]]>
+	</insert>
+	<insert id="createTemporaryConstantsBatch"
+		parameterType="java.util.Map">
+       <![CDATA[
+	        insert into zsysconstants(psequences
+                                     ,pchange_comments
+                                     ,pkinds
+                                     ,pkind_desc
+                                     ,pnames
+                                     ,pconstant_values
+                                     ,phex_converting_flag) values
+        ]]>
+		<foreach collection="list" item="key" separator=",">
+			(#{key.sequences}
+			,#{key.changeComments}
+			,#{key.kinds}
+			,#{key.kindDesc}
+			,#{key.names}
+			,#{key.constantValues}
+			,#{key.hexConvertingFlag})
+		</foreach>
+	</insert>
+	<insert id="createTemporaryBizClassBatch"
+		parameterType="java.util.Map">
+	<![CDATA[
+        insert into zsysbizobjectclassinfo( psequences
+                ,pchange_comments
+                ,pnames
+                ,pnames_parent
+                ,pdefault_policy
+                ,pdbms_table
+                ,pis_instantiable
+                ,pjava_package
+                ,pdisplayed_name
+                ,pdisplayed_name_kr
+                ,pcombo_display
+                ,papply_workflow
+                ,pworkflow_url
+                ,pmodule_name
+                ,premarks
+                ,pclass_icon
+                ,pclass_icon_small
+                ,powners) values
+        ]]>
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.sequences}
+			,#{key.changeComments}
+			,#{key.names}
+			,#{key.namesParent}
+			,#{key.defaultPolicy}
+			,#{key.dbmsTable}
+			,#{key.isInstantiableStr}
+			,#{key.javaPackage}
+			,#{key.displayedName}
+			,#{key.displayedNameKr}
+			,#{key.comboDisplayStr}
+			,#{key.applyWorkflowStr}
+			,#{key.workflowUrl}
+			,#{key.moduleName}
+			,#{key.remarks}
+			,#{key.classIcon}
+			,#{key.classIconSmall}
+			,#{key.owners})
+		</foreach>
+	</insert>
+
+	<insert id="createTemporaryRelClassBatch"
+		parameterType="java.util.Map">
+		insert into zsysrelobjectclassinfo( psequences
+		,pchange_comments
+		,pnames
+		,pnames_parent
+		,pdisplayed_name
+		,pdisplayed_name_kr
+		,pdbms_table
+		,pallow_duplicate_str
+		,pfrom_class
+		,pto_class
+		,pfrom_relationship
+		,pto_relationship
+		,prelation_from_meaning
+		,prelation_to_meaning
+		,pcardinality_from_str
+		,pcardinality_to_str
+		,prevision_rule_from_str
+		,prevision_rule_to_str
+		,pis_instantiable_str
+		,pjava_package
+		,pmodule_name
+		,premarks
+		,powners
+		)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.sequences}
+			,#{key.changeComments}
+			,#{key.names}
+			,#{key.namesParent}
+			,#{key.displayedName}
+			,#{key.displayedNameKr}
+			,#{key.dbmsTable}
+			,#{key.allowDuplicateStr}
+			,#{key.fromClass}
+			,#{key.toClass}
+			,#{key.fromRelationship}
+			,#{key.toRelationship}
+			,#{key.relationFromMeaning}
+			,#{key.relationToMeaning}
+			,#{key.cardinalityFromStr}
+			,#{key.cardinalityToStr}
+			,#{key.revisionRuleFromStr}
+			,#{key.revisionRuleToStr}
+			,#{key.isInstantiableStr}
+			,#{key.javaPackage}
+			,#{key.moduleName}
+			,#{key.remarks}
+			,#{key.owners})
+		</foreach>
+	</insert>
+	<insert id="createTemporaryClassAttrBatch"
+		parameterType="java.util.Map">
+		insert into zsysclassattrinfo( psequences
+		,pchange_comments
+		,pclass_type
+		,pclass_name
+		,pattribute_name
+		,pdisplayed_name
+		,pdbms_column
+		,pcolumn_alias
+		,psortings
+		,pdata_type_str
+		,plengths
+		,pnull_able_str
+		,pdefault_value
+		,pvalue_list
+		,premarks
+		,powners
+		)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.sequences}
+			,#{key.changeComments}
+			,#{key.classType}
+			,#{key.className}
+			,#{key.attributeName}
+			,#{key.displayedName}
+			,#{key.dbmsColumn}
+			,#{key.columnAlias}
+			,#{key.sortings}
+			,#{key.dataTypeStr}
+			,#{key.lengths}
+			,#{key.nullAbleStr}
+			,#{key.defaultValue}
+			,#{key.valueList}
+			,#{key.remarks}
+			,#{key.owners})
+		</foreach>
+	</insert>
+
+	<insert id="createTemporaryAttrDefinitionBatch"
+		parameterType="java.util.Map">
+		insert into zsysattribute(psequences
+		,pchange_comments
+		,pnames
+		,pdisplayed_names
+		,pdisplayed_names_kr
+		,pmodule_name
+		,premarks
+		)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.sequences}
+			,#{key.changeComments}
+			,#{key.names}
+			,#{key.displayedNames}
+			,#{key.displayedNamesKr}
+			,#{key.moduleName}
+			,#{key.remarks})
+		</foreach>
+	</insert>
+
+	<insert id="createAllowedClassForRelationBatch"
+		parameterType="java.util.Map">
+		insert into psysallowedclassforrel(obid
+		,pflags
+		,prelationship_obid
+		,pclass_obid
+		,pcreator
+		,pcreated
+		,pmodifier
+		,pmodified)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.obid}
+			,#{key.flags}
+			,#{key.relationshipObid}
+			,#{key.classObid}
+			,#{key.creator}
+			,UTC_TIMESTAMP()
+			,#{key.modifier}
+			,UTC_TIMESTAMP()
+			)
+		</foreach>
+	</insert>
+
+	<insert id="createClassInfoBatch" parameterType="java.util.Map">
+		insert into psysclassinfo( obid
+		,pflags
+		,pclass_name
+		,pflags_class
+		,pdbms_table
+		,pclass_obid
+		,pclass_parent_obid
+		,pdisplayed_name
+		,pdisplayed_name_kr
+		,pcreator
+		,pcreated
+		,pmodifier
+		,pmodified
+		)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.obid}
+			,#{key.flags}
+			,#{key.names}
+			,#{key.flagsClass}
+			,#{key.dbmsTable}
+			,#{key.classObid}
+			,#{key.classParentObid}
+			,#{key.displayedName}
+			,#{key.displayedNameKr}
+			,#{key.creator}
+			,UTC_TIMESTAMP()
+			,#{key.modifier}
+			,UTC_TIMESTAMP())
+		</foreach>
+	</insert>
+
+	<insert id="createClassAttrRef" parameterType="java.util.Map">
+		insert into psysattrref(class_type
+		,pclass_name
+		,pdbms_table
+		,pflags_class
+		,pattribute_name
+		,pflags_attribute
+		,pis_inherited
+		,pdbms_column
+		,pcolumn_alias
+		,pdata_type
+		,plengths
+		,pnullable
+		,pdefault_value
+		,pvalue_setting_info
+		,psorting
+		,pdefined_class_name
+		,pattribute_sequence
+		)values
+		(#{classType}
+		,#{className}
+		,#{dbmsTable}
+		,#{flagsClass}
+		,#{attributeName}
+		,#{flagsAttribute}
+		,#{isInherited}
+		,#{dbmsColumn}
+		,#{columnAlias}
+		,#{dataType}
+		,#{lengths}
+		,#{nullable}
+		,#{defaultValue}
+		,#{valueSettingInfo}
+		,#{sorting}
+		,#{definedClassName}
+		,#{attributeSequence}
+		)
+	</insert>
+
+	<insert id="createClassAttrRefBatch"
+		parameterType="java.util.Map">
+		insert into psysattrref(class_type
+		,pclass_name
+		,pdbms_table
+		,pflags_class
+		,pattribute_name
+		,pflags_attribute
+		,pis_inherited
+		,pdbms_column
+		,pcolumn_alias
+		,pdata_type
+		,plengths
+		,pnullable
+		,pdefault_value
+		,pvalue_setting_info
+		,psorting
+		,pdefined_class_name
+		,pattribute_sequence
+		)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.classType}
+			,#{key.className}
+			,#{key.dbmsTable}
+			,#{key.flagsClass}
+			,#{key.attributeName}
+			,#{key.flagsAttribute}
+			,#{key.isInherited}
+			,#{key.dbmsColumn}
+			,#{key.columnAlias}
+			,#{key.dataType}
+			,#{key.lengths}
+			,#{key.nullable}
+			,#{key.defaultValue}
+			,#{key.valueSettingInfo}
+			,#{key.sorting}
+			,#{key.definedClassName}
+			,#{key.attributeSequence}
+			)
+		</foreach>
+	</insert>
+	<insert id="createSystemSiteBatch" parameterType="java.util.Map">
+		insert into zsyssite(pnames
+		,pdisplayed_names)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.names}
+			,#{key.displayedNames}
+			)
+		</foreach>
+	</insert>
+
+	<insert id="createFileStoreLocationBatch"
+		parameterType="java.util.Map">
+		insert into zsysstorelocation(psequences
+		,pchange_comments
+		,pkinds_str
+		,pnames
+		,pfile_server
+		,pfile_path
+		,pftp_user
+		,pftp_password
+		,pserver_protocol
+		,pserver_port
+		,pservice_domain
+		,pservice_port
+		,pservice_url
+		)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.sequences}
+			,#{key.changeComments}
+			,#{key.kindsStr}
+			,#{key.names}
+			,#{key.fileServer}
+			,#{key.filePath}
+			,#{key.ftpUser}
+			,#{key.ftpPassword}
+			,#{key.serverProtocol}
+			,#{key.serverPort}
+			,#{key.serviceDomain}
+			,#{key.servicePort}
+			,#{key.serviceUrl})
+		</foreach>
+	</insert>
+
+
+	<insert id="createUserGroupBatch" parameterType="java.util.Map">
+		insert into zsysgrouprole(psequences
+		,pchange_comments
+		,pkinds_str
+		,pnames
+		,pdescriptions
+		,powners
+		)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.sequences}
+			,#{key.changeComments}
+			,#{key.kindsStr}
+			,#{key.names}
+			,#{key.descriptions}
+			,#{key.owners})
+		</foreach>
+	</insert>
+
+	<insert id="createTemporayMenuBatch"
+		parameterType="java.util.Map">
+		insert into zsysmenu(psequences
+		,pchange_comments
+		,pis_sub
+		,pmodule_name
+		,pis_access_control_object
+		,pnames
+		,pkinds_str
+		,psortings
+		,psub_names
+		,pis_hidden
+		,plabels
+		,plabels_kr
+		,pcalling_type
+		,plink_href
+		,plink_alt
+		,pimages
+		,paccess_expression
+		,pdescriptions
+		,powners
+		)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.sequences}
+			,#{key.changeComments}
+			,#{key.isSub}
+			,#{key.moduleName}
+			,#{key.isAccessControlObject}
+			,#{key.names}
+			,#{key.kindsStr}
+			,#{key.sortings}
+			,#{key.subNames}
+			,#{key.isHidden}
+			,#{key.labels}
+			,#{key.labelsKr}
+			,#{key.callingType}
+			,#{key.linkHref}
+			,#{key.linkAlt}
+			,#{key.images}
+			,#{key.accessExpression}
+			,#{key.descriptions}
+			,#{key.owners})
+		</foreach>
+	</insert>
+
+	<insert id="createTemporayLayoutTabBatch"
+		parameterType="java.util.Map">
+		insert into zsyslayouttab( psequences
+		,pchange_comments
+		,pusages
+		,pkinds_str
+		,pnames
+		,plabels
+		,plabels_kr
+		,psub_object_list
+		,plink_herf
+		,plink_alt
+		,pheights
+		,powners
+		)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.sequences}
+			,#{key.changeComments}
+			,#{key.usages}
+			,#{key.kindsStr}
+			,#{key.names}
+			,#{key.labels}
+			,#{key.labelsKr}
+			,#{key.subObjectList}
+			,#{key.linkHerf}
+			,#{key.linkAlt}
+			,#{key.heights}
+			,#{key.owners})
+		</foreach>
+	</insert>
+
+
+
+	<insert id="createTemporayLifeCycleBatch"
+		parameterType="java.util.Map">
+		insert into zsyslifecycle(psequences
+		,pchange_comments
+		,pnames
+		,psequence_rule
+		,pdefault_format
+		,pstate_list
+		,pstore_name
+		,pall_state_flag
+		,papplied_class_list
+		,pdisplayed_name
+		,papplied_format_list
+		)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.sequences}
+			,#{key.changeComments}
+			,#{key.names}
+			,#{key.sequenceRule}
+			,#{key.defaultFormat}
+			,#{key.stateList}
+			,#{key.storeName}
+			,#{key.allStateFlag}
+			,#{key.appliedClassList}
+			,#{key.displayedName}
+			,#{key.appliedFormatList})
+		</foreach>
+	</insert>
+
+	<insert id="createTemporayStateInfoBatch"
+		parameterType="java.util.Map">
+		insert into zsyslifecyclestateinfo(psequences
+		,pchange_comments
+		,plife_cycle
+		,pstates
+		,proute_complete_action
+		,pdefault_route_purpose
+		,proute_auto_start_on_reject
+		,proute_how_to_on_reject
+		,pinbox_task_auto_complete
+		,pdate_offset_day
+		,pparallel_process_rule
+		)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.sequences}
+			,#{key.changeComments}
+			,#{key.lifeCycle}
+			,#{key.states}
+			,#{key.routeCompleteAction}
+			,#{key.defaultRoutePurpose}
+			,#{key.routeAutoStartOnReject}
+			,#{key.routeHowToOnReject}
+			,#{key.inboxTaskAutoComplete}
+			,#{key.dateOffsetDay}
+			,#{key.parallelProcessRule})
+		</foreach>
+	</insert>
+
+	<insert id="createTemporayBranchInfoBatch"
+		parameterType="java.util.Map">
+		insert into zsysbranch(psequences
+		,pchange_comments
+		,plife_cycle
+		,pbracnh_info
+		)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.sequences}
+			,#{key.changeComments}
+			,#{key.lifeCycle}
+			,#{key.bracnhInfo} )
+		</foreach>
+	</insert>
+
+
+
+
+	<insert id="createTemporayTriggerParameterBatch"
+		parameterType="java.util.Map">
+		insert into zsystriggerparameter(psequences
+		,pchange_comments
+		,pnames
+		,pprogram_name
+		,pmethod_name
+		,pprogram_constructor
+		,pcalled_sequence
+		,perror_type
+		,ptarget_states
+		,pargument01
+		,pargument02
+		,pargument03
+		,pargument04
+		,pargument05
+		,pargument06
+		,pargument07
+		,pargument08
+		,pargument09
+		,pargument10
+		,pargument_desc01
+		,pargument_desc02
+		,pargument_desc03
+		,pargument_desc04
+		,pargument_desc05
+		,pargument_desc06
+		,pargument_desc07
+		,pargument_desc08
+		,pargument_desc09
+		,pargument_desc10
+		,pparm_description
+		)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.sequences}
+			,#{key.changeComments}
+			,#{key.names}
+			,#{key.programName}
+			,#{key.methodName}
+			,#{key.programConstructor}
+			,#{key.calledSequence}
+			,#{key.errorType}
+			,#{key.targetStates}
+			,#{key.argument01}
+			,#{key.argument02}
+			,#{key.argument03}
+			,#{key.argument04}
+			,#{key.argument05}
+			,#{key.argument06}
+			,#{key.argument07}
+			,#{key.argument08}
+			,#{key.argument09}
+			,#{key.argument10}
+			,#{key.argumentDesc01}
+			,#{key.argumentDesc02}
+			,#{key.argumentDesc03}
+			,#{key.argumentDesc04}
+			,#{key.argumentDesc05}
+			,#{key.argumentDesc06}
+			,#{key.argumentDesc07}
+			,#{key.argumentDesc08}
+			,#{key.argumentDesc09}
+			,#{key.argumentDesc10}
+			,#{key.parmDescription})
+		</foreach>
+	</insert>
+	<insert id="createTemporayStateTriggerBatch"
+		parameterType="java.util.Map">
+		insert into zsysstatetrigger(psequences
+		,pchange_comments
+		,ppolicy_name
+		,pstate_name
+		,pkinds
+		,pprogram_kinds
+		,pcalled_sequences
+		,pprogram_name
+		,ptrigger_name
+		)values
+		<foreach collection="list" item="key" separator=","
+			index="index">
+			(#{key.sequences}
+			,#{key.changeComments}
+			,#{key.policyName}
+			,#{key.stateName}
+			,#{key.kindsStr}
+			,#{key.programKindsStr}
+			,#{key.calledSequences}
+			,#{key.programName}
+			,#{key.triggerName})
+		</foreach>
+	</insert>
+
+	<select id="deleteScheamTable">
+		delete from ${dbmsTableName}
+		where obid in
+		<choose>
+			<when test="obidList != null">
+				<foreach collection="obidList" item="item" index="index"
+					open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</when>
+			<when test="obid != null">
+				(#{obid})
+			</when>
+		</choose>
+	</select>
+	<select id="retrieveRelationObjectTable"
+		resultType="com.rap.omc.foundation.classes.model.RelationTableInfo">
+		select a.obid as obid ,
+		a.pclass_name as class_name ,
+		a.pfrom_class as from_class ,
+		a.pfrom_obid as from_obid ,
+		a.pto_class as to_class ,
+		a.pto_obid as to_obid
+		from ptrelationtable a
+		where 1 = 1
+		<if test="relationList != null">
+			<foreach collection="relationList" item="item" index="index"
+				open=" and a.pclass_name in (" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="fromFilterList != null">
+			<foreach collection="fromFilterList" item="item"
+				index="index" open=" and a.pfrom_class in (" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="toFilterList != null">
+			<foreach collection="fromFilterList" item="item"
+				index="index" open=" and a.pto_class in (" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<choose>
+			<when test="direction == 'From'">
+				and a.pto_obid = #{obid}
+			</when>
+			<when test="direction == 'To'">
+				and a.pfrom_obid = #{obid}
+			</when>
+			<otherwise>
+				and (a.pto_obid = #{obid} or a.pfrom_obid = #{obid})
+			</otherwise>
+		</choose>
+	</select>
+	<select id="getSystemKeyTable"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaSysKeyVO">
+		select obid as obid, pkinds as kinds from psyskeytable
+		where obid in
+		<choose>
+			<when test="obidList != null">
+				<foreach collection="obidList" item="item" index="index"
+					open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</when>
+			<when test="obid != null">
+				(#{obid})
+			</when>
+		</choose>
+	</select>
+
+	<select id="dynamicRetrieveConstants"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaSysConstantVO">
+        <![CDATA[
+            ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveProperty"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaPropertyVO">
+        <![CDATA[
+            ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveBizClass"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaSysBizClassVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveRelClass"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaSysRelClassVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveAllowedClass"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaSysAllowedClsForRelVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveAttr"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaSysClassAttrInfoVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveMenu"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaMenuVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+
+	<select id="retrieveUserMenuWithObid"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaMenuVO">
+        <![CDATA[
+        select a.obid                as obid             
+              ,a.pflags              as flags            
+              ,a.pobject_kind        as object_kind      
+              ,a.pnames              as names            
+              ,a.pdescriptions       as descriptions     
+              ,a.plabels             as labels           
+              ,a.plabels_kr          as labels_kr        
+              ,a.plink_herf          as link_herf        
+              ,a.plink_alt           as link_alt         
+              ,a.pimages             as images           
+              ,a.paccess_expression  as access_expression
+              ,a.pmodule_name        as module_name      
+              ,a.pstring01           as string01         
+              ,a.pstring02           as string02         
+              ,a.pstring03           as string03         
+              ,a.pstring04           as string04         
+              ,a.pstring05           as string05         
+              ,a.pcreator            as creator          
+              ,a.pcreated            as created          
+              ,a.pmodifier           as modifier         
+              ,b.obid                as relation_obid    
+              ,b.pschema_kind        as schema_kind      
+              ,b.pflags              as relation_flags   
+              ,b.pattribute01        as attribute01
+              ,b.pattribute02        as attribute02
+              ,b.pattribute03        as attribute03
+              ,b.pattribute04        as attribute04
+              ,b.pattribute05        as attribute05
+              ,b.pattribute06        as attribute06
+              ,b.pattribute07        as attribute07
+              ,b.pattribute08        as attribute08
+              ,b.pattribute09        as attribute09
+              ,b.pattribute10        as attribute10
+              ,b.pattribute11        as attribute11
+              ,b.pattribute12        as attribute12
+              ,b.pattribute13        as attribute13
+              ,b.pattribute14        as attribute14
+              ,b.pattribute15        as attribute15
+              ,b.pattribute16        as attribute16
+              ,b.pattribute17        as attribute17
+              ,b.pattribute18        as attribute18
+              ,b.pattribute19        as attribute19
+              ,b.pattribute20        as attribute20
+        from psysrelationinfo b, psysmenu a 
+        where a.obid = b.pto_obid
+        and   (omcBitAnd(b.pschema_kind ,#{kindGroupMenu}) = #{kindGroupMenu} or 
+               omcBitAnd(b.pschema_kind ,#{kindRoleMenu} ) = #{kindRoleMenu} or 
+               omcBitAnd(b.pschema_kind ,#{kindUserMenu})  = #{kindUserMenu})
+        ]]>
+		<if test="activeOnly != null">
+            <![CDATA[
+ 	        and omcBitAnd(b.pflags,#{relationActiveFlag}) = #{relationActiveFlag}
+ 	        and omcBitAnd(a.pflags,#{menuActiveFlag}) = #{menuActiveFlag}
+ 	        ]]>
+		</if>
+		and b.pfrom_obid in
+		<if test="obidList != null">
+			<foreach collection="obidList" item="item" index="index"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="obid != null">
+			(#{obid})
+		</if>
+	</select>
+	<select id="retrieveUserMenuWithName"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaMenuVO">
+        <![CDATA[
+        select a.obid                as obid             
+              ,a.pflags              as flags            
+              ,a.pobject_kind        as object_kind      
+              ,a.pnames              as names            
+              ,a.pdescriptions       as descriptions     
+              ,a.plabels             as labels           
+              ,a.plabels_kr          as labels_kr        
+              ,a.plink_herf          as link_herf        
+              ,a.plink_alt           as link_alt         
+              ,a.pimages             as images           
+              ,a.paccess_expression  as access_expression
+              ,a.pmodule_name        as module_name      
+              ,a.pstring01           as string01         
+              ,a.pstring02           as string02         
+              ,a.pstring03           as string03         
+              ,a.pstring04           as string04         
+              ,a.pstring05           as string05         
+              ,a.pcreator            as creator          
+              ,a.pcreated            as created          
+              ,a.pmodifier           as modifier         
+              ,b.obid                as relation_obid    
+              ,b.pschema_kind        as schema_kind      
+              ,b.pflags              as relation_flags   
+              ,b.pattribute01        as attribute01
+              ,b.pattribute02        as attribute02
+              ,b.pattribute03        as attribute03
+              ,b.pattribute04        as attribute04
+              ,b.pattribute05        as attribute05
+              ,b.pattribute06        as attribute06
+              ,b.pattribute07        as attribute07
+              ,b.pattribute08        as attribute08
+              ,b.pattribute09        as attribute09
+              ,b.pattribute10        as attribute10
+              ,b.pattribute11        as attribute11
+              ,b.pattribute12        as attribute12
+              ,b.pattribute13        as attribute13
+              ,b.pattribute14        as attribute14
+              ,b.pattribute15        as attribute15
+              ,b.pattribute16        as attribute16
+              ,b.pattribute17        as attribute17
+              ,b.pattribute18        as attribute18
+              ,b.pattribute19        as attribute19
+              ,b.pattribute20        as attribute20
+        from psysrelationinfo b, psysmenu a, psysuser c
+        where a.obid = b.pto_obid
+        and   b.pfrom_obid = c.obid
+        and   (omcBitAnd(b.pschema_kind ,#{kindGroupMenu}) = #{kindGroupMenu} or 
+               omcBitAnd(b.pschema_kind ,#{kindRoleMenu} ) = #{kindRoleMenu} or 
+               omcBitAnd(b.pschema_kind ,#{kindUserMenu})  = #{kindUserMenu})
+        ]]>
+		<if test="activeOnly != null">
+            <![CDATA[
+ 	        and omcBitAnd(b.pflags ,#{relationActiveFlag}) = #{relationActiveFlag}
+ 	        and omcBitAnd(a.pflags ,#{menuActiveFlag}) = #{menuActiveFlag}
+ 	        ]]>
+		</if>
+		and c.pnames in
+		<if test="obidList != null">
+			<foreach collection="obidList" item="item" index="index"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="obid != null">
+			(#{obid})
+		</if>
+	</select>
+	<select id="retrieveUserMenuSetWithName"
+		resultType="java.lang.String">
+        <![CDATA[
+        select distinct a.pnames              as names            
+        from psysrelationinfo b, psysmenu a, psysuser c
+        where a.obid = b.pto_obid
+        and   b.pfrom_obid = c.obid
+        and   (omcBitAnd(b.pschema_kind ,#{kindGroupMenu}) = #{kindGroupMenu} or 
+               omcBitAnd(b.pschema_kind ,#{kindRoleMenu} ) = #{kindRoleMenu} or 
+               omcBitAnd(b.pschema_kind ,#{kindUserMenu})  = #{kindUserMenu})
+        ]]>
+		<if test="activeOnly != null">
+            <![CDATA[
+ 	        and omcBitAnd(b.pflags ,#{relationActiveFlag}) = #{relationActiveFlag}
+ 	        and omcBitAnd(a.pflags ,#{menuActiveFlag}) = #{menuActiveFlag}
+ 	        ]]>
+		</if>
+		and c.pnames in
+		<if test="obidList != null">
+			<foreach collection="obidList" item="item" index="index"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="obid != null">
+			(#{obid})
+		</if>
+	</select>
+
+	<select id="retrieveUserMenuSetWithObid"
+		resultType="java.lang.String">
+        <![CDATA[
+        select distinct a.pnames              as names
+        from psysrelationinfo b, psysmenu a 
+        where a.obid = b.pto_obid
+        and   (omcBitAnd(b.pschema_kind ,#{kindGroupMenu}) = #{kindGroupMenu} or 
+               omcBitAnd(b.pschema_kind ,#{kindRoleMenu} ) = #{kindRoleMenu} or 
+               omcBitAnd(b.pschema_kind ,#{kindUserMenu})  = #{kindUserMenu})
+        ]]>
+		<if test="activeOnly != null">
+            <![CDATA[
+ 	        and omcBitAnd(b.pflags,#{relationActiveFlag}) = #{relationActiveFlag}
+ 	        and omcBitAnd(a.pflags,#{menuActiveFlag}) = #{menuActiveFlag}
+ 	        ]]>
+		</if>
+		and b.pfrom_obid in
+		<if test="obidList != null">
+			<foreach collection="obidList" item="item" index="index"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="obid != null">
+			(#{obid})
+		</if>
+	</select>
+
+
+	<select id="retrieveMenuUser"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaUserVO">
+        <![CDATA[
+         select a.obid                as obid              
+               ,a.pflags              as flags             
+               ,a.pkinds              as kinds       
+               ,a.pnames              as names             
+               ,a.pdescriptions       as descriptions      
+               ,a.pparent             as parent            
+               ,a.ppassword           as password         
+               ,a.psite               as site         
+               ,a.pdepartment_code    as department_code          
+               ,a.pdepartment_desc    as department_desc            
+               ,a.pdepartment_desc_kor as department_desc_kor 
+               ,a.pcreator            as creator          
+               ,a.pcreated            as created           
+               ,a.pmodifier           as modifier          
+               ,b.obid                as relation_obid     
+               ,b.pschema_kind        as schema_kind       
+               ,b.pflags              as relation_flags    
+               ,b.pattribute01        as attribute01 
+               ,b.pattribute02        as attribute02 
+               ,b.pattribute03        as attribute03 
+               ,b.pattribute04        as attribute04 
+               ,b.pattribute05        as attribute05 
+               ,b.pattribute06        as attribute06 
+               ,b.pattribute07        as attribute07 
+               ,b.pattribute08        as attribute08 
+               ,b.pattribute09        as attribute09 
+               ,b.pattribute10        as attribute10 
+               ,b.pattribute11        as attribute11 
+               ,b.pattribute12        as attribute12 
+               ,b.pattribute13        as attribute13 
+               ,b.pattribute14        as attribute14 
+               ,b.pattribute15        as attribute15 
+               ,b.pattribute16        as attribute16 
+               ,b.pattribute17        as attribute17 
+               ,b.pattribute18        as attribute18 
+               ,b.pattribute19        as attribute19 
+               ,b.pattribute20        as attribute20 
+         from psysrelationinfo b, psysuser a 
+         where a.obid = b.pfrom_obid 
+         and   (omcBitAnd(b.pschema_kind ,#{kindGroupMenu}) = #{kindGroupMenu} or 
+                omcBitAnd(b.pschema_kind ,#{kindRoleMenu}) = #{kindRoleMenu} or 
+                omcBitAnd(b.pschema_kind ,#{kindUserMenu}) = #{kindUserMenu}) 
+         ]]>
+		<if test="activeOnly != null">
+            <![CDATA[
+ 	        and omcBitAnd(b.pflags ,#{relationActiveFlag}) = #{relationActiveFlag}
+ 	        and omcBitAnd(a.pflags ,#{userActiveFlag}) = #{userActiveFlag}
+	        ]]>
+		</if>
+		and b.pto_obid in
+		<if test="obidList != null">
+			<foreach collection="obidList" item="item" index="index"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="obid != null">
+			(#{obid})
+		</if>
+	</select>
+	<select id="dynamicRetrieveRelation"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaRelationVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveLifeCycle"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaLifeCycleVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveBranch"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaBranchVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveFileFormat"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaFileFormatVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveStateDefinition"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaLifeCycleStateInfoVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveState"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaStatesVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveTempBranch"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaLifeCycleBranchVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveTriggerParmeter"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaTriggerParameterVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveStateTrigger"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaStateTriggerVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveLifeCycleRelation"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaLifeCycleRelationVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveFileServer"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaFileServerVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveSite"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaSiteVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveUser"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaUserVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="dynamicRetrieveTabNLayout"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaTabLayoutVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+
+	<select id="dynamicRetrieveAttribute"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaAttributeVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="retrieveDynamicStringList"
+		resultType="java.lang.String">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<select id="retrieveParentChildList"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaClassParentChildVO">
+        <![CDATA[
+        ${sql}
+        ]]>
+	</select>
+	<insert id="dynamicCreate">
+        <![CDATA[
+    	${sql}
+        ]]>
+	</insert>
+
+	<update id="dynamicModify">
+        <![CDATA[
+    	${sql}
+        ]]>
+	</update>
+
+	<update id="dynamicDelete">
+        <![CDATA[
+    	${sql}
+        ]]>
+	</update>
+	<select id="retrieveFileFormat"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaFileFormatVO">
+		delete from ${dbmsTableName}
+		where obid in
+		<choose>
+			<when test="obidList != null">
+				<foreach collection="obidList" item="item" index="index"
+					open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</when>
+			<when test="obid != null">
+				(#{obid})
+			</when>
+		</choose>
+	</select>
+
+</mapper>

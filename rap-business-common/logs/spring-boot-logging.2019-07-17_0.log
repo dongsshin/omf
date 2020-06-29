@@ -1,0 +1,533 @@
+2019-07-17 10:34:10.129 [main] INFO  com.RapBusinessCommonApplication - Starting RapBusinessCommonApplication on LCNC06V0064 with PID 8280 (C:\SpringBoot\workspace\rap-business-common\target\classes started by 62972 in C:\SpringBoot\workspace\rap-business-common)
+2019-07-17 10:34:10.155 [main] INFO  com.RapBusinessCommonApplication - No active profile set, falling back to default profiles: default
+2019-07-17 10:34:19.879 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-07-17 10:34:19.890 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-17 10:34:21.971 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2018ms. Found 0 repository interfaces.
+2019-07-17 10:34:23.627 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - Loaded jar:file:/C:/Users/62972/.m2/repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-17 10:34:23.637 [main] WARN  c.a.icatch.provider.imp.AssemblerImp - Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-17 10:34:23.651 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-17 10:34:23.654 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-17 10:34:23.655 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-17 10:34:23.655 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-17 10:34:23.655 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-17 10:34:23.655 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.client_demarcation = false
+2019-07-17 10:34:23.656 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.threaded_2pc = true
+2019-07-17 10:34:23.657 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-17 10:34:23.657 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.log_base_dir = ./
+2019-07-17 10:34:23.657 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-17 10:34:23.657 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.max_actives = 50
+2019-07-17 10:34:23.657 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-17 10:34:23.657 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.enable_logging = true
+2019-07-17 10:34:23.657 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-17 10:34:23.657 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.max_timeout = 360000000000
+2019-07-17 10:34:23.657 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-17 10:34:23.657 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-17 10:34:23.658 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.tm_unique_name = 10.64.184.49.tm
+2019-07-17 10:34:23.658 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-17 10:34:23.658 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-17 10:34:23.658 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-17 10:34:23.658 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-17 10:34:23.658 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.default_jta_timeout = 100000000000
+2019-07-17 10:34:23.662 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - Using default (local) logging and recovery...
+2019-07-17 10:34:23.731 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransactionServiceImp' of type [com.atomikos.icatch.config.UserTransactionServiceImp] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-17 10:34:23.766 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransaction' of type [com.atomikos.icatch.jta.UserTransactionImp] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-17 10:34:23.776 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransactionManager' of type [com.atomikos.icatch.jta.UserTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-17 10:34:23.811 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManager' of type [org.springframework.transaction.jta.JtaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-17 10:34:23.856 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagementConfiguration' of type [com.rap.config.datasource.TransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6d684fbd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-17 10:34:23.892 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-17 10:34:23.894 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdviceAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-17 10:34:23.929 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e9a419ec] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-17 10:34:25.640 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-07-17 10:34:25.691 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-17 10:34:25.731 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-07-17 10:34:25.731 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-07-17 10:34:26.175 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-17 10:34:26.176 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 15877 ms
+2019-07-17 10:34:27.405 [main] INFO  o.s.b.web.servlet.RegistrationBean - Filter characterEncodingFilter was not registered (possibly already registered?)
+2019-07-17 10:34:28.080 [main] INFO  c.a.d.xa.XATransactionalResource - schemaDataSource: refreshed XAResource
+2019-07-17 10:34:28.313 [main] INFO  c.r.c.d.SchemaSqlSessionConfig - schema.maxSqlCount:200000
+2019-07-17 10:34:29.599 [main] INFO  c.a.d.xa.XATransactionalResource - foundationDataSource: refreshed XAResource
+2019-07-17 10:34:29.682 [main] INFO  c.r.c.d.FoundationSqlSessionConfig - foundation.maxSqlCount:200000
+2019-07-17 10:34:30.020 [main] INFO  c.a.d.xa.XATransactionalResource - masterDataSource: refreshed XAResource
+2019-07-17 10:34:30.109 [main] INFO  c.r.c.d.MasterSqlSessionConfig - master.maxSqlCount:200000
+2019-07-17 10:34:32.555 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-07-17 10:34:32.561 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-07-17 10:34:33.901 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-17 10:34:34.111 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c7aac7c, org.springframework.security.web.context.SecurityContextPersistenceFilter@d0538b3, org.springframework.security.web.header.HeaderWriterFilter@6d7a343f, org.springframework.security.web.authentication.logout.LogoutFilter@1b89debc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3338d706, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7c8cea05, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@7ab8f93, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24ea71d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69542112, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6037748a, org.springframework.security.web.session.SessionManagementFilter@2f541f60, org.springframework.security.web.access.ExceptionTranslationFilter@63d43a5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7def62d0]
+2019-07-17 10:34:34.708 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-17 10:34:37.599 [main] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-07-17 10:34:37.618 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-07-17 10:34:37.707 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-17 10:34:37.722 [main] INFO  com.RapBusinessCommonApplication - Started RapBusinessCommonApplication in 28.968 seconds (JVM running for 34.843)
+2019-07-17 10:38:09.493 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-17 10:38:09.494 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-07-17 10:38:09.551 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 57 ms
+2019-07-17 10:40:02.123 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.288 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.295 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.303 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.313 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.319 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.324 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.331 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.336 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.343 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.350 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.362 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.369 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.382 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.385 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.389 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.392 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.395 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.401 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.405 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.409 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.412 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.415 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.419 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.425 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.428 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.432 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.434 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.437 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.440 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.444 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.446 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.450 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.463 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.466 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.479 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.483 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.498 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.503 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.517 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.519 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.535 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.539 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.551 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.558 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.566 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.570 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.571 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.572 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.573 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.574 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:02.575 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.296 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.309 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.314 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.320 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.322 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.328 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.332 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.334 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.337 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.340 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.342 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.348 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.352 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.361 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.366 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.369 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.372 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.375 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.377 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.380 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.385 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.388 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.391 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.393 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.394 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.400 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.403 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.405 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.408 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.414 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.422 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.429 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.434 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.444 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.448 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.460 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.463 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.480 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.485 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.487 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.487 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.517 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.520 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.534 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.541 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.547 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.547 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.547 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.547 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.547 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.547 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.547 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.585 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.603 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.642 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.650 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.653 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.656 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.667 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.671 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.673 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.676 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.691 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.698 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.723 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.752 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.754 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.755 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.764 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.768 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.772 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.773 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.792 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.802 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.814 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.848 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.850 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.852 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.855 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.858 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.860 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.864 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.895 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.898 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.905 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.935 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.937 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.944 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.947 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.951 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.953 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.955 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.960 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.964 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.973 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:03.998 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:04.004 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:04.004 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:04.007 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:04.009 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:04.012 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:40:04.016 [http-nio-8080-exec-6] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.352 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.365 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.368 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.372 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.376 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.381 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.389 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.392 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.395 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.397 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.399 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.405 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.408 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.414 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.415 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.417 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.419 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.420 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.422 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.424 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.426 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.429 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.431 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.434 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.437 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.441 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.443 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.445 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.448 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.451 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.453 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.455 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.458 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.473 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.475 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.484 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.485 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.498 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.500 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.510 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.513 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.528 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.530 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.538 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.541 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.545 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.546 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.547 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.547 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.548 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.548 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.549 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.751 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.765 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.772 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.778 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.782 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.786 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.789 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.793 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.795 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.797 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.801 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.805 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.809 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.813 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.816 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.818 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.823 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.823 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.824 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.828 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.835 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.836 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.840 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.850 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.853 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.854 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.861 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.864 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.866 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.869 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.872 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.874 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.874 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.888 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.889 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.899 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.900 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.911 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.914 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.922 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.926 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.934 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.940 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.948 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.948 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.959 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.960 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.961 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.962 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.963 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.963 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.964 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.968 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:32.978 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.016 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.019 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.020 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.020 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.020 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.021 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.032 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.036 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.039 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.041 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.062 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.084 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.084 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.084 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.090 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.090 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.094 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.096 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.100 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.105 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.113 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.141 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.143 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.143 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.145 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.149 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.151 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.152 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.157 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.159 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.169 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.196 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.198 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.198 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.200 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.212 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.215 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.218 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.220 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.234 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.245 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.281 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.283 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.285 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.287 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.291 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.294 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:45:33.295 [http-nio-8080-exec-7] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.731 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.745 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.748 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.764 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.766 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.769 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.771 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.773 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.774 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.779 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.780 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.790 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.792 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.799 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.803 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.806 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.808 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.810 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.812 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.814 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.819 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.825 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.827 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.828 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.830 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.835 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.837 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.839 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.843 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.844 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.847 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.849 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.851 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.865 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.868 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.886 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.887 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.897 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.899 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.919 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.922 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.932 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.936 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.946 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.950 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.959 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.961 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.964 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.965 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.966 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.966 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:30.967 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.172 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.187 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.192 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.196 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.200 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.202 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.203 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.204 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.206 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.209 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.211 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.220 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.224 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.229 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.232 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.235 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.239 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.242 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.244 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.245 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.252 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.258 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.261 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.267 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.269 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.285 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.286 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.286 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.288 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.292 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.294 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.296 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.298 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.305 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.305 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.319 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.321 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.330 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.334 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.341 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.344 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.365 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.366 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.384 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.389 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.399 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.399 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.400 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.400 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.400 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.401 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.401 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.402 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.411 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.466 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.468 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.471 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.475 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.478 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.481 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.484 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.486 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.487 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.494 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.503 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.536 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.538 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.540 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.543 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.545 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.546 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.548 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.552 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.568 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.577 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.605 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.607 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.608 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.609 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.611 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.617 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.619 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.623 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.626 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.634 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.665 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.667 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.668 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.671 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.675 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.684 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.685 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.689 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.698 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.715 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.755 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.757 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.758 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.764 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.769 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.773 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 10:52:31.775 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-17 13:15:32.898 [RMI TCP Connection(165)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-07-17 13:15:32.929 [RMI TCP Connection(165)-127.0.0.1] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-17 13:15:32.932 [RMI TCP Connection(165)-127.0.0.1] INFO  c.a.datasource.pool.ConnectionPool - atomikos connection pool 'masterDataSource': destroying pool...
+2019-07-17 13:15:32.949 [RMI TCP Connection(165)-127.0.0.1] INFO  c.a.datasource.pool.ConnectionPool - atomikos connection pool 'foundationDataSource': destroying pool...
+2019-07-17 13:15:32.963 [RMI TCP Connection(165)-127.0.0.1] INFO  c.a.datasource.pool.ConnectionPool - atomikos connection pool 'schemaDataSource': destroying pool...
+2019-07-17 13:15:34.132 [RMI TCP Connection(165)-127.0.0.1] INFO  c.a.icatch.imp.TransactionServiceImp - Transaction Service: Entering shutdown (false, 0)...

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="System">
+
+	<select id="System.retrieveTimeZoneList" resultType="com.rap.omc.foundation.system.model.TimeZoneVO">
+        <![CDATA[
+            SELECT TZ.PTIMEZONE_NAME AS names, TZ.PDISPLAYED_NAME AS titles
+              FROM PSYSTIMEZONE TZ
+        ]]>
+	</select>
+
+	<insert id="insertChangeLog">
+        <![CDATA[        
+        INSERT INTO PSYSCHANGEDLOG (
+               pchanging_category 
+				, ptarget_obid       
+				, ptarget_names      
+				, ptarget_class      
+				, pchanging_user     
+				, pchanged_date      
+				, pattribute01       
+				, pattribute02       
+				, pattribute03       
+				, pattribute04       
+				, pattribute05       
+				, pcreator           
+				, pcreated           
+				, pmodifier          
+				, pmodified   		
+        ) VALUES (
+				#{changingCategory}       
+				, #{targetObid}      
+				, #{targetNames}       
+				, #{targetClass}      
+				, #{changingUser}  
+        ]]>
+        <if test="changedDate != null and changedDate != ''">
+            <![CDATA[ , omcConvertLocalToUtc(#{changedDate})  ]]>
+		</if>	
+        <if test="changedDate == null or changedDate == ''">
+            <![CDATA[ , NULL  ]]>
+		</if>
+        <![CDATA[     
+				, #{attribute01}       
+				, #{attribute02}       
+				, #{attribute03}       
+				, #{attribute04}       
+				, #{attribute05}       
+				, #{creator}           
+				, omcGetUtcDate()           
+				, #{modifier}          
+				, omcGetUtcDate()  		
+        )
+        ]]>
+	</insert>
+
+	<select id="retrieveChangeLogList" resultType="com.rap.omc.foundation.system.model.ChangeLogVO">
+        <![CDATA[
+            SELECT pchanging_category as changingCategory
+				, ptarget_obid as targetObid
+				, ptarget_names as targetNames
+				, ptarget_class  as targetClass
+				, pchanging_user as changingUser
+				, PG_TZ.UF_UTC2LOCAL(pchanged_date)  as changedDate
+				, pattribute01   as attribute01
+				, pattribute02 as attribute02
+				, pattribute03  as attribute03
+				, pattribute04  as attribute04
+				, pattribute05  as attribute05
+				, pcreator  as creator
+				, PG_TZ.UF_UTC2LOCAL(pcreated)   as created
+				, pmodifier  as modifier
+				, PG_TZ.UF_UTC2LOCAL(pmodified)   as modified
+              FROM PSYSCHANGEDLOG
+             WHERE 1=1
+        ]]>
+		<if test="changingCategory != null and changingCategory != '' and !(changingCategory eq '*'.toString())">
+            <![CDATA[ AND pchanging_category = #{changingCategory}  ]]>
+		</if>		
+		<if test="targetObid != null and targetObid != ''">
+            <![CDATA[ AND ptarget_obid = #{targetObid}  ]]>
+		</if>		
+		<if test="targetNames != null and targetNames != '' and !(targetNames eq '%'.toString())">
+            <![CDATA[ AND ptarget_names LIKE #{targetNames} ]]>
+		</if>		
+		<if test="targetClass != null and targetClass != '' and !(targetClass eq '*'.toString())">
+            <![CDATA[ AND ptarget_class IN (SELECT stringvalue 
+				                     		FROM table(comUtility.splitStr2Table128(#{targetClass},','))) ]]>
+		</if>		
+		<if test="changingUser != null and changingUser != '' and !(changingUser eq '%'.toString())">
+            <![CDATA[ AND pchanging_user LIKE #{changingUser} ]]>
+		</if>		
+		<if test="attribute01 != null and attribute01 != '' and !(attribute01 eq '%'.toString())">
+            <![CDATA[ AND pattribute01 LIKE #{attribute01} ]]>
+		</if>		
+		<if test="attribute02 != null and attribute02 != '' and !(attribute02 eq '%'.toString())">
+            <![CDATA[ AND pattribute02 LIKE #{attribute02} ]]>
+		</if>		
+		<if test="attribute03 != null and attribute03 != '' and !(attribute03 eq '%'.toString())">
+            <![CDATA[ AND pattribute03 LIKE #{attribute03} ]]>
+		</if>		
+		<if test="attribute04 != null and attribute04 != '' and !(attribute04 eq '%'.toString())">
+            <![CDATA[ AND pattribute04 LIKE #{attribute04} ]]>
+		</if>		
+		<if test="attribute05 != null and attribute05 != '' and !(attribute05 eq '%'.toString())">
+            <![CDATA[ AND pattribute05 LIKE #{attribute05} ]]>
+		</if>		
+		<if test="startChangedDate != null and startChangedDate != ''">
+            <![CDATA[ AND TO_CHAR(pchanged_date, 'YYYYMMDD') >= TO_CHAR(omcConvertLocalToUtc(#{startChangedDate}), 'YYYYMMDD') ]]>
+		</if>	
+		<if test="endChangedDate != null and endChangedDate != ''">
+            <![CDATA[ AND TO_CHAR(pchanged_date, 'YYYYMMDD') <= TO_CHAR(omcConvertLocalToUtc(#{endChangedDate}), 'YYYYMMDD') ]]>
+		</if>
+		ORDER BY pcreated
+	</select>
+</mapper>

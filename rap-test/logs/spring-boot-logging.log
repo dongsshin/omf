@@ -1,0 +1,1156 @@
+2019-07-16 15:26:40.271 [main] INFO  com.RapFileManagementApplication - Starting RapFileManagementApplication on LCNC06V0064 with PID 3180 (C:\SpringBoot\workspace\rap-file-service\target\classes started by 62972 in C:\SpringBoot\workspace\rap-file-service)
+2019-07-16 15:26:40.290 [main] INFO  com.RapFileManagementApplication - No active profile set, falling back to default profiles: default
+2019-07-16 15:26:53.875 [main] INFO  com.RapFileManagementApplication - Starting RapFileManagementApplication on LCNC06V0064 with PID 9196 (C:\SpringBoot\workspace\rap-file-service\target\classes started by 62972 in C:\SpringBoot\workspace\rap-file-service)
+2019-07-16 15:26:53.885 [main] INFO  com.RapFileManagementApplication - No active profile set, falling back to default profiles: default
+2019-07-16 15:26:58.510 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-07-16 15:26:58.515 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-16 15:26:59.998 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1449ms. Found 0 repository interfaces.
+2019-07-16 15:27:01.112 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - Loaded jar:file:/C:/Users/62972/.m2/repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-16 15:27:01.118 [main] WARN  c.a.icatch.provider.imp.AssemblerImp - Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.client_demarcation = false
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.threaded_2pc = true
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.log_base_dir = ./
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.max_actives = 50
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.enable_logging = true
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-16 15:27:01.133 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.max_timeout = 360000000000
+2019-07-16 15:27:01.134 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-16 15:27:01.135 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-16 15:27:01.135 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.tm_unique_name = 10.64.184.49.tm
+2019-07-16 15:27:01.135 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-16 15:27:01.135 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-16 15:27:01.135 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-16 15:27:01.136 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-16 15:27:01.137 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.default_jta_timeout = 100000000000
+2019-07-16 15:27:01.137 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - Using default (local) logging and recovery...
+2019-07-16 15:27:01.188 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransactionServiceImp' of type [com.atomikos.icatch.config.UserTransactionServiceImp] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:27:01.218 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransaction' of type [com.atomikos.icatch.jta.UserTransactionImp] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:27:01.231 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransactionManager' of type [com.atomikos.icatch.jta.UserTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:27:01.250 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManager' of type [org.springframework.transaction.jta.JtaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:27:01.288 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagementConfiguration' of type [com.rap.config.datasource.TransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a32de237] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:27:01.309 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:27:01.313 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdviceAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:27:01.347 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1f69ac66] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:27:02.652 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-07-16 15:27:02.683 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-16 15:27:02.696 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-07-16 15:27:02.700 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-07-16 15:27:03.003 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-16 15:27:03.003 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 9009 ms
+2019-07-16 15:27:03.923 [main] INFO  o.s.b.web.servlet.RegistrationBean - Filter characterEncodingFilter was not registered (possibly already registered?)
+2019-07-16 15:27:04.540 [main] INFO  c.a.d.xa.XATransactionalResource - schemaDataSource: refreshed XAResource
+2019-07-16 15:27:04.679 [main] INFO  c.r.c.d.SchemaSqlSessionConfig - schema.maxSqlCount:200000
+2019-07-16 15:27:05.514 [main] INFO  c.a.d.xa.XATransactionalResource - foundationDataSource: refreshed XAResource
+2019-07-16 15:27:05.571 [main] INFO  c.r.c.d.FoundationSqlSessionConfig - foundation.maxSqlCount:200000
+2019-07-16 15:27:05.880 [main] INFO  c.a.d.xa.XATransactionalResource - masterDataSource: refreshed XAResource
+2019-07-16 15:27:05.937 [main] INFO  c.r.c.d.MasterSqlSessionConfig - master.maxSqlCount:200000
+2019-07-16 15:27:07.708 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-07-16 15:27:07.714 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-07-16 15:27:08.605 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-16 15:27:08.775 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@46cb800b, org.springframework.security.web.context.SecurityContextPersistenceFilter@2c6553c6, org.springframework.security.web.header.HeaderWriterFilter@648bfebe, org.springframework.security.web.authentication.logout.LogoutFilter@2e845f1c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7ccfed46, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7db63a01, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@505a48a2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52c68925, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17810908, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15096b0e, org.springframework.security.web.session.SessionManagementFilter@31c29db1, org.springframework.security.web.access.ExceptionTranslationFilter@52a3eba3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4d87e7f3]
+2019-07-16 15:27:09.220 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-16 15:27:11.180 [main] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-07-16 15:27:11.198 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-07-16 15:27:11.318 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-16 15:27:11.324 [main] INFO  com.RapFileManagementApplication - Started RapFileManagementApplication in 18.473 seconds (JVM running for 19.905)
+2019-07-16 15:27:19.203 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-07-16 15:27:19.230 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-16 15:27:19.279 [RMI TCP Connection(3)-127.0.0.1] INFO  c.a.datasource.pool.ConnectionPool - atomikos connection pool 'masterDataSource': destroying pool...
+2019-07-16 15:27:19.304 [RMI TCP Connection(3)-127.0.0.1] INFO  c.a.datasource.pool.ConnectionPool - atomikos connection pool 'foundationDataSource': destroying pool...
+2019-07-16 15:27:19.313 [RMI TCP Connection(3)-127.0.0.1] INFO  c.a.datasource.pool.ConnectionPool - atomikos connection pool 'schemaDataSource': destroying pool...
+2019-07-16 15:27:20.451 [RMI TCP Connection(3)-127.0.0.1] INFO  c.a.icatch.imp.TransactionServiceImp - Transaction Service: Entering shutdown (false, 0)...
+2019-07-16 15:29:08.444 [main] INFO  com.RapFileManagementApplication - Starting RapFileManagementApplication on LCNC06V0064 with PID 4888 (C:\SpringBoot\workspace\rap-file-service\target\classes started by 62972 in C:\SpringBoot\workspace\rap-file-service)
+2019-07-16 15:29:08.453 [main] INFO  com.RapFileManagementApplication - No active profile set, falling back to default profiles: default
+2019-07-16 15:29:13.026 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-07-16 15:29:13.032 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-16 15:29:14.688 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1615ms. Found 0 repository interfaces.
+2019-07-16 15:29:15.767 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - Loaded jar:file:/C:/Users/62972/.m2/repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-16 15:29:15.780 [main] WARN  c.a.icatch.provider.imp.AssemblerImp - Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-16 15:29:15.791 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-16 15:29:15.792 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-16 15:29:15.792 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-16 15:29:15.792 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-16 15:29:15.792 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-16 15:29:15.792 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.client_demarcation = false
+2019-07-16 15:29:15.792 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.threaded_2pc = true
+2019-07-16 15:29:15.792 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-16 15:29:15.792 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.log_base_dir = ./
+2019-07-16 15:29:15.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-16 15:29:15.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.max_actives = 50
+2019-07-16 15:29:15.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-16 15:29:15.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.enable_logging = true
+2019-07-16 15:29:15.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-16 15:29:15.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.max_timeout = 360000000000
+2019-07-16 15:29:15.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-16 15:29:15.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-16 15:29:15.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.tm_unique_name = 10.64.184.49.tm
+2019-07-16 15:29:15.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-16 15:29:15.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-16 15:29:15.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-16 15:29:15.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-16 15:29:15.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.default_jta_timeout = 100000000000
+2019-07-16 15:29:15.795 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - Using default (local) logging and recovery...
+2019-07-16 15:29:15.856 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransactionServiceImp' of type [com.atomikos.icatch.config.UserTransactionServiceImp] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:29:15.886 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransaction' of type [com.atomikos.icatch.jta.UserTransactionImp] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:29:15.909 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransactionManager' of type [com.atomikos.icatch.jta.UserTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:29:15.932 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManager' of type [org.springframework.transaction.jta.JtaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:29:15.964 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagementConfiguration' of type [com.rap.config.datasource.TransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6f02f5af] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:29:15.980 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:29:15.981 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdviceAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:29:16.010 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$eb3ebfde] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:29:17.390 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-07-16 15:29:17.426 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-16 15:29:17.451 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-07-16 15:29:17.452 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-07-16 15:29:17.716 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-16 15:29:17.716 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 9117 ms
+2019-07-16 15:29:18.704 [main] INFO  o.s.b.web.servlet.RegistrationBean - Filter characterEncodingFilter was not registered (possibly already registered?)
+2019-07-16 15:29:19.329 [main] INFO  c.a.d.xa.XATransactionalResource - schemaDataSource: refreshed XAResource
+2019-07-16 15:29:19.481 [main] INFO  c.r.c.d.SchemaSqlSessionConfig - schema.maxSqlCount:200000
+2019-07-16 15:29:20.249 [main] INFO  c.a.d.xa.XATransactionalResource - foundationDataSource: refreshed XAResource
+2019-07-16 15:29:20.306 [main] INFO  c.r.c.d.FoundationSqlSessionConfig - foundation.maxSqlCount:200000
+2019-07-16 15:29:20.605 [main] INFO  c.a.d.xa.XATransactionalResource - masterDataSource: refreshed XAResource
+2019-07-16 15:29:20.657 [main] INFO  c.r.c.d.MasterSqlSessionConfig - master.maxSqlCount:200000
+2019-07-16 15:29:22.435 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-07-16 15:29:22.439 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-07-16 15:29:23.333 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-16 15:29:23.477 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e0de20d, org.springframework.security.web.context.SecurityContextPersistenceFilter@a1c4f69, org.springframework.security.web.header.HeaderWriterFilter@3a1540be, org.springframework.security.web.authentication.logout.LogoutFilter@b1e63b5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4c69b396, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7bb4f09d, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@121f97fb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5cdafb4d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54a7d1b9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70a3b, org.springframework.security.web.session.SessionManagementFilter@1a000fff, org.springframework.security.web.access.ExceptionTranslationFilter@489989eb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2a9fd482]
+2019-07-16 15:29:23.999 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-16 15:29:26.169 [main] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-07-16 15:29:26.188 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-07-16 15:29:26.254 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-16 15:29:26.263 [main] INFO  com.RapFileManagementApplication - Started RapFileManagementApplication in 18.762 seconds (JVM running for 20.011)
+2019-07-16 15:30:10.691 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-16 15:30:10.692 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-07-16 15:30:10.729 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 37 ms
+2019-07-16 15:30:25.116 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.263 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.270 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.283 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.293 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.300 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.304 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.316 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.322 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.324 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.328 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.338 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.343 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.356 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.357 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.363 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.365 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.367 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.371 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.374 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.378 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.381 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.382 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.388 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.390 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.394 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.395 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.401 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.403 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.406 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.407 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.411 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.418 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.426 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.429 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.438 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.440 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.452 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.454 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.464 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.467 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.477 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.481 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.489 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.491 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.499 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.499 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.500 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.501 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.502 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.503 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:25.503 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.005 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.019 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.026 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.032 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.033 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.037 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.041 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.043 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.045 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.047 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.050 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.061 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.064 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.070 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.073 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.074 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.074 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.074 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.078 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.079 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.081 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.083 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.085 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.088 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.089 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.091 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.094 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.094 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.096 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.098 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.099 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.103 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.105 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.111 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.113 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.118 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.121 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.128 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.130 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.141 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.143 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.152 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.156 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.167 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.171 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.178 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.178 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.179 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.180 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.180 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.181 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.181 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.202 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.223 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.277 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.284 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.286 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.291 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.298 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.298 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.298 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.310 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.325 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.331 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.342 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.372 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.375 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.377 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.379 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.382 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.386 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.389 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.410 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.430 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.447 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.472 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.475 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.477 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.480 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.484 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.486 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.488 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.512 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.515 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.526 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.552 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.555 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.557 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.560 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.565 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.568 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.575 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.580 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.588 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.598 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.635 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.637 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.639 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.641 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.645 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.649 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.651 [http-nio-8080-exec-4] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 15:30:26.738 [http-nio-8080-exec-5] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 15:30:26.738 [http-nio-8080-exec-5] INFO  c.r.c.w.i.LoginCheckInterceptor - *************************************LoginCheckInterceptor.checkHandle*******************************
+2019-07-16 15:30:26.738 [http-nio-8080-exec-5] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 15:30:26.739 [http-nio-8080-exec-5] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 15:30:26.740 [http-nio-8080-exec-5] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *************************************SSOLocaleChangeInterceptor.preHandle****************************
+2019-07-16 15:30:26.740 [http-nio-8080-exec-5] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 15:30:26.781 [http-nio-8080-exec-5] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 15:30:26.782 [http-nio-8080-exec-5] INFO  c.r.c.w.i.LoginCheckInterceptor - *************************************LoginCheckInterceptor.checkHandle*******************************
+2019-07-16 15:30:26.782 [http-nio-8080-exec-5] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 15:30:26.782 [http-nio-8080-exec-5] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 15:30:26.782 [http-nio-8080-exec-5] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *************************************SSOLocaleChangeInterceptor.preHandle****************************
+2019-07-16 15:30:26.782 [http-nio-8080-exec-5] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 15:45:08.371 [main] INFO  com.RapFileManagementApplication - Starting RapFileManagementApplication on LCNC06V0064 with PID 1684 (C:\SpringBoot\workspace\rap-file-service\target\classes started by 62972 in C:\SpringBoot\workspace\rap-file-service)
+2019-07-16 15:45:08.389 [main] INFO  com.RapFileManagementApplication - No active profile set, falling back to default profiles: default
+2019-07-16 15:45:12.741 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-07-16 15:45:12.747 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-16 15:45:14.215 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1437ms. Found 0 repository interfaces.
+2019-07-16 15:45:15.330 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - Loaded jar:file:/C:/Users/62972/.m2/repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-16 15:45:15.338 [main] WARN  c.a.icatch.provider.imp.AssemblerImp - Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-16 15:45:15.341 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-16 15:45:15.341 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-16 15:45:15.342 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-16 15:45:15.344 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-16 15:45:15.345 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-16 15:45:15.347 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.client_demarcation = false
+2019-07-16 15:45:15.348 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.threaded_2pc = true
+2019-07-16 15:45:15.349 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-16 15:45:15.350 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.log_base_dir = ./
+2019-07-16 15:45:15.352 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-16 15:45:15.352 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.max_actives = 50
+2019-07-16 15:45:15.352 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-16 15:45:15.352 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.enable_logging = true
+2019-07-16 15:45:15.352 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-16 15:45:15.352 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.max_timeout = 360000000000
+2019-07-16 15:45:15.352 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-16 15:45:15.352 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-16 15:45:15.352 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.tm_unique_name = 10.64.184.49.tm
+2019-07-16 15:45:15.352 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-16 15:45:15.352 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-16 15:45:15.352 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-16 15:45:15.352 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-16 15:45:15.352 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.default_jta_timeout = 100000000000
+2019-07-16 15:45:15.354 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - Using default (local) logging and recovery...
+2019-07-16 15:45:15.397 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransactionServiceImp' of type [com.atomikos.icatch.config.UserTransactionServiceImp] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:45:15.421 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransaction' of type [com.atomikos.icatch.jta.UserTransactionImp] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:45:15.429 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransactionManager' of type [com.atomikos.icatch.jta.UserTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:45:15.447 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManager' of type [org.springframework.transaction.jta.JtaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:45:15.491 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagementConfiguration' of type [com.rap.config.datasource.TransactionManagementConfiguration$$EnhancerBySpringCGLIB$$77ba8355] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:45:15.513 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:45:15.517 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdviceAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:45:15.550 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f3f64d84] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:45:16.710 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-07-16 15:45:16.743 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-16 15:45:16.764 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-07-16 15:45:16.764 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-07-16 15:45:17.022 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-16 15:45:17.023 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 8528 ms
+2019-07-16 15:45:17.919 [main] INFO  o.s.b.web.servlet.RegistrationBean - Filter characterEncodingFilter was not registered (possibly already registered?)
+2019-07-16 15:45:18.578 [main] INFO  c.a.d.xa.XATransactionalResource - schemaDataSource: refreshed XAResource
+2019-07-16 15:45:18.755 [main] INFO  c.r.c.d.SchemaSqlSessionConfig - schema.maxSqlCount:200000
+2019-07-16 15:45:19.657 [main] INFO  c.a.d.xa.XATransactionalResource - foundationDataSource: refreshed XAResource
+2019-07-16 15:45:19.713 [main] INFO  c.r.c.d.FoundationSqlSessionConfig - foundation.maxSqlCount:200000
+2019-07-16 15:45:19.990 [main] INFO  c.a.d.xa.XATransactionalResource - masterDataSource: refreshed XAResource
+2019-07-16 15:45:20.061 [main] INFO  c.r.c.d.MasterSqlSessionConfig - master.maxSqlCount:200000
+2019-07-16 15:45:22.013 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-07-16 15:45:22.018 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-07-16 15:45:23.124 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-16 15:45:23.316 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@623be2a0, org.springframework.security.web.context.SecurityContextPersistenceFilter@3618486e, org.springframework.security.web.header.HeaderWriterFilter@2c6553c6, org.springframework.security.web.authentication.logout.LogoutFilter@8aa3013, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@32eeef08, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@48b1b469, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3b44ed3c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@590ab84, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51e14cb6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1df83569, org.springframework.security.web.session.SessionManagementFilter@518ed9b4, org.springframework.security.web.access.ExceptionTranslationFilter@751526a7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5af8ef61]
+2019-07-16 15:45:23.852 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-16 15:45:25.994 [main] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-07-16 15:45:26.020 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-07-16 15:45:26.087 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-16 15:45:26.096 [main] INFO  com.RapFileManagementApplication - Started RapFileManagementApplication in 18.735 seconds (JVM running for 20.148)
+2019-07-16 15:45:30.210 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-07-16 15:45:30.242 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-16 15:45:30.283 [RMI TCP Connection(2)-127.0.0.1] INFO  c.a.datasource.pool.ConnectionPool - atomikos connection pool 'masterDataSource': destroying pool...
+2019-07-16 15:45:30.300 [RMI TCP Connection(2)-127.0.0.1] INFO  c.a.datasource.pool.ConnectionPool - atomikos connection pool 'foundationDataSource': destroying pool...
+2019-07-16 15:45:30.309 [RMI TCP Connection(2)-127.0.0.1] INFO  c.a.datasource.pool.ConnectionPool - atomikos connection pool 'schemaDataSource': destroying pool...
+2019-07-16 15:45:31.465 [RMI TCP Connection(2)-127.0.0.1] INFO  c.a.icatch.imp.TransactionServiceImp - Transaction Service: Entering shutdown (false, 0)...
+2019-07-16 15:49:06.595 [main] INFO  com.RapFileManagementApplication - Starting RapFileManagementApplication on LCNC06V0064 with PID 11664 (C:\SpringBoot\workspace\rap-file-service\target\classes started by 62972 in C:\SpringBoot\workspace\rap-file-service)
+2019-07-16 15:49:06.606 [main] INFO  com.RapFileManagementApplication - No active profile set, falling back to default profiles: default
+2019-07-16 15:49:10.944 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-07-16 15:49:10.950 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-16 15:49:12.462 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1485ms. Found 0 repository interfaces.
+2019-07-16 15:49:13.643 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - Loaded jar:file:/C:/Users/62972/.m2/repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-16 15:49:13.652 [main] WARN  c.a.icatch.provider.imp.AssemblerImp - Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-16 15:49:13.664 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-16 15:49:13.665 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-16 15:49:13.666 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-16 15:49:13.666 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-16 15:49:13.666 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-16 15:49:13.666 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.client_demarcation = false
+2019-07-16 15:49:13.666 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.threaded_2pc = true
+2019-07-16 15:49:13.666 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-16 15:49:13.666 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.log_base_dir = ./
+2019-07-16 15:49:13.666 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-16 15:49:13.666 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.max_actives = 50
+2019-07-16 15:49:13.666 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-16 15:49:13.667 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.enable_logging = true
+2019-07-16 15:49:13.667 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-16 15:49:13.667 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.max_timeout = 360000000000
+2019-07-16 15:49:13.667 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-16 15:49:13.667 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-16 15:49:13.668 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.tm_unique_name = 10.64.184.49.tm
+2019-07-16 15:49:13.668 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-16 15:49:13.668 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-16 15:49:13.668 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-16 15:49:13.668 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-16 15:49:13.668 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.default_jta_timeout = 100000000000
+2019-07-16 15:49:13.669 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - Using default (local) logging and recovery...
+2019-07-16 15:49:13.713 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransactionServiceImp' of type [com.atomikos.icatch.config.UserTransactionServiceImp] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:49:13.741 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransaction' of type [com.atomikos.icatch.jta.UserTransactionImp] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:49:13.750 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransactionManager' of type [com.atomikos.icatch.jta.UserTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:49:13.770 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManager' of type [org.springframework.transaction.jta.JtaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:49:13.809 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagementConfiguration' of type [com.rap.config.datasource.TransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e64c56a0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:49:13.825 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:49:13.826 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdviceAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:49:13.852 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$628820cf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 15:49:15.010 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-07-16 15:49:15.049 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-16 15:49:15.076 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-07-16 15:49:15.076 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-07-16 15:49:15.369 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-16 15:49:15.370 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 8630 ms
+2019-07-16 15:49:16.234 [main] INFO  o.s.b.web.servlet.RegistrationBean - Filter characterEncodingFilter was not registered (possibly already registered?)
+2019-07-16 15:49:16.763 [main] INFO  c.a.d.xa.XATransactionalResource - schemaDataSource: refreshed XAResource
+2019-07-16 15:49:16.923 [main] INFO  c.r.c.d.SchemaSqlSessionConfig - schema.maxSqlCount:200000
+2019-07-16 15:49:17.735 [main] INFO  c.a.d.xa.XATransactionalResource - foundationDataSource: refreshed XAResource
+2019-07-16 15:49:17.806 [main] INFO  c.r.c.d.FoundationSqlSessionConfig - foundation.maxSqlCount:200000
+2019-07-16 15:49:18.054 [main] INFO  c.a.d.xa.XATransactionalResource - masterDataSource: refreshed XAResource
+2019-07-16 15:49:18.117 [main] INFO  c.r.c.d.MasterSqlSessionConfig - master.maxSqlCount:200000
+2019-07-16 15:49:19.883 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-07-16 15:49:19.888 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-07-16 15:49:20.833 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-16 15:49:20.990 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22f1a340, org.springframework.security.web.context.SecurityContextPersistenceFilter@6980fa39, org.springframework.security.web.header.HeaderWriterFilter@8929865, org.springframework.security.web.authentication.logout.LogoutFilter@b21cbbf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@f4b2d13, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7a0eb939, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@32f243f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44bb6856, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f69e35a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7aa5292d, org.springframework.security.web.session.SessionManagementFilter@7e9d171c, org.springframework.security.web.access.ExceptionTranslationFilter@2b826482, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2a3c3a04]
+2019-07-16 15:49:21.524 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-16 15:49:23.502 [main] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-07-16 15:49:23.528 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-07-16 15:49:23.598 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-16 15:49:23.606 [main] INFO  com.RapFileManagementApplication - Started RapFileManagementApplication in 17.896 seconds (JVM running for 19.147)
+2019-07-16 15:49:44.309 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-07-16 15:49:44.355 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-16 15:49:44.425 [RMI TCP Connection(2)-127.0.0.1] INFO  c.a.datasource.pool.ConnectionPool - atomikos connection pool 'masterDataSource': destroying pool...
+2019-07-16 15:49:44.442 [RMI TCP Connection(2)-127.0.0.1] INFO  c.a.datasource.pool.ConnectionPool - atomikos connection pool 'foundationDataSource': destroying pool...
+2019-07-16 15:49:44.454 [RMI TCP Connection(2)-127.0.0.1] INFO  c.a.datasource.pool.ConnectionPool - atomikos connection pool 'schemaDataSource': destroying pool...
+2019-07-16 15:49:45.727 [RMI TCP Connection(2)-127.0.0.1] INFO  c.a.icatch.imp.TransactionServiceImp - Transaction Service: Entering shutdown (false, 0)...
+2019-07-16 17:29:37.406 [main] INFO  com.RapTestApplication - Starting RapTestApplication on LCNC06V0064 with PID 7096 (C:\SpringBoot\workspace\rap-test\target\classes started by 62972 in C:\SpringBoot\workspace\rap-test)
+2019-07-16 17:29:37.416 [main] INFO  com.RapTestApplication - No active profile set, falling back to default profiles: default
+2019-07-16 17:29:41.984 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-07-16 17:29:41.994 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-16 17:29:43.432 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1400ms. Found 0 repository interfaces.
+2019-07-16 17:29:44.506 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - Loaded jar:file:/C:/Users/62972/.m2/repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-16 17:29:44.515 [main] WARN  c.a.icatch.provider.imp.AssemblerImp - Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-16 17:29:44.525 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-16 17:29:44.526 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-16 17:29:44.526 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-16 17:29:44.526 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-16 17:29:44.526 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-16 17:29:44.526 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.client_demarcation = false
+2019-07-16 17:29:44.526 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.threaded_2pc = true
+2019-07-16 17:29:44.526 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.log_base_dir = ./
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.max_actives = 50
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.enable_logging = true
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.max_timeout = 360000000000
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.tm_unique_name = 10.64.184.49.tm
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-16 17:29:44.528 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.default_jta_timeout = 100000000000
+2019-07-16 17:29:44.529 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - Using default (local) logging and recovery...
+2019-07-16 17:29:44.576 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransactionServiceImp' of type [com.atomikos.icatch.config.UserTransactionServiceImp] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 17:29:44.606 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransaction' of type [com.atomikos.icatch.jta.UserTransactionImp] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 17:29:44.616 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransactionManager' of type [com.atomikos.icatch.jta.UserTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 17:29:44.634 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManager' of type [org.springframework.transaction.jta.JtaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 17:29:44.662 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagementConfiguration' of type [com.rap.config.datasource.TransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c6b6ba98] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 17:29:44.678 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 17:29:44.682 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdviceAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 17:29:44.714 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$42f284c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-16 17:29:45.908 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-07-16 17:29:45.936 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-16 17:29:45.954 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-07-16 17:29:45.954 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-07-16 17:29:46.218 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-16 17:29:46.218 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 8689 ms
+2019-07-16 17:29:47.069 [main] INFO  o.s.b.web.servlet.RegistrationBean - Filter characterEncodingFilter was not registered (possibly already registered?)
+2019-07-16 17:29:47.292 [main] INFO  c.a.d.xa.XATransactionalResource - schemaDataSource: refreshed XAResource
+2019-07-16 17:29:47.469 [main] INFO  c.r.c.d.SchemaSqlSessionConfig - schema.maxSqlCount:200000
+2019-07-16 17:29:48.324 [main] INFO  c.a.d.xa.XATransactionalResource - foundationDataSource: refreshed XAResource
+2019-07-16 17:29:48.369 [main] INFO  c.r.c.d.FoundationSqlSessionConfig - foundation.maxSqlCount:200000
+2019-07-16 17:29:48.669 [main] INFO  c.a.d.xa.XATransactionalResource - masterDataSource: refreshed XAResource
+2019-07-16 17:29:48.736 [main] INFO  c.r.c.d.MasterSqlSessionConfig - master.maxSqlCount:200000
+2019-07-16 17:29:50.554 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-07-16 17:29:50.557 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-07-16 17:29:51.604 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-16 17:29:51.784 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@701c413, org.springframework.security.web.context.SecurityContextPersistenceFilter@4cc4f6bd, org.springframework.security.web.header.HeaderWriterFilter@58fb5b8f, org.springframework.security.web.authentication.logout.LogoutFilter@5a644d75, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2ee5fe1e, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1cb7f2fe, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@28468162, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f943847, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d96b8fb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63f16350, org.springframework.security.web.session.SessionManagementFilter@1f591b2e, org.springframework.security.web.access.ExceptionTranslationFilter@17d837ab, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5bb90b89]
+2019-07-16 17:29:52.302 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-16 17:29:54.315 [main] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-07-16 17:29:54.332 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-07-16 17:29:54.403 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-16 17:29:54.414 [main] INFO  com.RapTestApplication - Started RapTestApplication in 18.012 seconds (JVM running for 19.526)
+2019-07-16 17:30:07.572 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-16 17:30:07.572 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-07-16 17:30:07.625 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 52 ms
+2019-07-16 17:30:07.674 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL was not normalized.
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:296)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:194)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:151)
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:81)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-07-16 17:30:20.508 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.660 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.668 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.678 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.686 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.693 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.696 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.701 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.706 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.710 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.715 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.725 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.731 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.743 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.746 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.749 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.753 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.755 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.760 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.765 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.768 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.772 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.773 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.777 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.778 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.783 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.786 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.789 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.792 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.795 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.800 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.804 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.814 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.825 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.831 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.843 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.843 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.860 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.860 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.876 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.882 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.894 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.897 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.904 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.908 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.918 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.920 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.921 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.922 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.922 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.923 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:20.924 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.429 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.441 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.453 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.468 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.471 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.476 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.480 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.481 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.484 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.487 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.488 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.493 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.496 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.502 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.504 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.516 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.524 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.526 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.528 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.530 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.532 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.535 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.537 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.539 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.543 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.546 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.549 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.551 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.553 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.556 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.559 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.563 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.571 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.582 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.585 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.593 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.596 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.604 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.609 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.617 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.620 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.630 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.634 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.645 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.647 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.651 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.651 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.652 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.653 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.653 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.653 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.654 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.672 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.683 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.708 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.716 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.716 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.721 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.735 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.738 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.740 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.742 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.752 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.756 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.764 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.787 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.789 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.790 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.792 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.795 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.796 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.797 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.812 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.822 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.828 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.855 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.859 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.860 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.863 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.865 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.867 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.869 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.889 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.892 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.903 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.927 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.930 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.930 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.933 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.939 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.942 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.943 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.944 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.947 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.958 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.985 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.987 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.988 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.989 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.991 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.994 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:21.995 [http-nio-8080-exec-2] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-16 17:30:22.068 [http-nio-8080-exec-4] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:30:22.069 [http-nio-8080-exec-4] INFO  c.r.c.w.i.LoginCheckInterceptor - *************************************LoginCheckInterceptor.checkHandle*******************************
+2019-07-16 17:30:22.069 [http-nio-8080-exec-4] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:30:22.070 [http-nio-8080-exec-4] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:30:22.070 [http-nio-8080-exec-4] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *************************************SSOLocaleChangeInterceptor.preHandle****************************
+2019-07-16 17:30:22.070 [http-nio-8080-exec-4] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:31:03.995 [http-nio-8080-exec-6] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:31:03.995 [http-nio-8080-exec-6] INFO  c.r.c.w.i.LoginCheckInterceptor - *************************************LoginCheckInterceptor.checkHandle*******************************
+2019-07-16 17:31:03.995 [http-nio-8080-exec-6] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:31:03.995 [http-nio-8080-exec-6] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:31:03.995 [http-nio-8080-exec-6] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *************************************SSOLocaleChangeInterceptor.preHandle****************************
+2019-07-16 17:31:03.995 [http-nio-8080-exec-6] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:31:22.675 [http-nio-8080-exec-8] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:31:22.675 [http-nio-8080-exec-8] INFO  c.r.c.w.i.LoginCheckInterceptor - *************************************LoginCheckInterceptor.checkHandle*******************************
+2019-07-16 17:31:22.675 [http-nio-8080-exec-8] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:31:22.675 [http-nio-8080-exec-8] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:31:22.675 [http-nio-8080-exec-8] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *************************************SSOLocaleChangeInterceptor.preHandle****************************
+2019-07-16 17:31:22.675 [http-nio-8080-exec-8] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:39:44.470 [http-nio-8080-exec-8] INFO  c.r.o.f.r.e.DefaultExceptionResolver - ex = java.io.IOException: Stream closed
+2019-07-16 17:39:44.474 [http-nio-8080-exec-8] WARN  c.r.o.f.r.e.DefaultExceptionResolver - 
+================================== Exception occurred! (default) ===================================
+# Exception Information
+ - Exception Type   : java.io.IOException
+
+# Exception StackTrace
+ Description=
+
+java.io.IOException: Stream closed
+	at java.util.zip.GZIPInputStream.ensureOpen(GZIPInputStream.java:62)
+	at java.util.zip.GZIPInputStream.read(GZIPInputStream.java:113)
+	at org.apache.http.client.entity.LazyDecompressingInputStream.read(LazyDecompressingInputStream.java:70)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at com.rap.sample.controller.TestController.sendGet(TestController.java:100)
+	at com.rap.sample.controller.TestController.httpClientTest(TestController.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:151)
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:81)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-07-16 17:39:44.526 [http-nio-8080-exec-8] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:39:44.526 [http-nio-8080-exec-8] INFO  c.r.c.w.i.LoginCheckInterceptor - *************************************LoginCheckInterceptor.checkHandle*******************************
+2019-07-16 17:39:44.526 [http-nio-8080-exec-8] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:39:44.526 [http-nio-8080-exec-8] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:39:44.526 [http-nio-8080-exec-8] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *************************************SSOLocaleChangeInterceptor.preHandle****************************
+2019-07-16 17:39:44.526 [http-nio-8080-exec-8] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:39:44.526 [http-nio-8080-exec-8] WARN  o.s.w.s.r.ResourceHttpRequestHandler - Path with "WEB-INF" or "META-INF": [WEB-INF/jsp/system/error/error.jsp]
+2019-07-16 17:39:44.544 [http-nio-8080-exec-8] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:39:44.544 [http-nio-8080-exec-8] INFO  c.r.c.w.i.LoginCheckInterceptor - *************************************LoginCheckInterceptor.checkHandle*******************************
+2019-07-16 17:39:44.545 [http-nio-8080-exec-8] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:39:44.545 [http-nio-8080-exec-8] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:39:44.545 [http-nio-8080-exec-8] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *************************************SSOLocaleChangeInterceptor.preHandle****************************
+2019-07-16 17:39:44.545 [http-nio-8080-exec-8] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:40:01.993 [http-nio-8080-exec-7] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:40:01.994 [http-nio-8080-exec-7] INFO  c.r.c.w.i.LoginCheckInterceptor - *************************************LoginCheckInterceptor.checkHandle*******************************
+2019-07-16 17:40:01.994 [http-nio-8080-exec-7] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:40:01.994 [http-nio-8080-exec-7] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:40:01.995 [http-nio-8080-exec-7] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *************************************SSOLocaleChangeInterceptor.preHandle****************************
+2019-07-16 17:40:01.995 [http-nio-8080-exec-7] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:41:50.835 [http-nio-8080-exec-10] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:41:50.836 [http-nio-8080-exec-10] INFO  c.r.c.w.i.LoginCheckInterceptor - *************************************LoginCheckInterceptor.checkHandle*******************************
+2019-07-16 17:41:50.836 [http-nio-8080-exec-10] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:41:50.836 [http-nio-8080-exec-10] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:41:50.836 [http-nio-8080-exec-10] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *************************************SSOLocaleChangeInterceptor.preHandle****************************
+2019-07-16 17:41:50.836 [http-nio-8080-exec-10] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:42:07.741 [http-nio-8080-exec-3] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:42:07.742 [http-nio-8080-exec-3] INFO  c.r.c.w.i.LoginCheckInterceptor - *************************************LoginCheckInterceptor.checkHandle*******************************
+2019-07-16 17:42:07.742 [http-nio-8080-exec-3] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:42:07.742 [http-nio-8080-exec-3] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:42:07.742 [http-nio-8080-exec-3] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *************************************SSOLocaleChangeInterceptor.preHandle****************************
+2019-07-16 17:42:07.742 [http-nio-8080-exec-3] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:42:12.993 [http-nio-8080-exec-7] INFO  c.r.o.f.r.e.DefaultExceptionResolver - ex = java.io.IOException: Stream closed
+2019-07-16 17:42:12.994 [http-nio-8080-exec-7] WARN  c.r.o.f.r.e.DefaultExceptionResolver - 
+================================== Exception occurred! (default) ===================================
+# Exception Information
+ - Exception Type   : java.io.IOException
+
+# Exception StackTrace
+ Description=
+
+java.io.IOException: Stream closed
+	at java.util.zip.GZIPInputStream.ensureOpen(GZIPInputStream.java:62)
+	at java.util.zip.GZIPInputStream.read(GZIPInputStream.java:113)
+	at org.apache.http.client.entity.LazyDecompressingInputStream.read(LazyDecompressingInputStream.java:70)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at com.rap.sample.controller.TestController.sendGet(TestController.java:100)
+	at com.rap.sample.controller.TestController.httpClientTest(TestController.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:151)
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:81)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-07-16 17:42:13.011 [http-nio-8080-exec-7] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:42:13.012 [http-nio-8080-exec-7] INFO  c.r.c.w.i.LoginCheckInterceptor - *************************************LoginCheckInterceptor.checkHandle*******************************
+2019-07-16 17:42:13.012 [http-nio-8080-exec-7] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:42:13.012 [http-nio-8080-exec-7] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:42:13.012 [http-nio-8080-exec-7] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *************************************SSOLocaleChangeInterceptor.preHandle****************************
+2019-07-16 17:42:13.012 [http-nio-8080-exec-7] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:42:13.012 [http-nio-8080-exec-7] WARN  o.s.w.s.r.ResourceHttpRequestHandler - Path with "WEB-INF" or "META-INF": [WEB-INF/jsp/system/error/error.jsp]
+2019-07-16 17:42:13.045 [http-nio-8080-exec-7] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:42:13.046 [http-nio-8080-exec-7] INFO  c.r.c.w.i.LoginCheckInterceptor - *************************************LoginCheckInterceptor.checkHandle*******************************
+2019-07-16 17:42:13.046 [http-nio-8080-exec-7] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:42:13.046 [http-nio-8080-exec-7] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:42:13.046 [http-nio-8080-exec-7] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *************************************SSOLocaleChangeInterceptor.preHandle****************************
+2019-07-16 17:42:13.046 [http-nio-8080-exec-7] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:42:29.945 [http-nio-8080-exec-3] INFO  c.r.o.f.r.e.DefaultExceptionResolver - ex = javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2019-07-16 17:42:29.947 [http-nio-8080-exec-3] WARN  c.r.o.f.r.e.DefaultExceptionResolver - 
+================================== Exception occurred! (default) ===================================
+# Exception Information
+ - Exception Type   : javax.net.ssl.SSLHandshakeException
+
+# Exception StackTrace
+ Description=
+
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1946)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:316)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:310)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1639)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:223)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:1037)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:965)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1064)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1367)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1395)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1379)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:436)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:384)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at com.rap.sample.controller.TestController.sendGet(TestController.java:87)
+	at com.rap.sample.controller.TestController.httpClientTest(TestController.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:151)
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:81)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:397)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:302)
+	at sun.security.validator.Validator.validate(Validator.java:262)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:229)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:124)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1621)
+	... 116 common frames omitted
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126)
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280)
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:392)
+	... 122 common frames omitted
+2019-07-16 17:42:29.956 [http-nio-8080-exec-3] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:42:29.957 [http-nio-8080-exec-3] INFO  c.r.c.w.i.LoginCheckInterceptor - *************************************LoginCheckInterceptor.checkHandle*******************************
+2019-07-16 17:42:29.957 [http-nio-8080-exec-3] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:42:29.957 [http-nio-8080-exec-3] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:42:29.957 [http-nio-8080-exec-3] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *************************************SSOLocaleChangeInterceptor.preHandle****************************
+2019-07-16 17:42:29.957 [http-nio-8080-exec-3] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:42:29.958 [http-nio-8080-exec-3] WARN  o.s.w.s.r.ResourceHttpRequestHandler - Path with "WEB-INF" or "META-INF": [WEB-INF/jsp/system/error/error.jsp]
+2019-07-16 17:42:29.982 [http-nio-8080-exec-3] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:42:29.983 [http-nio-8080-exec-3] INFO  c.r.c.w.i.LoginCheckInterceptor - *************************************LoginCheckInterceptor.checkHandle*******************************
+2019-07-16 17:42:29.983 [http-nio-8080-exec-3] INFO  c.r.c.w.i.LoginCheckInterceptor - *****************************************************************************************************
+2019-07-16 17:42:29.983 [http-nio-8080-exec-3] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************
+2019-07-16 17:42:29.983 [http-nio-8080-exec-3] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *************************************SSOLocaleChangeInterceptor.preHandle****************************
+2019-07-16 17:42:29.983 [http-nio-8080-exec-3] INFO  c.r.c.w.i.SSOLocaleChangeInterceptor - *****************************************************************************************************

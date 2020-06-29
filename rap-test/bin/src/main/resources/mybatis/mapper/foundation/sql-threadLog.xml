@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Thread.Log">
+
+	<insert id="insertMainLog">
+        <![CDATA[     
+			INSERT INTO PSYSTHREADMAINLOG (
+				obid         
+				, pnames       
+				, pstates      
+				, pobject_list 
+				, pmessages    
+				, pstarted     
+				, pcompleted   
+				, pcreator     
+				, pcreated     
+				, pmodifier    
+				, pmodified 
+			) VALUES (
+				#{obid}
+				, #{names}
+				, #{states}
+				, #{objectList}
+				, null
+				, omcGetUtcDate()
+				, omcGetUtcDate()
+				, #{creator}
+				, omcGetUtcDate()
+				, #{modifier}
+				, omcGetUtcDate()
+			)
+        ]]>
+	</insert>
+
+	<update id="updateMainLog">	   
+        <![CDATA[
+        UPDATE PSYSTHREADMAINLOG
+           SET pmodified = omcGetUtcDate()     
+           		, pmodifier = #{modifier}
+           		, pcompleted = omcGetUtcDate()    
+        ]]>
+		<if test="states != null and states != ''">
+            <![CDATA[ , pstates = #{states} ]]>
+		</if>
+		<if test="messages != null and messages != ''">
+            <![CDATA[ , pmessages = #{messages} ]]>
+		</if>	   
+        <![CDATA[
+         WHERE obid = #{obid}
+        ]]>
+	</update>
+
+	<insert id="insertSubLog">
+        <![CDATA[   
+			INSERT INTO PSYSTHREADSUBLOG (
+				obid
+				, obid_main
+				, pstates
+				, pobject_list
+				, pmessages
+				, pstarted
+				, pcompleted
+				, pcreator
+				, pcreated
+				, pmodifier
+				, pmodified			
+			) VALUES (
+				#{obid}
+				, #{obidMain}
+				, #{states}
+				, #{objectList}
+				, null
+				, omcGetUtcDate()
+				, omcGetUtcDate()
+				, #{creator}
+				, omcGetUtcDate()
+				, #{modifier}
+				, omcGetUtcDate()
+			)
+        ]]>
+	</insert>
+
+	<update id="updateSubLog">	   
+        <![CDATA[
+        UPDATE PSYSTHREADSUBLOG
+           SET pmodified = omcGetUtcDate()     
+           		, pmodifier = #{modifier}
+           		, pcompleted = omcGetUtcDate()    
+        ]]>
+		<if test="states != null and states != ''">
+            <![CDATA[ , pstates = #{states} ]]>
+		</if>
+		<if test="messages != null and messages != ''">
+            <![CDATA[ , pmessages = #{messages} ]]>
+		</if>	   
+        <![CDATA[
+         WHERE obid = #{obid}
+        ]]>
+	</update>
+
+	<insert id="insertDetailLog">
+        <![CDATA[    
+			INSERT INTO PSYSTHREADDETAILLOG (
+				obid
+				, obid_sub
+				, pstates
+				, pobject
+				, pattribute01
+				, pattribute02
+				, pattribute03
+				, pattribute04
+				, pattribute05
+				, pmessages
+				, pstarted
+				, pcompleted
+				, pcreator
+				, pcreated
+				, pmodifier
+				, pmodified
+			) VALUES (
+				#{obid}
+				, #{obidSub}
+				, #{states}
+				, #{object}
+				, #{attribute01}
+				, #{attribute02}
+				, #{attribute03}
+				, #{attribute04}
+				, #{attribute05}
+				, null
+				, omcGetUtcDate()
+				, omcGetUtcDate()
+				, #{creator}
+				, omcGetUtcDate()
+				, #{modifier}
+				, omcGetUtcDate()
+			)
+        ]]>
+	</insert>
+
+	<update id="updateDetailLog">	   
+        <![CDATA[
+        UPDATE PSYSTHREADDETAILLOG
+           SET pmodified = omcGetUtcDate()     
+           		, pmodifier = #{modifier}  
+        ]]>
+		<if test="states != null and states != ''">
+            <![CDATA[ 
+            	, pstates = #{states} 
+           		, pcompleted = omcGetUtcDate()
+            ]]>
+		</if>
+		<if test="messages != null and messages != ''">
+            <![CDATA[ , pmessages = #{messages} ]]>
+		</if>
+		<if test="attribute01 != null and attribute01 != ''">
+            <![CDATA[ , pattribute01 = #{attribute01} ]]>
+		</if>
+		<if test="attribute02 != null and attribute02 != ''">
+            <![CDATA[ , pattribute02 = #{attribute02} ]]>
+		</if>
+		<if test="attribute03 != null and attribute03 != ''">
+            <![CDATA[ , pattribute03 = #{attribute03} ]]>
+		</if>
+		<if test="attribute04 != null and attribute04 != ''">
+            <![CDATA[ , pattribute04 = #{attribute04} ]]>
+		</if>
+		<if test="attribute05 != null and attribute05 != ''">
+            <![CDATA[ , pattribute05 = #{attribute05} ]]>
+		</if>	  
+        <![CDATA[
+         WHERE obid = #{obid}
+        ]]>
+	</update>
+
+</mapper>

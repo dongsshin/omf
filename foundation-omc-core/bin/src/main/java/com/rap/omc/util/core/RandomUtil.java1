@@ -1,0 +1,95 @@
+package com.rap.omc.util.core;
+
+import java.security.SecureRandom;
+/*     */ import java.text.DateFormat;
+/*     */ import java.text.SimpleDateFormat;
+/*     */ import java.util.Calendar;
+/*     */ import java.util.GregorianCalendar;
+/*     */ import java.util.Locale;
+
+/*     */
+/*     */ public class RandomUtil
+/*     */ {
+
+    /*     */ public static String getRandomDate(String startDate, String endDate)
+    /*     */ {
+        /*  41 */ String dateStr1 = DateUtil.toYYYYMMDDDate(startDate);
+        /*  42 */ String dateStr2 = DateUtil.toYYYYMMDDDate(endDate);
+        /*     */
+        /*  44 */ int sYear = Integer.parseInt(dateStr1.substring(0, 4));
+        /*  45 */ int sMonth = Integer.parseInt(dateStr1.substring(4, 6));
+        /*  46 */ int sDay = Integer.parseInt(dateStr1.substring(6, 8));
+        /*     */
+        /*  48 */ int eYear = Integer.parseInt(dateStr2.substring(0, 4));
+        /*  49 */ int eMonth = Integer.parseInt(dateStr2.substring(4, 6));
+        /*  50 */ int eDay = Integer.parseInt(dateStr2.substring(6, 8));
+        /*     */
+        /*  52 */ GregorianCalendar sDate = new GregorianCalendar(sYear, sMonth - 1, sDay, 0, 0);
+        /*  53 */ GregorianCalendar eDate = new GregorianCalendar(eYear, eMonth - 1, eDay, 23, 59);
+        /*     */
+        /*  55 */ SimpleDateFormat calformat = new SimpleDateFormat("yyyyMMdd", Locale.getDefault());
+        /*  56 */ return getRandomDate(sDate, eDate, calformat);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String getRandomDate(Calendar startDate, Calendar endDate)
+    /*     */ {
+        /*  67 */ return getRandomDate(startDate, endDate, new SimpleDateFormat("yyyyMMdd", Locale.getDefault()));
+        /*     */ }
+
+    /*     */
+    /*     */ public static String getRandomDate(Calendar startDate, Calendar endDate, DateFormat format)
+    /*     */ {
+        /*  80 */ if (endDate.getTimeInMillis() < startDate.getTimeInMillis()) throw new IllegalArgumentException(
+                "The start date " + startDate.getTime() + " is later than the end date " + endDate.getTime() + ".");
+        /*     */
+        /*  82 */ SecureRandom srand = new SecureRandom();
+        /*     */
+        /*  84 */ long rand = (srand.nextLong() >>> 1) % (endDate.getTimeInMillis() - startDate.getTimeInMillis() + 1L)
+                + startDate.getTimeInMillis();
+        /*     */
+        /*  86 */ GregorianCalendar cal = new GregorianCalendar();
+        /*  87 */ cal.setTimeInMillis(rand);
+        /*  88 */ return format.format(cal.getTime());
+        /*     */ }
+
+    /*     */
+    /*     */ public static String getRandomStr(char startChar, char endChar)
+    /*     */ {
+        /* 101 */ int startInt = startChar;
+        /* 102 */ int endInt = endChar;
+        /*     */
+        /* 105 */ if (startInt > endInt) throw new IllegalArgumentException(
+                "The start char " + startChar + " is bigger than the end char " + endChar + ".");
+        /*     */
+        /* 108 */ SecureRandom rnd = new SecureRandom();
+        /*     */ int randomInt;
+        /*     */ do
+        /*     */ {
+            /* 113 */ randomInt = rnd.nextInt(endInt + 1);
+            /*     */ }
+        /* 111 */ while (
+        /* 114 */ randomInt < startInt);
+        /*     */
+        /* 117 */ return (new StringBuffer(randomInt)).toString();
+        /*     */ }
+
+    /*     */
+    /*     */ public static int getRandomNum(int startNum, int endNum)
+    /*     */ {
+        /* 129 */ if (startNum > endNum) throw new IllegalArgumentException(
+                "The start number " + startNum + " is bigger than the end number " + endNum + ".");
+        /* 130 */ if (startNum < 0) throw new IllegalArgumentException("Input parameter must be bigger than 0.");
+        /*     */
+        /* 133 */ SecureRandom rnd = new SecureRandom();
+        /*     */ int randomNum;
+        /*     */ do
+        /*     */ {
+            /* 138 */ randomNum = rnd.nextInt(endNum + 1);
+            /*     */ }
+        /* 136 */ while (
+        /* 139 */ randomNum < startNum);
+        /*     */
+        /* 141 */ return randomNum;
+        /*     */ }
+    /*     */ }

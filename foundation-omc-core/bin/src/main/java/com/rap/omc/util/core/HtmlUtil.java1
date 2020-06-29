@@ -1,0 +1,220 @@
+package com.rap.omc.util.core;
+
+import java.text.DecimalFormat;
+/*     */ import java.util.Calendar;
+/*     */ import javax.servlet.ServletRequest;
+/*     */ import javax.servlet.http.HttpServletRequest;
+/*     */ import javax.servlet.http.HttpServletResponse;
+/*     */ import javax.servlet.http.HttpSession;
+/*     */ import javax.servlet.jsp.PageContext;
+/*     */ import org.slf4j.Logger;
+/*     */ import org.slf4j.LoggerFactory;
+
+import com.rap.omc.util.StringUtil;
+
+/*     */
+/*     */ public final class HtmlUtil
+/*     */ {
+
+    /*  35 */ private static final Logger LOGGER = LoggerFactory.getLogger(HtmlUtil.class);
+
+    /*     */
+    /*     */ public static String brToN(String s)
+    /*     */ {
+        /*  49 */ return StringUtil.replace(s, "<BR>", "\n");
+        /*     */ }
+
+    /*     */
+    /*     */ public static String getDummyString()
+    /*     */ {
+        /*  58 */ return Calendar.getInstance().toString();
+        /*     */ }
+
+    /*     */
+    /*     */ public static String getDummyString(int length)
+    /*     */ {
+        /*  68 */ String dummy = Calendar.getInstance().toString();
+        /*     */
+        /*  70 */ return ((dummy.length() <= length) ? dummy : dummy.substring(0, length));
+        /*     */ }
+
+    /*     */
+    /*     */ public static String getRandomColor()
+    /*     */ {
+        /*  80 */ String rCo = Integer.toHexString((int)(Math.random() * 256.0D));
+        /*  81 */ String gCo = Integer.toHexString((int)(Math.random() * 256.0D));
+        /*  82 */ String bCo = Integer.toHexString((int)(Math.random() * 256.0D));
+        /*     */
+        /*  84 */ return "#" + rCo + gCo + bCo;
+        /*     */ }
+
+    /*     */
+    /*     */ public static String nToBr(String s)
+    /*     */ {
+        /*  94 */ return StringUtil.replace(s, "\n", "<BR>");
+        /*     */ }
+
+    /*     */
+    /*     */ public static boolean isMultipart(HttpServletRequest req)
+    /*     */ {
+        /* 106 */ String contentType = null;
+        /* 107 */ String multipartContentType = "multipart/form-data";
+        /* 108 */ contentType = req.getContentType();
+        /*     */
+        /* 110 */ return ((contentType != null) && (contentType.length() > 19)
+                && (multipartContentType.equals(contentType.substring(0, 19))));
+        /*     */ }
+
+    /*     */
+    /*     */ public static boolean isOverIE50(HttpServletRequest req)
+    /*     */ {
+        /* 120 */ String userAgent = req.getHeader("user-agent");
+        /*     */
+        /* 122 */ if (userAgent == null) return false;
+        /*     */
+        /* 124 */ int index = userAgent.indexOf("MSIE");
+        /* 125 */ if (index == -1) return false;
+        /*     */
+        /* 127 */ int version = 0;
+        /*     */ try {
+            /* 129 */ version = Integer.parseInt(userAgent.substring(index + 5, index + 5 + 1));
+            /*     */ } catch (Exception e) {
+            /* 131 */ return false;
+            /*     */ }
+        /*     */
+        /* 134 */ return (version >= 5);
+        /*     */ }
+
+    /*     */
+    /*     */ public static String mask(String str, String format)
+    /*     */ {
+        /* 149 */ int j = 0;
+        /* 150 */ if ((str == null) || (str.length() == 0)) return "";
+        /* 151 */ if ((format == null) || (format.length() == 0)) return str;
+        /* 152 */ StringBuilder sb = new StringBuilder();
+        /* 153 */ for (int i = 0; i < format.length(); ++i) {
+            /* 154 */ if (format.charAt(i) == '#') {
+                /* 155 */ if (j >= str.length()) return sb.toString();
+                /* 156 */ sb.append(str.charAt(j++));
+                /*     */ } else {
+                /* 158 */ sb.append(format.charAt(i));
+                /*     */ }
+            /*     */ }
+        /* 161 */ return sb.toString();
+        /*     */ }
+
+    /*     */
+    /*     */ public static String decimal(String str, String format)
+    /*     */ {
+        /* 173 */ if ((str == null) || (str.length() == 0)) return "";
+        /* 174 */ if ((format == null) || (format.length() == 0)) return str;
+        /* 175 */ DecimalFormat df = new DecimalFormat(format);
+        /*     */ try {
+            /* 177 */ return df.format(new Double(str).doubleValue());
+            /*     */ } catch (Exception e) {
+            /* 179 */ LOGGER.error(e.getMessage());
+            /*     */ }
+        /* 181 */ return str;
+        /*     */ }
+
+    /*     */
+    /*     */ public static void blockHttpCache(HttpServletResponse response)
+    /*     */ {
+        /* 190 */ response.setDateHeader("Expires", 0L);
+        /* 191 */ response.setHeader("Pragma", "no-cache");
+        /* 192 */ response.setHeader("Cache-Control", "no-cache");
+        /*     */ }
+
+    /*     */
+    /*     */ public static String maskPhone(String phoneStr)
+    /*     */ {
+        /* 201 */ if (phoneStr == null) return "";
+        /* 202 */ int strSize = phoneStr.length();
+        /*     */
+        /* 204 */ if (strSize <= 8) {
+            /* 205 */ if (strSize == 7) {
+                /* 206 */ return mask(phoneStr, "###-####");
+                /*     */ }
+            /* 208 */ return mask(phoneStr, "####-####");
+            /*     */ }
+        /*     */
+        /* 212 */ if (phoneStr.startsWith("02")) {
+            /* 213 */ if (strSize == 9) {
+                /* 214 */ return mask(phoneStr, "##-###-####");
+                /*     */ }
+            /* 216 */ return mask(phoneStr, "##-####-####");
+            /*     */ }
+        /*     */
+        /* 220 */ String localNumber = phoneStr.substring(3);
+        /* 221 */ if (("0130".equals(localNumber)) || ("0502".equals(localNumber)) || ("0505".equals(localNumber))) {
+            /* 222 */ if (strSize == 11) {
+                /* 223 */ return mask(phoneStr, "####-###-####");
+                /*     */ }
+            /* 225 */ return mask(phoneStr, "####-####-####");
+            /*     */ }
+        /*     */
+        /* 229 */ if (strSize == 10) return mask(phoneStr, "###-###-####");
+        /*     */
+        /* 231 */ if (strSize == 11) return mask(phoneStr, "###-####-####");
+        /* 232 */ LOGGER.warn("This Phone Number is wrong format");
+        /* 233 */ return phoneStr;
+        /*     */ }
+
+    /*     */
+    /*     */ public static String escape(String str)
+    /*     */ {
+        /* 244 */ if (str == null) return null;
+        /*     */
+        /* 246 */ StringBuilder escapedStr = new StringBuilder();
+        /* 247 */ char[] ch = str.toCharArray();
+        /* 248 */ int charSize = ch.length;
+        /* 249 */ for (int i = 0; i < charSize; ++i) {
+            /* 250 */ if (ch[i] == '&')/* 251 */ escapedStr.append("&amp;");
+            /* 252 */ else if (ch[i] == '<')/* 253 */ escapedStr.append("&lt;");
+            /* 254 */ else if (ch[i] == '>')/* 255 */ escapedStr.append("&gt;");
+            /* 256 */ else if (ch[i] == '"')/* 257 */ escapedStr.append("&quot;");
+            /* 258 */ else if (ch[i] == '\'')/* 259 */ escapedStr.append("&#039;");
+            /*     */ else {
+                /* 261 */ escapedStr.append(ch[i]);
+                /*     */ }
+            /*     */ }
+        /* 264 */ return escapedStr.toString();
+        /*     */ }
+
+    /*     */
+    /*     */ public static String unEscape(String str)
+    /*     */ {
+        /* 275 */ if (str == null) return null;
+        /*     */
+        /* 277 */ String unEscapeStr = str;
+        /* 278 */ unEscapeStr = unEscapeStr.replaceAll("&amp;", "&");
+        /* 279 */ unEscapeStr = unEscapeStr.replaceAll("&lt;", "<");
+        /* 280 */ unEscapeStr = unEscapeStr.replaceAll("&gt;", ">");
+        /* 281 */ unEscapeStr = unEscapeStr.replaceAll("&quot;", "\"");
+        /* 282 */ unEscapeStr = unEscapeStr.replaceAll("&#039;", "'");
+        /*     */
+        /* 284 */ return unEscapeStr;
+        /*     */ }
+
+    /*     */
+    /*     */ public static String getValue(PageContext pageContext, String name, String defaultValue)
+    /*     */ {
+        /* 298 */ Object temp = null;
+        /*     */
+        /* 300 */ temp = pageContext.getAttribute(name);
+        /* 301 */ if (temp != null) return temp.toString();
+        /*     */
+        /* 303 */ temp = pageContext.getRequest().getParameter(name);
+        /* 304 */ if (temp != null) return temp.toString();
+        /*     */
+        /* 306 */ temp = pageContext.getRequest().getAttribute(name);
+        /* 307 */ if (temp != null) return temp.toString();
+        /*     */
+        /* 309 */ HttpSession sess = pageContext.getSession();
+        /* 310 */ if (sess != null) temp = sess.getAttribute(name);
+        /* 311 */ if (temp != null) {
+            /* 312 */ return temp.toString();
+            /*     */ }
+        /* 314 */ return defaultValue;
+        /*     */ }
+    /*     */ }

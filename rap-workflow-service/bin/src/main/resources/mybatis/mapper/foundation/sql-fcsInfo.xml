@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="FcsInfo">
+
+    <select id="retrieveStoreByLifeCycle" resultType="com.rap.omc.foundation.file.model.FcsLocationVO">
+        <![CDATA[
+	        select c.obid                as store_obid        
+	              ,c.pnames              as store_name         
+	              ,'1'                   as location_obid      
+	              ,'1'                   as location_name   
+            	  ,c.pservice_url        as service_url
+            	  ,c.pserver_port        as server_port
+            	  ,c.pservice_domain	 as service_domain
+            	  ,c.pfile_path          as file_path 
+            	  ,c.pfile_server	     as file_server
+            	  ,c.pftp_user	         as ftp_user
+            	  ,c.pftp_password       as ftp_password
+            	  ,c.pserver_protocol    as server_protocol
+            	  ,'Location'            as store_type
+		    from  psyslifecycle a, psysrelationinfo b, psysfilestore c
+		    where a.obid     = b.pfrom_obid
+		    and   b.pto_obid = c.obid
+		    and   (a.pnames = #{funVariable_00001} or a.obid = #{funVariable_00001})
+		    and   omcBitAnd(b.pschema_kind,#{funVariable_00002}) = #{funVariable_00002}
+		    and   omcBitAnd(a.pflags      ,#{funVariable_00003}) = #{funVariable_00003}
+		    and   omcBitAnd(b.pflags      ,#{funVariable_00004}) = #{funVariable_00004}
+		    and   omcBitAnd(c.pflags      ,#{funVariable_00005}) = #{funVariable_00005}
+        ]]>
+	</select>
+
+
+	<select id="retrieveLocationOrStore" resultType="com.rap.omc.foundation.file.model.FcsLocationVO">
+        <![CDATA[
+	        select '1'                   as store_obid        
+	              ,'1'                   as store_name         
+	              ,a.obid                as location_obid      
+	              ,a.pnames              as location_name   
+            	  ,a.pservice_url        as service_url
+            	  ,a.pserver_port        as server_port
+            	  ,a.pservice_domain	 as service_domain
+            	  ,a.pfile_path          as file_path 
+            	  ,a.pfile_server	     as file_server
+            	  ,a.pftp_user	         as ftp_user
+            	  ,a.pftp_password       as ftp_password
+            	  ,a.pserver_protocol    as server_protocol
+            	  ,'Location'            as store_type
+		    from psysfilelocation a
+		    where (a.obid = #{funVariable_00001} or a.pnames = #{funVariable_00001})
+		    and   omcBitAnd(a.pflags,#{funVariable_00002}) = #{funVariable_00002}
+		    union all
+	        select a.obid                as store_obid        
+	              ,a.pnames              as store_name         
+	              ,'1'                   as location_obid      
+	              ,'1'                   as location_name   
+            	  ,a.pservice_url        as service_url
+            	  ,a.pserver_port        as server_port
+            	  ,a.pservice_domain	 as service_domain
+            	  ,a.pfile_path          as file_path 
+            	  ,a.pfile_server	     as file_server
+            	  ,a.pftp_user	         as ftp_user
+            	  ,a.pftp_password       as ftp_password
+            	  ,a.pserver_protocol    as server_protocol
+            	  ,'Store'               as store_type 
+		    from psysfilestore a
+		    where (a.obid = #{funVariable_00001} or a.pnames = #{funVariable_00001})
+		    and   omcBitAnd(a.pflags,#{funVariable_00003})   = #{funVariable_00003};
+        ]]>
+	</select>
+	<select id="retrieveStoreLocationBySite" resultType="com.rap.omc.foundation.file.model.FcsLocationVO">
+       <![CDATA[
+	    select a.obid               as store_obid        
+	          ,a.pnames             as store_name         
+	          ,c.obid               as location_obid      
+	          ,c.pnames             as location_name      
+	          ,c.pservice_domain    as service_domain     
+	          ,c.pservice_port      as service_port       
+	          ,c.pservice_url       as service_url        
+	          ,c.pfile_server       as file_server        
+	          ,c.pfile_path         as file_path          
+	          ,c.pftp_user          as ftp_user           
+	          ,c.pftp_password      as ftp_password       
+	          ,c.pserver_protocol   as server_protocol    
+	          ,c.pserver_port       as server_port        
+	          ,'Location'           as store_type
+	    from psysfilestore a, psysrelationinfo b, psysfilelocation c, psysrelationinfo d, psyssite e
+	    where a.obid       = b.pfrom_obid
+	    and   b.pto_obid   = c.obid
+	    and   c.obid       = d.pto_obid
+	    and   d.pfrom_obid = e.obid
+	    and   e.pnames     = #{funVariable_00001}
+	    and   a.pnames     = #{funVariable_00002}
+	    and   omcBitAnd(a.pflags       ,#{funVariable_00003}) = #{funVariable_00003}
+	    and   omcBitAnd(b.pflags       ,#{funVariable_00004}) = #{funVariable_00004}
+	    and   omcBitAnd(b.pschema_kind ,#{funVariable_00005}) = #{funVariable_00005}
+	    and   omcBitAnd(c.pflags       ,#{funVariable_00006}) = #{funVariable_00006}
+	    and   omcBitAnd(d.pflags       ,#{funVariable_00007}) = #{funVariable_00007}
+	    and   omcBitAnd(d.pschema_kind ,#{funVariable_00008}) = #{funVariable_00008}
+	    order by d.psorting asc,b.psorting asc;
+        ]]>
+	</select>
+
+	<select id="retrieveLocationWithStore" resultType="com.rap.omc.foundation.file.model.FcsLocationVO">
+       <![CDATA[
+	    select a.obid               as store_obid     
+	          ,a.pnames             as store_name     
+	          ,c.obid               as location_obid  
+	          ,c.pnames             as location_name  
+	          ,c.pservice_domain    as service_domain 
+	          ,c.pservice_port      as service_port   
+	          ,c.pservice_url       as service_url    
+	          ,c.pfile_server       as file_server    
+	          ,c.pfile_path         as file_path      
+	          ,c.pftp_user          as ftp_user       
+	          ,c.pftp_password      as ftp_password   
+	          ,c.pserver_protocol   as server_protocol
+	          ,c.pserver_port       as server_port
+	          ,'Location'           as store_type                   
+	    from psysfilestore a, psysrelationinfo b, psysfilelocation c
+	    where a.obid      = b.pfrom_obid
+	    and   b.pto_obid  = c.obid
+	    and   (a.pnames    = #{funVariable_00001} or a.obid    = #{funVariable_00001})
+	    and   omcBitAnd(a.pflags       ,#{funVariable_00002}) = #{funVariable_00002}
+	    and   omcBitAnd(b.pflags       ,#{funVariable_00003}) = #{funVariable_00003}
+	    and   omcBitAnd(b.pschema_kind ,#{funVariable_00004}) = #{funVariable_00004}
+	    and   omcBitAnd(c.pflags       ,#{funVariable_00005}) = #{funVariable_00005}
+	    order by b.psorting asc;
+        ]]>
+	</select>
+	<select id="retrieveStoreWithStore" resultType="com.rap.omc.foundation.file.model.FcsLocationVO">
+       <![CDATA[
+	    select a.obid               as store_obid     
+	          ,a.pnames             as store_name     
+	          ,'1'                  as location_obid  
+	          ,'1'                  as location_name  
+	          ,a.pservice_domain    as service_domain 
+	          ,a.pservice_port      as service_port   
+	          ,a.pservice_url       as service_url    
+	          ,a.pfile_server       as file_server    
+	          ,a.pfile_path         as file_path      
+	          ,a.pftp_user          as ftp_user       
+	          ,a.pftp_password      as ftp_password   
+	          ,a.pserver_protocol   as server_protocol
+	          ,a.pserver_port       as server_port
+	          ,'Store'              as store_type         
+	    from psysfilestore a
+	    where (a.pnames    = #{funVariable_00001} or a.obid    = #{funVariable_00001})
+	    and   omcBitAnd(a.pflags,#{funVariable_00002}) = #{funVariable_00002}
+        ]]>
+	</select>
+</mapper>

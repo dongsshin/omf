@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OmcUser">
+	<select id="retrieveUserProperty" resultType="com.rap.omc.schema.object.model.OmcSchemaPropertyVO">
+        <![CDATA[
+		    select b.obid            as obid
+		          ,b.pflags          as flags 
+				  ,b.psys_object     as sys_object
+				  ,b.pkinds          as kinds
+				  ,b.pproperty_value as property_value
+		          ,b.pproperty_name  as property_name 
+				  ,b.pcreator        as creator 
+				  ,b.pcreated        as created 
+				  ,b.pmodifier       as pmodifier
+				  ,b.pmodified       as modified
+		    from psysuser a, psysproperty b
+		    where a.obid         = b.psys_object
+		    and a.pnames         = #{userNames}
+    	    and omcBitAnd(b.pkinds ,#{searchPropertyKind})   = #{searchPropertyKind}
+		    and omcBitAnd(b.pflags ,#{searchPropertyFlag})   = #{searchPropertyFlag}
+		    and omcBitAnd(a.pflags ,#{searchUserActiveFlag}) = #{searchUserActiveFlag}		    
+		]]>
+        <if test="propertyName != null and propertyName != ''">
+            <![CDATA[ and b.pproperty_name = #{propertyName} ]]>
+        </if>
+	</select>
+	<select id="loadUserByUsername" resultType="com.rap.common.login.model.Member">
+        <![CDATA[
+		    SELECT * FROM user WHERE username = #{username}
+		]]>
+	</select>
+		<select id="loadUserAuthorityByUsername" resultType="java.lang.String">
+        <![CDATA[
+		    SELECT authority_name FROM authority WHERE username = #{username}
+		]]>
+	</select>
+	<select id="retrieveUserToUser" resultType="com.rap.omc.foundation.user.model.User2UserResultVO">
+        <![CDATA[
+        select c.obid                   as obid
+		      ,c.pflags                 as flags
+		      ,c.pnames                 as names
+		      ,c.pdescriptions          as descriptions
+		      ,c.pkinds                 as kinds
+		      ,c.pdepartment_code       as pdepartment_code
+		      ,c.pdepartment_desc       as department_desc
+		      ,c.pdepartment_desc_kor   as department_desc_kor
+		      ,c.pemail_id              as email_id
+		      ,b.obid                   as relation_obid
+		      ,b.pfrom_obid             as relation_from_obid
+		      ,b.pflags                 as relation_flags
+		      ,b.pschema_kind           as relation_schema_kind
+		from psysuser a, psysrelationinfo b, psysuser c
+		where a.obid     = b.pfrom_obid
+		and   b.pto_obid = c.obid
+		and   omcBitAnd(a.pkinds ,#{searchUserFromKind})            = #{searchUserFromKind}
+		and   omcBitAnd(a.pflags ,#{searchUserFromFlags})           = #{searchUserFromFlags}
+		and   omcBitAnd(b.pflags ,#{searchUserRelFlags})            = #{searchUserRelFlags} 
+		and   omcBitAnd(b.pschema_kind ,#{searchUserRelSchemaKind}) = #{searchUserRelSchemaKind}
+		and   omcBitAnd(c.pkinds ,#{searchUserToKind})              = #{searchUserToKind}
+		and   omcBitAnd(c.pflags ,#{searchUserToFlags})             = #{searchUserToFlags}
+		and   a.pnames = #{userNames}
+	    ]]>
+	</select>
+	<select id="retrieveUserFromUser" resultType="com.rap.omc.foundation.user.model.User2UserResultVO">
+        <![CDATA[
+        select a.obid                   as obid
+		      ,a.pflags                 as flags
+		      ,a.pnames                 as names
+		      ,a.pdescriptions          as descriptions
+		      ,a.pkinds                 as kinds
+		      ,a.pdepartment_code       as pdepartment_code
+		      ,a.pdepartment_desc       as department_desc
+		      ,a.pdepartment_desc_kor   as department_desc_kor
+		      ,a.pemail_id              as email_id
+		      ,b.obid                   as relation_obid
+		      ,b.pfrom_obid             as relation_from_obid
+		      ,b.pflags                 as relation_flags
+		      ,b.pschema_kind           as relation_schema_kind
+		from psysuser a, psysrelationinfo b, psysuser c
+		where a.obid     = b.pfrom_obid
+		and   b.pto_obid = c.obid
+		and   omcBitAnd(a.pkinds ,#{searchUserFromKind})            = #{searchUserFromKind}
+		and   omcBitAnd(a.pflags ,#{searchUserFromFlags})           = #{searchUserFromFlags}
+		and   omcBitAnd(b.pflags ,#{searchUserRelFlags})            = #{searchUserRelFlags} 
+		and   omcBitAnd(b.pschema_kind ,#{searchUserRelSchemaKind}) = #{searchUserRelSchemaKind}
+		and   omcBitAnd(c.pkinds ,#{searchUserToKind})              = #{searchUserToKind}
+		and   omcBitAnd(c.pflags ,#{searchUserToFlags})             = #{searchUserToFlags}
+		and   c.pnames = #{userNames}
+	    ]]>
+	</select>
+	
+	
+    <select id="retrieveUserRelatedAllUser" resultType="com.rap.omc.foundation.user.model.User2UserResultVO">
+        <![CDATA[
+        select a.obid                   as obid
+		      ,a.pflags                 as flags
+		      ,a.pnames                 as names
+		      ,a.pdescriptions          as descriptions
+		      ,a.pkinds                 as kinds
+		      ,a.pdepartment_code       as pdepartment_code
+		      ,a.pdepartment_desc       as department_desc
+		      ,a.pdepartment_desc_kor   as department_desc_kor
+		      ,a.pemail_id              as email_id
+		      ,b.obid                   as relation_obid
+		      ,b.pfrom_obid             as relation_from_obid
+		      ,b.pflags                 as relation_flags
+		      ,b.pschema_kind           as relation_schema_kind
+		from psysuser a, psysrelationinfo b, psysuser c
+		where a.obid     = b.pfrom_obid
+		and   b.pto_obid = c.obid
+		and   omcBitAnd(a.pflags ,#{searchUserFromFlags})           = #{searchUserFromFlags}
+		and   omcBitAnd(b.pflags ,#{searchUserRelFlags})            = #{searchUserRelFlags} 
+		and   omcBitAnd(c.pflags ,#{searchUserToFlags})             = #{searchUserToFlags}
+		and   c.pnames = #{userNames}
+		union all
+		select c.obid                   as obid
+		      ,c.pflags                 as flags
+		      ,c.pnames                 as names
+		      ,c.pdescriptions          as descriptions
+		      ,c.pkinds                 as kinds
+		      ,c.pdepartment_code       as pdepartment_code
+		      ,c.pdepartment_desc       as department_desc
+		      ,c.pdepartment_desc_kor   as department_desc_kor
+		      ,c.pemail_id              as email_id
+		      ,b.obid                   as relation_obid
+		      ,b.pfrom_obid             as relation_from_obid
+		      ,b.pflags                 as relation_flags
+		      ,b.pschema_kind           as relation_schema_kind
+		from psysuser a, psysrelationinfo b, psysuser c
+		where a.obid     = b.pfrom_obid
+		and   b.pto_obid = c.obid
+		and   omcBitAnd(a.pflags ,#{searchUserFromFlags})           = #{searchUserFromFlags}
+		and   omcBitAnd(b.pflags ,#{searchUserRelFlags})            = #{searchUserRelFlags} 
+		and   omcBitAnd(c.pflags ,#{searchUserToFlags})             = #{searchUserToFlags}
+		and   a.pnames = #{userNames}
+	    ]]>
+	</select>
+</mapper>

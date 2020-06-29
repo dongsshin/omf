@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Common">
+	<insert id="insertMigratedObjectSet[MARIA]">
+		<foreach collection="voList" item="item" index="index"
+			separator=";">
+			insert into ${item.dbmsTable} (${item.columns}) values (${item.sql})
+		</foreach>
+	</insert>
+	<insert id="insertMigratedObjectSet[ORACLE]">
+		{call
+		declare
+		begin
+		<foreach collection="voList" item="item" index="index"
+			separator=";">
+			insert into ${item.dbmsTable} (${item.columns}) values (${item.sql})
+		</foreach>
+		;
+		end
+		}
+	</insert>
+	<insert id="insertRelationObjectSet[MARIA]">
+		<foreach collection="voList" item="item" index="index"
+			separator=";">
+			insert into ${item.dbmsTable} (${item.columns}) values (${item.sql})
+		</foreach>
+		;
+        <![CDATA[ 
+        insert into ptobjecttable (obid, pclass_name,pflags) values
+        ]]>
+		<foreach collection="voList" item="item" separator=",">
+			(#{item.obid}, #{item.className}, #{item.flags})
+		</foreach>
+		;
+        <![CDATA[ 
+        insert into ptrelationtable (obid, pclass_name,pfrom_class,pfrom_obid,pto_class,pto_obid) values
+        ]]>
+		<foreach collection="voList" item="item" separator=",">
+			(#{item.obid}, #{item.className},
+			#{item.fromClass},#{item.fromObid},#{item.toClass},#{item.toObid})
+		</foreach>
+	</insert>
+	<insert id="insertRelationObjectSet[ORACLE]">
+		{call
+		declare
+		begin
+		<foreach collection="voList" item="item" index="index"
+			separator=";">
+			insert into ${item.dbmsTable} (${item.columns}) values (${item.sql})
+		</foreach>
+		;
+	        <![CDATA[ 
+	        insert into ptobjecttable (obid, pclass_name,pflags) values
+	        ]]>
+		<foreach collection="voList" item="item" separator=",">
+			(#{item.obid}, #{item.className}, #{item.flags})
+		</foreach>
+		;
+	        <![CDATA[ 
+	        insert into ptrelationtable (obid, pclass_name,pfrom_class,pfrom_obid,pto_class,pto_obid) values
+	        ]]>
+		<foreach collection="voList" item="item" separator=",">
+			(#{item.obid}, #{item.className},
+			#{item.fromClass},#{item.fromObid},#{item.toClass},#{item.toObid})
+		</foreach>
+		;
+		end
+		}
+	</insert>
+	<insert id="insertBusinessObjectSet[MARIA]">
+		<foreach collection="voList" item="item" index="index"
+			separator=";">
+			insert into ${item.dbmsTable} (${item.columns}) values (${item.sql})
+		</foreach>
+		;
+        <![CDATA[ 
+        insert into ptobjecttable (obid, pclass_name,pflags) values
+        ]]>
+		<foreach collection="voList" item="item" separator=",">
+			(#{item.obid}, #{item.className}, #{item.flags})
+		</foreach>
+		;
+        <![CDATA[ 
+        insert into ptkeytable (obid, pclass_name,pnames,prevision) values
+        ]]>
+		<foreach collection="voList" item="item" separator=",">
+			( #{item.obid}, #{item.className}, #{item.names},#{item.revision})
+		</foreach>
+	</insert>
+	<insert id="insertBusinessObjectSet[ORACLE]">
+		{call
+		declare
+		begin
+		<foreach collection="voList" item="item" index="index"
+			separator=";">
+			insert into ${item.dbmsTable} (${item.columns}) values (${item.sql})
+		</foreach>
+		;
+	        <![CDATA[ 
+	        insert into ptobjecttable (obid, pclass_name,pflags) values
+	        ]]>
+		<foreach collection="voList" item="item" separator=",">
+			(#{item.obid}, #{item.className}, #{item.flags})
+		</foreach>
+		;
+	        <![CDATA[ 
+	        insert into ptkeytable (obid, pclass_name,pnames,prevision) values
+	        ]]>
+		<foreach collection="voList" item="item" separator=",">
+			( #{item.obid}, #{item.className}, #{item.names},#{item.revision})
+		</foreach>
+		;
+		end
+		}
+	</insert>
+	<insert id="insertBusinessObjectMasterSet[MARIA]">
+		<foreach collection="voList" item="item" index="index"
+			separator=";">
+			insert into ${item.dbmsTable} (${item.columns}) values (${item.sql})
+		</foreach>
+		;
+        <![CDATA[ 
+        insert into ptobjecttable (obid, pclass_name,pflags) values
+        ]]>
+		<foreach collection="voList" item="item" separator=",">
+			(#{item.obid}, #{item.className}, #{item.flags})
+		</foreach>
+		;
+        <![CDATA[ 
+        insert into ptkeytable (obid, pclass_name,pnames,prevision) values
+        ]]>
+		<foreach collection="voList" item="item" separator=",">
+			( #{item.obid}, #{item.className}, #{item.names},'-')
+		</foreach>
+	</insert>
+	<insert id="insertBusinessObjectMasterSet[ORACLE]">
+		{call
+		declare
+		begin
+		<foreach collection="voList" item="item" index="index"
+			separator=";">
+			insert into ${item.dbmsTable} (${item.columns}) values (${item.sql})
+		</foreach>
+		;
+	        <![CDATA[ 
+	        insert into ptobjecttable (obid, pclass_name,pflags) values
+	        ]]>
+		<foreach collection="voList" item="item" separator=",">
+			(#{item.obid}, #{item.className}, #{item.flags})
+		</foreach>
+		;
+	        <![CDATA[ 
+	        insert into ptkeytable (obid, pclass_name,pnames,prevision) values
+	        ]]>
+		<foreach collection="voList" item="item" separator=",">
+			( #{item.obid}, #{item.className}, #{item.names},'-')
+		</foreach>
+		;
+		end
+		}
+	</insert>
+
+	<update id="modifyObjectSet[MARIA]">
+		<foreach collection="voList" item="item" index="index"
+			separator=";">
+			update ${item.dbmsTable} set ${item.sql} where obid = #{item.obid}
+		</foreach>
+	</update>
+	<update id="modifyObjectSet[ORACLE]">
+		{call
+		declare
+		begin
+		<foreach collection="voList" item="item" index="index"
+			separator=";">
+			update ${item.dbmsTable} set ${item.sql} where obid = #{item.obid}
+		</foreach>
+		;
+		end
+		}
+	</update>
+
+	<delete id="deleteBusinessObjectSet[MARIA]">
+        <![CDATA[
+        delete from ptobjecttable where obid in
+        ]]>
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item.obid}
+		</foreach>
+        <![CDATA[
+        ;
+        delete from ptkeytable where obid in
+        ]]>
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item.obid}
+		</foreach>
+        <![CDATA[
+        ;
+        delete from ${dbmsTable} where obid in 
+        ]]>
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item.obid}
+		</foreach>
+	</delete>
+	<delete id="deleteBusinessObjectSet[ORACLE]">
+		{call
+		declare
+		begin
+	        <![CDATA[
+	        delete from ptobjecttable where obid in
+	        ]]>
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item.obid}
+		</foreach>
+	        <![CDATA[
+	        ;
+	        delete from ptkeytable where obid in
+	        ]]>
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item.obid}
+		</foreach>
+	        <![CDATA[
+	        ;
+	        delete from ${dbmsTable} where obid in 
+	        ]]>
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item.obid}
+		</foreach>
+		;
+		end
+		}
+	</delete>
+
+	<delete id="deleteRelationObjectSet[MARIA]">
+        <![CDATA[
+        delete from ptobjecttable where obid in
+        ]]>
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item.obid}
+		</foreach>
+        <![CDATA[
+        ;
+        delete from ptrelationtable where obid in
+        ]]>
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item.obid}
+		</foreach>
+        <![CDATA[
+        ;
+        delete from ${dbmsTable} where obid in 
+        ]]>
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item.obid}
+		</foreach>
+	</delete>
+	<delete id="deleteRelationObjectSet[ORACLE]">
+		{call
+		declare
+		begin
+	        <![CDATA[
+	        delete from ptobjecttable where obid in
+	        ]]>
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item.obid}
+		</foreach>
+	        <![CDATA[
+	        ;
+	        delete from ptrelationtable where obid in
+	        ]]>
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item.obid}
+		</foreach>
+	        <![CDATA[
+	        ;
+	        delete from ${dbmsTable} where obid in 
+	        ]]>
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item.obid}
+		</foreach>
+		;
+		end
+		}
+	</delete>
+	<select id="referencedObjectCheck" resultType="Integer">
+        <![CDATA[
+        select count(*) from (select 1 from psysdummy
+                              where exists(select 1 from ptrelationtable x where x.pfrom_obid in
+        ]]>
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator="," close="))">
+			#{item.obid}
+		</foreach>
+        <![CDATA[
+                              union
+                              select 1 from psysdummy
+                              where exists(select 1 from ptrelationtable x where x.pto_obid in
+        ]]>
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator="," close="))) a">
+			#{item.obid}
+		</foreach>
+	</select>
+	<select id="retrieveObject"
+		resultType="com.rap.omc.api.object.model.CastMap">
+        <![CDATA[
+            SELECT ${sql}
+              FROM ${dbmsTable} a
+             WHERE obid = #{obid}
+        ]]>
+	</select>
+	<select id="retrieveObjects"
+		resultType="com.rap.omc.api.object.model.CastMap">
+		select ${sql}
+		from ${dbmsTable} a
+		where a.obid in
+		<foreach collection="obidList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+	<select id="retrieveSimpleObjects"
+		resultType="com.rap.omc.api.object.model.CastMap">
+		select ${sql}
+		from ${dbmsTable} a
+		where
+		<foreach collection="voList" item="item" index="index"
+			open="(" separator=") or (" close=")">
+			${whereStr}
+		</foreach>
+	</select>
+	<select id="retrieveObjectTableKeys"
+		resultType="com.rap.omc.foundation.common.model.ObjectTableKeyVO">
+       <![CDATA[
+       select a.obid as obid, a.pclass_name as class_name, a.pflags as flags
+       from ptobjecttable a 
+       where a.obid in
+       ]]>
+		<foreach collection="obidList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+	<insert id="insertRelationObject[MARIA]">
+        <![CDATA[        
+        insert into ${dbmsTable} (${columns}) values (${sql})
+        ]]>
+		;
+        <![CDATA[
+        insert into ptobjecttable (obid, pclass_name, pflags)values(#{obid}, #{className}, #{flags})
+        ]]>
+		;
+        <![CDATA[
+        insert into ptrelationtable (obid, pclass_name, pfrom_class, pfrom_obid, pto_class, pto_obid) values (#{obid}, #{className}, #{fromClass}, #{fromObid}, #{toClass}, #{toObid})
+        ]]>
+	</insert>
+	<insert id="insertRelationObject[ORACLE]">
+		{call
+		declare
+		begin
+	        <![CDATA[        
+	        insert into ${dbmsTable} (${columns}) values (${sql})
+	        ]]>
+		;
+	        <![CDATA[
+	        insert into ptobjecttable (obid, pclass_name, pflags)values(#{obid}, #{className}, #{flags})
+	        ]]>
+		;
+	        <![CDATA[
+	        insert into ptrelationtable (obid, pclass_name, pfrom_class, pfrom_obid, pto_class, pto_obid) values (#{obid}, #{className}, #{fromClass}, #{fromObid}, #{toClass}, #{toObid})
+	        ]]>
+		;
+		end
+		}
+	</insert>
+	<insert id="insertBusinessObject[MARIA]">
+        <![CDATA[        
+        insert into ${dbmsTable} (${columns}) values (${sql})
+        ]]>
+		;
+        <![CDATA[
+        insert into ptobjecttable (obid, pclass_name, pflags)values(#{obid}, #{className}, #{flags})
+        ]]>
+		;
+        <![CDATA[
+        insert into ptkeytable (obid, pclass_name, pnames, prevision) values(#{obid}, #{className}, #{names}, #{revision})
+        ]]>
+	</insert>
+	<insert id="insertBusinessObject[ORACLE]">
+		{call
+		declare
+		begin
+	        <![CDATA[        
+	        insert into ${dbmsTable} (${columns}) values (${sql})
+	        ]]>
+		;
+	        <![CDATA[
+	        insert into ptobjecttable (obid, pclass_name, pflags)values(#{obid}, #{className}, #{flags})
+	        ]]>
+		;
+	        <![CDATA[
+	        insert into ptkeytable (obid, pclass_name, pnames, prevision) values(#{obid}, #{className}, #{names}, #{revision})
+	        ]]>
+		;
+		end
+		}
+	</insert>
+	<insert id="insertBusinessObjectMaster[MARIA]">
+        <![CDATA[        
+        insert into ${dbmsTable} (${columns}) values (${sql})
+        ]]>
+		;
+        <![CDATA[
+        insert into ptobjecttable (obid, pclass_name, pflags)values(#{obid}, #{className}, #{flags})
+        ]]>
+		;
+        <![CDATA[
+        insert into ptkeytable (obid, pclass_name, pnames, prevision) values(#{obid}, #{className}, #{names}, '-')
+        ]]>
+	</insert>
+	<insert id="insertBusinessObjectMaster[ORACLE]">
+		{call
+		declare
+		begin
+	        <![CDATA[        
+	        insert into ${dbmsTable} (${columns}) values (${sql})
+	        ]]>
+		;
+	        <![CDATA[
+	        insert into ptobjecttable (obid, pclass_name, pflags)values(#{obid}, #{className}, #{flags})
+	        ]]>
+		;
+	        <![CDATA[
+	        insert into ptkeytable (obid, pclass_name, pnames, prevision) values(#{obid}, #{className}, #{names}, '-')
+	        ]]>
+		;
+		end
+		}
+	</insert>
+	<update id="updateObject">
+        <![CDATA[
+        UPDATE ${dbmsTable}
+           SET ${sql}
+         WHERE obid = #{obid}
+        ]]>
+	</update>
+
+	<update id="updateRelationObjectWithKeyTable[MARIA]">
+        <![CDATA[
+        update ${dbmsTable} set ${sql} where obid = #{obid};
+        update ptobjecttable set pclass_name = #{className},pflags = #{flags} where obid = #{obid};
+        update ptrelationtable 
+        set pclass_name = #{className},
+            pfrom_class = #{fromClass},
+            pfrom_obid  = #{fromObid},
+            pto_class   = #{toClass},
+            pto_obid    = #{toObid} 
+        where obid      = #{obid};
+        ]]>
+	</update>
+	<update id="updateRelationObjectWithKeyTable[ORACLE]">
+        <![CDATA[
+        {call
+            declare
+            begin
+		        update ${dbmsTable} set ${sql} where obid = #{obid};
+		        update ptobjecttable set pclass_name = #{className},pflags = #{flags} where obid = #{obid};
+		        update ptrelationtable 
+		        set pclass_name = #{className},
+		            pfrom_class = #{fromClass},
+		            pfrom_obid  = #{fromObid},
+		            pto_class   = #{toClass},
+		            pto_obid    = #{toObid} 
+		        where obid      = #{obid};
+            end
+        }
+        ]]>
+	</update>
+	<delete id="deleteRelationObject[MARIA]">
+        <![CDATA[ 
+        delete from ${dbmsTable} where obid = #{obid};
+        delete from ptrelationtable where obid = #{obid};
+        delete from ptobjecttable where obid = #{obid};
+        ]]>
+	</delete>
+	<delete id="deleteRelationObject[ORACLE]">
+		{call
+		declare
+		begin
+	        <![CDATA[ 
+		        delete from ${dbmsTable} where obid = #{obid};
+		        delete from ptrelationtable where obid = #{obid};
+		        delete from ptobjecttable where obid = #{obid};
+	        ]]>
+		end
+		}
+	</delete>
+
+	<delete id="deleteBusinessObject[MARIA]">
+        <![CDATA[ 
+        delete from ${dbmsTable} where obid = #{obid};
+        delete from ptkeytable where obid = #{obid};
+        delete from ptobjecttable where obid = #{obid};
+        ]]>
+	</delete>
+	<delete id="deleteBusinessObject[ORACLE]">
+		{call
+		declare
+		begin
+	        <![CDATA[ 
+		        delete from ${dbmsTable} where obid = #{obid};
+		        delete from ptkeytable where obid = #{obid};
+		        delete from ptobjecttable where obid = #{obid};
+	        ]]>
+		end
+		}
+	</delete>
+	<select id="retrieveDyancmicStringQuery" resultType="String">
+        <![CDATA[
+            ${sql}
+        ]]>
+	</select>
+	<select id="retrieveDyancmicIntegerQuery" resultType="Integer">
+        <![CDATA[
+            ${sql}
+        ]]>
+	</select>
+	<select id="retrieveKeyInfo" resultType="java.lang.String">
+        <![CDATA[
+            select pclass_name
+			from ptobjecttable
+            where obid = #{obid}
+        ]]>
+	</select>
+	<select id="retrieveKeyDetailInfo"
+		resultType="com.rap.omc.foundation.common.model.KeyInfo">
+        <![CDATA[
+            select pclass_name as class_name
+            	  ,pflags      as flags
+            	  ,obid        as obid
+			from ptobjecttable
+           where obid = #{obid}
+        ]]>
+	</select>
+	<select id="getBusinessObjectObidList"
+		resultType="java.lang.String">
+        <![CDATA[
+        select obid from ptkeytable where pnames = #{names}
+        ]]>
+		and pclass_name in
+		<foreach collection="classNameList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item}
+		</foreach>
+		<if test="revision != null and revision != ''">
+			and prevision = #{revision}
+		</if>
+	</select>
+
+	<select id="getBusinessObjectObid" resultType="java.lang.String">
+        <![CDATA[
+        select obid from ptkeytable where pnames = #{names}
+        ]]>
+		and pclass_name = #{className}
+		<if test="revision != null and revision != ''">
+			and prevision = #{revision}
+		</if>
+	</select>
+
+	<select id="getLatestBusinessObjectObidList"
+		resultType="java.lang.String">
+        <![CDATA[
+        select obid from ptkeytable where pprevious_obid = '1'
+        ]]>
+		and pclass_name in
+		<foreach collection="classNameList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item}
+		</foreach>
+		<foreach collection="nameList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<select id="getBusinessObjectMasterObidList"
+		resultType="java.lang.String">
+        <![CDATA[
+        select obid from ptkeytable where prevision = #{revision}
+        and pnames in
+        ]]>
+		<foreach collection="nameList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item}
+		</foreach>
+       <![CDATA[
+        and pclass_name in
+        ]]>
+		<foreach collection="chileClassList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+	<select id="getClassNameWithObidList"
+		resultType="com.rap.omc.foundation.common.model.KeyInfo">
+        <![CDATA[
+        select obid, pclass_name class_name, pflags flags from ptobjecttable where obid in
+        ]]>
+		<foreach collection="obidList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+	<update id="updateBusinessObjectKeyInfo[MARIA]">
+	    <![CDATA[
+        update ptobjecttable
+        set pclass_name = #{className}
+        where obid = #{obid};
+        ]]>
+        <![CDATA[
+        update ptkeytable
+        set pclass_name = #{className}
+        ]]>
+		<if test="names != null and names != ''">
+			, pnames = #{names}
+		</if>
+		<if test="revision != null and revision != ''">
+			, prevision = #{revision}
+		</if>
+        <![CDATA[
+         where obid = #{obid};
+        ]]>
+	</update>
+	<update id="updateBusinessObjectKeyInfo[ORACLE]">
+		{call
+		declare
+		begin
+		    <![CDATA[
+	        update ptobjecttable
+	        set pclass_name = #{className}
+	        where obid = #{obid};
+	        ]]>
+	        <![CDATA[
+	        update ptkeytable
+	        set pclass_name = #{className}
+	        ]]>
+		<if test="names != null and names != ''">
+			, pnames = #{names}
+		</if>
+		<if test="revision != null and revision != ''">
+			, prevision = #{revision}
+		</if>
+	        <![CDATA[
+	         where obid = #{obid};
+	        ]]>
+		end
+		}
+	</update>
+	<update id="updateRelationObjetKeyInfo[MARIA]">
+        <![CDATA[
+        update ptobjecttable
+        set pclass_name = #{className}
+        where obid = #{obid};
+        ]]>
+        <![CDATA[
+        update ptrelationtable
+        set pclass_name = #{className}
+        where obid = #{obid};
+        ]]>
+	</update>
+	<update id="updateRelationObjetKeyInfo[ORACLE]">
+		{call
+		declare
+		begin
+	        <![CDATA[
+	        update ptobjecttable
+	        set pclass_name = #{className}
+	        where obid = #{obid};
+	        ]]>
+	        <![CDATA[
+	        update ptrelationtable
+	        set pclass_name = #{className}
+	        where obid = #{obid};
+	        ]]>
+		end
+		}
+	</update>
+	<update id="updateObjectFlagKeyInfo">
+        <![CDATA[
+        update ptobjecttable
+        set pflags = #{flags}
+        where obid = #{obid}
+        ]]>
+	</update>
+	<insert id="insertRelationKeyInfo[MARIA]">
+	    <![CDATA[
+        insert into ptobjecttable (obid, pclass_name, pflags)values(#{obid}, #{className}, #{flags})
+        ]]>
+		;
+        <![CDATA[
+        insert into ptrelationtable (obid, pclass_name, pfrom_class, pfrom_obid, pto_class, pto_obid)
+        values (#{obid}, #{className}, #{fromClass}, #{fromObid}, #{toClass}, #{toObid})
+        ]]>
+	</insert>
+	<insert id="insertRelationKeyInfo[ORACLE]">
+	    <![CDATA[
+        {call
+            declare
+            begin
+                insert into ptobjecttable (obid, pclass_name, pflags)values(#{obid}, #{className}, #{flags});
+                insert into ptrelationtable (obid, pclass_name, pfrom_class, pfrom_obid, pto_class, pto_obid)
+                values (#{obid}, #{className}, #{fromClass}, #{fromObid}, #{toClass}, #{toObid});
+            end
+        }
+        ]]>
+	</insert>
+	<update id="updateRelationKeyInfoAll[MARIA]">
+        <![CDATA[
+        update ptrelationtable
+        set pclass_name = #{className},
+            pfrom_class = #{fromClass},
+            pfrom_obid  = #{fromObid},
+            pto_class   = #{toClass},
+            pto_obid    = #{toObid}
+        where obid = #{obid};
+        
+        update ptobjecttable
+        set pclass_name = #{className},
+            pflags      = #{flags}
+        where obid = #{obid};
+        ]]>
+	</update>
+	<update id="updateRelationKeyInfoAll[ORACLE]">
+		{call
+		declare
+		begin
+	        <![CDATA[
+		        update ptrelationtable
+		        set pclass_name = #{className},
+		            pfrom_class = #{fromClass},
+		            pfrom_obid  = #{fromObid},
+		            pto_class   = #{toClass},
+		            pto_obid    = #{toObid}
+		        where obid = #{obid};
+		        
+		        update ptobjecttable
+		        set pclass_name = #{className},
+		            pflags      = #{flags}
+		        where obid = #{obid};
+	        ]]>
+		end
+		}
+	</update>
+	<insert id="selectRelationShipAllList">
+        <![CDATA[
+        select a.obid as obid,b.pflags as flags,a.pclass_name as class_name,a.pfrom_obid as from_obid,a.pto_class as to_class,a.pto_obid as to_obid, 1 as is_to from ptrelationtable a, ptobjecttable b
+		where a.pfrom_obid = #{obid}
+		and   a.obid = b.obid
+		union all
+		select a.obid as obid,b.pflags as flags,a.pclass_name as class_name,a.pfrom_obid as from_obid,a.pto_class as to_class,a.pto_obid as to_obid, 0 as is_to from ptrelationtable a, ptobjecttable b
+		where a.pto_obid = #{obid}
+		and   a.obid = b.obid
+        ]]>
+	</insert>
+
+	<select id="retrieveDynamicLayoutInfo"
+		resultType="com.rap.omc.foundation.layout.model.LayoutInfo">
+        <![CDATA[
+            ${sql}
+        ]]>
+	</select>
+
+	<select id="retrieveDynamicTabInfo"
+		resultType="com.rap.omc.foundation.layout.model.TabInfo">
+        <![CDATA[
+            ${sql}
+        ]]>
+	</select>
+
+
+
+</mapper>

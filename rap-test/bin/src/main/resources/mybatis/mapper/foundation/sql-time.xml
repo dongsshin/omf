@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Time">
+
+	<select id="getDBLocalTime" resultType="java.util.Date">
+        <![CDATA[
+			${obid}	
+        ]]>
+	</select>
+
+	<select id="getDBWeekOfYear" resultType="java.lang.Integer">
+        <![CDATA[
+			${sql}
+        ]]>
+	</select>
+
+	<select id="getDBLocalTimeStr" resultType="java.lang.String">
+        <![CDATA[
+			${obid}
+        ]]>
+	</select>
+
+	<insert id="insertTime">
+        <![CDATA[        
+        INSERT INTO TEST_TIME (
+                ID,
+				CREATED_TIME,
+				CREATED_TIME_S,
+				CREATED_TIME_Z,
+				INPUT_TIME,
+				INPUT_TIME_S,
+				INPUT_TIME_Z
+        ) VALUES (
+                #{id},
+				omcGetUtcDate(),
+				#{createdTimeS},
+				TIMESTAMP '2001-12-01 20:00:00.000000 GMT',
+				PG_TZ.UF_LOCAL2UTC(#{inputTime}),
+				#{inputTimeS},
+				TIMESTAMP '2001-12-01 20:00:00.000000 GMT'
+        )
+        ]]>
+	</insert>
+</mapper>

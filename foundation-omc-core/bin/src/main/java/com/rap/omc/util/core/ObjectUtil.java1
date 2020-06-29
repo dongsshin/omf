@@ -1,0 +1,52 @@
+package com.rap.omc.util.core;
+import java.io.ByteArrayInputStream;
+/*    */ import java.io.ByteArrayOutputStream;
+/*    */ import java.io.IOException;
+/*    */ import java.io.ObjectInputStream;
+/*    */ import java.io.ObjectOutputStream;
+/*    */ import org.slf4j.Logger;
+/*    */ import org.slf4j.LoggerFactory;
+
+/*    */
+/*    */ public class ObjectUtil
+/*    */ {
+
+    /* 34 */ private static final Logger LOGGER = LoggerFactory.getLogger(ObjectUtil.class);
+
+    /*    */
+    /*    */ public static Object deepClone(Object oldObj)
+    /*    */ {
+        /* 43 */ ObjectOutputStream oos = null;
+        /* 44 */ ObjectInputStream ois = null;
+        /*    */ try {
+            /* 46 */ ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            /* 47 */ oos = new ObjectOutputStream(bos);
+            /*    */
+            /* 49 */ oos.writeObject(oldObj);
+            /* 50 */ oos.flush();
+            /* 51 */ ByteArrayInputStream bin = new ByteArrayInputStream(bos.toByteArray());
+            /* 52 */ ois = new ObjectInputStream(bin);
+            /*    */
+            /* 55 */ return ois.readObject();
+            /*    */ } catch (IOException ioe) {
+            	return null;
+            /*    */ }
+        /*    */ catch (ClassNotFoundException cnfe) {
+        	return null;
+            /*    */ }
+        /*    */ finally {
+            /* 61 */ if (oos != null) {
+                /*    */ try {
+                    /* 63 */ oos.close();
+                    /*    */ } catch (IOException e) {
+                    /* 65 */ LOGGER.error("An I/O error has occurred while closing ObjectOutputStream : " + e);
+                    /*    */ }
+                /*    */ }
+            /* 68 */ if (ois != null)/*    */ try {
+                /* 70 */ ois.close();
+                /*    */ } catch (IOException e) {
+                /* 72 */ LOGGER.error("An I/O error has occurred while closing ObjectInputStream : " + e);
+                /*    */ }
+            /*    */ }
+        /*    */ }
+    /*    */ }

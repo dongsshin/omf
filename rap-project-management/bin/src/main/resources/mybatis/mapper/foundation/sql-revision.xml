@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Revision">
+
+	<select id="getFirstRevision" resultType="com.rap.omc.api.object.model.CastMap">
+		<![CDATA[
+            select ${sql} 
+			from ${dbmsTable} a
+			where a.obid in (select x.obid from ptkeytable x where x.pnames = #{names} and x.pclass_name = #{className})
+			and z.pnext_obid = '1'
+    	]]>
+	</select>
+	
+	<select id="getLastRevision" resultType="com.rap.omc.api.object.model.CastMap">
+		<![CDATA[
+            select ${sql} 
+			from ${dbmsTable} a
+			where a.obid in (select x.obid from ptkeytable x where x.pnames = #{names} and x.pclass_name = #{className})
+			and a.pprevious_obid = '1'
+    	]]>
+	</select>
+
+	<select id="getRevisions" resultType="com.rap.omc.api.object.model.CastMap">
+	    <![CDATA[
+            select ${sql} 
+			from ${dbmsTable} a
+			where a.obid in (select x.obid from ptkeytable x where x.pnames = #{names} and x.pclass_name = #{className})
+    	]]>
+	</select>
+</mapper>

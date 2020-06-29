@@ -1,0 +1,36 @@
+/**
+ * ===========================================
+ * System Name : LGE GPDM
+ * Program ID : LoginController.java
+ * ===========================================
+ * Modify Date Modifier Description
+ * -------------------------------------------
+ * 2015. 12. 6. yosikim Initial
+ * ===========================================
+ */
+package com.rap.common.login.controller;
+
+import org.springframework.ui.ModelMap;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.rap.common.login.model.UserInfoVO;
+import com.rap.common.login.service.LoginService;
+
+/**
+ * <pre>
+ * Class : LoginAgent
+ * Description : MC, VC 등 사업부 단위로 로긴한다.
+ * </pre>
+ *
+ * @author yosikim
+ */
+
+public interface LoginAgent {
+
+   // 로긴 로직이 끝난 후, 마지막 redirect 처리(로그인페이지에서 호출)
+   public String postDevLogin(UserInfoVO userInfo, ModelMap model);
+
+   // 로긴 로직이 끝난 후, 마지막 redirect 처리(SSO에서 호출)
+   public String postSsoLogin(UserInfoVO userInfo, LoginService loginService, RedirectAttributes ra, String origin, String decoded, String ssoId, String mainTarget);
+
+}

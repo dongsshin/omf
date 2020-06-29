@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="file">
+    
+      <insert id="insertFileDeleteHistory">
+		<![CDATA[
+			INSERT INTO PSYSFILEDELETEHISTORY (
+			        obid
+		          , pflags
+		          , pclass_name
+		          , pnames
+		          , ptitles
+		          , plife_cycle
+		          , pdescriptions
+		          , passigned_type		         
+		          , pstates
+		          , psizes 
+		          , puser_file_name
+		          , pfile_path
+		          , psys_file_name
+		          , pfile_location
+		          , pattribute01
+		          , pattribute02
+		          , pattribute03
+		          , pattribute04
+		          , pattribute05
+		          , pattribute06
+		          , pattribute07
+		          , pattribute08
+		          , pattribute09
+		          , pattribute10
+		          , pattribute11         
+		          , pattribute12
+		          , pattribute13
+		          , pattribute14
+		          , pattribute15
+		          , pcheckouted
+		          , plocker
+		          , pcheckouter		          
+		          , powner
+		          , pcreator		        
+		          , pcreated
+		          , pmodifier		          
+		          , pmodified
+		          , pfile_store
+		          , pfrom_obid
+		          , pfile_format
+			) VALUES (
+			        #{obid}
+		          , #{flags}
+		          , #{className}
+		          , #{names}
+		          , #{titles}
+		          , #{lifeCycle}
+		  ]]>
+		   <if test="descriptions != null and descriptions != ''">
+            		<![CDATA[ , #{descriptions}  ]]>
+ 		  </if>  
+		  <if test="descriptions == null or descriptions == ''">
+            		<![CDATA[ , NULL  ]]>
+ 		  </if>   
+ 		  <if test="assignedType != null and assignedType != ''">
+            		<![CDATA[ , #{assignedType}  ]]>
+	      </if>
+          <if test="assignedType == null or assignedType == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+		    <![CDATA[		          	         
+		          
+		          , #{states}
+		          , #{sizes} 
+		          , #{userFileName}
+		          , #{filePath}
+		          , #{sysFileName}
+		          , #{fileLocation}
+		    ]]>
+		  <if test="attribute01 != null and attribute01 != ''">
+            		<![CDATA[  , #{attribute01}  ]]>
+	      </if>
+          <if test="attribute01 == null or attribute01 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+	      <if test="attribute02 != null and attribute02 != ''">
+            		<![CDATA[  , #{attribute02}  ]]>
+	      </if>
+          <if test="attribute02 == null or attribute02 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+	      <if test="attribute03 != null and attribute03 != ''">
+            		<![CDATA[  , #{attribute03}  ]]>
+	      </if>
+          <if test="attribute03 == null or attribute03 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+	      <if test="attribute04 != null and attribute04 != ''">
+            		<![CDATA[  , #{attribute04}  ]]>
+	      </if>
+          <if test="attribute04 == null or attribute04 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+	      <if test="attribute05 != null and attribute05 != ''">
+            		<![CDATA[  , #{attribute05}  ]]>
+	      </if>
+          <if test="attribute05 == null or attribute05 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+	      <if test="attribute06 != null and attribute06 != ''">
+            		<![CDATA[  , #{attribute06}  ]]>
+	      </if>
+          <if test="attribute06 == null or attribute06 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+	      <if test="attribute07 != null and attribute07 != ''">
+            		<![CDATA[  , #{attribute07}  ]]>
+	      </if>
+          <if test="attribute07 == null or attribute07 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+	      <if test="attribute08 != null and attribute08 != ''">
+            		<![CDATA[  , #{attribute08}  ]]>
+	      </if>
+          <if test="attribute08 == null or attribute08 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+	      <if test="attribute09 != null and attribute09 != ''">
+            		<![CDATA[  , #{attribute09}  ]]>
+	      </if>
+          <if test="attribute09 == null or attribute09 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+	      <if test="attribute10 != null and attribute10 != ''">
+            		<![CDATA[  , #{attribute10}  ]]>
+	      </if>
+          <if test="attribute10 == null or attribute10 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+	      <if test="attribute11 != null and attribute11 != ''">
+            		<![CDATA[  , #{attribute11}  ]]>
+	      </if>
+          <if test="attribute11 == null or attribute11 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+	      <if test="attribute12 != null and attribute12 != ''">
+            		<![CDATA[  , #{attribute12}  ]]>
+	      </if>
+          <if test="attribute12 == null or attribute12 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+	      <if test="attribute13 != null and attribute13 != ''">
+            		<![CDATA[  , #{attribute13}  ]]>
+	      </if>
+          <if test="attribute13 == null or attribute13 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+	      <if test="attribute14 != null and attribute14 != ''">
+            		<![CDATA[  , #{attribute14}  ]]>
+	      </if>
+          <if test="attribute14 == null or attribute14 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>
+	      <if test="attribute15 != null and attribute15 != ''">
+            		<![CDATA[  , #{attribute15}  ]]>
+	      </if>
+          <if test="attribute15 == null or attribute15 == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>		
+	       <if test="checkouted != null and checkouted != ''">
+            		<![CDATA[   , #{checkouted}  ]]>
+	      </if>
+          <if test="checkouted == null or checkouted == ''">
+            		<![CDATA[ , NULL  ]]>
+	      </if>		    
+     <![CDATA[
+		          , #{locker}
+		          , #{checkouter}		         
+		          , #{owner}
+		          , #{creator}		        
+		          , omcGetUtcDate() 
+		          , #{modifier}		          
+		          , omcGetUtcDate() 
+		          , #{fileStore}
+		          , #{fromObid}
+		          , #{fileFormat}
+		          )
+		]]>
+    </insert>
+    
+    <update id="updateFileDeleteHistory">
+		<![CDATA[
+				update PSYSFILEDELETEHISTORY
+				set pfrom_obid = #{afterFromObid}	
+				  , pmodified = omcGetUtcDate()			 				  
+				where obid = #{obid}				
+				  and pfrom_obid = #{beforeFromObid} 
+				  and pfile_path = #{filePath}
+ 		]]>
+    </update>
+    
+
+    <select id="retrieveOtp" resultType="com.rap.omc.foundation.file.model.OtpVO">
+		<![CDATA[
+			select pnonce as nonce,			       
+			       premote_addr as remoteAddr,
+			       pused_count as usedCount,
+			       psession_info as sessionInfo,
+			       pused_time as usedTime, 
+			       pcreator as creator,
+			       pcreated as created
+			from PSYSONETIMEPASSWORD
+			where pnonce = #{nonce}
+ 		]]> 
+    </select>
+
+    <insert id="insertOtp">
+		<![CDATA[
+			INSERT INTO PSYSONETIMEPASSWORD (
+			      pnonce
+			    , premote_addr
+			    , pused_count
+			    , psession_info
+			    , pcreator
+			    , pcreated
+			    , pmodifier
+			    , pmodified
+			) VALUES (
+			      #{nonce}			   
+			    , #{remoteAddr}
+			    , 0
+			    , #{sessionInfo}
+			    , #{creator}
+			    , #{created}
+			    , #{modifier}
+			    , #{modified}
+			)
+		]]>
+    </insert>
+       
+    <insert id="insertOtpTry">
+		<![CDATA[
+			INSERT INTO PSYSONETIMEPASSWORDEXCEPTION(
+			      pnonce
+			    , premote_addr
+			    , pused_time
+			    , pover_case
+			    , pcreator
+			    , pcreated
+			    , pmodifier
+			    , pmodified
+			) VALUES (
+			      #{nonce}			   
+			    , #{remoteAddr}
+			    , #{usedTime}
+			    , #{overCase}
+			    , #{creator}
+			    , #{created}
+			    , #{modifier}
+			    , #{modified}
+			)			
+		]]>
+    </insert>
+    
+    <select id="retrieveFilesTemp" resultType="com.rap.omc.api.object.model.FilesVO">
+		<![CDATA[
+			select a.obid                           as obid                                    
+			      ,a.pnames                         as names                                   
+			      ,a.pfrom_obid                     as from_obid                               
+			      ,a.ptitles                        as titles                                  
+			      ,a.pflags                         as flags                                   
+			      ,a.pfile_store                    as file_store                              
+			      ,a.pfile_format                   as file_format                             
+			      ,a.passigned_type                 as assigned_type                           
+			      ,a.pdescriptions                  as descriptions                            
+			      ,a.pclass_name                    as class_name                              
+			      ,a.plife_cycle                    as life_cycle                              
+			      ,a.plocker                        as locker                                  
+			      ,a.psizes                         as sizes                                   
+			      ,a.pstates                        as states                                  
+			      ,a.puser_file_name                as user_file_name                          
+			      ,a.pcheckouter                    as checkouter                              
+			      ,a.pcheckouted                    as checkouted                              
+			      ,a.pfile_path                     as file_path                               
+			      ,a.psys_file_name                 as sys_file_name                           
+			      ,a.powner                         as owner                                   
+			      ,a.pfile_location                 as file_location                           
+			      ,a.pfile_timestamp                as file_timestamp                          
+			      ,a.pcreator                       as creator                                 
+			      ,a.pcreated                       as created                                 
+			      ,a.pattribute01                   as attribute01                             
+			      ,a.pattribute02                   as attribute02                             
+			      ,a.pmodifier                      as modifier                                
+			      ,a.pattribute03                   as attribute03                             
+			      ,a.pmodified                      as modified                                
+			      ,a.pattribute04                   as attribute04                             
+			      ,a.pattribute05                   as attribute05                             
+			      ,a.pattribute06                   as attribute06                             
+			      ,a.pattribute07                   as attribute07                             
+			      ,a.pattribute08                   as attribute08                             
+			      ,a.pattribute09                   as attribute09                             
+			      ,a.pattribute10                   as attribute10                             
+			      ,a.pattribute11                   as attribute11                             
+			      ,a.pattribute12                   as attribute12                             
+			      ,a.pattribute13                   as attribute13                             
+			      ,a.pattribute14                   as attribute14                             
+			      ,a.pattribute15                   as attribute15                             
+			from ptfile a
+			where 1 = 1
+			and   a.pfrom_obid = #{fromObid}
+ 		]]> 
+ 	    <if test="fileFormat != null and fileFormat != ''">
+ 	        <![CDATA[
+            and   a.pfile_format = #{fileFormat}
+            ]]>
+	    </if>
+    </select>
+    
+     <update id="updateOtp">
+		<![CDATA[
+				update PSYSONETIMEPASSWORD
+				set pused_count = #{usedCount}
+				  , pused_time  = #{usedTime}
+				  , pmodified   = omcGetUtcDate()
+				where pnonce = #{nonce}
+ 		]]>
+    </update>
+    
+
+    
+</mapper>

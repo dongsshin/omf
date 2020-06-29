@@ -1,0 +1,22 @@
+package com.rap.omc.util.core;
+
+/*    */ public class UnicodeUtil
+/*    */ {
+
+    /*    */ public static int countUnicode(String str)
+    /*    */ {
+        /* 34 */ char[] charArray = str.toCharArray();
+        /* 35 */ int unicodeNumber = 0;
+        /* 36 */ for (int inx = 0; inx < charArray.length; ++inx) {
+            /* 37 */ if (!(isUnicode(charArray[inx]))) continue;
+            ++unicodeNumber;
+            /*    */ }
+        /* 39 */ return unicodeNumber;
+        /*    */ }
+
+    /*    */
+    /*    */ public static boolean isUnicode(char ch)
+    /*    */ {
+        /* 50 */ return ((ch >= 44032) && (ch <= 55203));
+        /*    */ }
+    /*    */ }

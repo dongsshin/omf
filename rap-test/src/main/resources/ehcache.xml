@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.ehcache.org/ehcache.xsd"
+	updateCheck="true" monitoring="autodetect" dynamicConfig="true">
+
+	<cache name="locationInfoCache" eternal="false"
+		maxEntriesLocalHeap="20" overflowToDisk="false" diskPersistent="false"
+		timeToIdleSeconds="0" timeToLiveSeconds="0"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<!-- Foundation -->
+	<cache name="classInfoCache" eternal="false"
+		maxEntriesLocalHeap="1000" overflowToDisk="false"
+		diskPersistent="false" timeToIdleSeconds="0" timeToLiveSeconds="0"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<!-- Foundation -->
+	<cache name="apiQueryCache" eternal="false"
+		maxEntriesLocalHeap="1000" overflowToDisk="false"
+		diskPersistent="false" timeToIdleSeconds="0" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" />
+
+	<!-- Foundation -->
+	<cache name="layoutInfoCache" eternal="false"
+		maxEntriesLocalHeap="100" overflowToDisk="false"
+		diskPersistent="false" timeToIdleSeconds="0" timeToLiveSeconds="0"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<!-- Foundation -->
+	<cache name="objectKeyTable" eternal="false"
+		maxEntriesLocalHeap="500" overflowToDisk="false"
+		diskPersistent="false" timeToIdleSeconds="0" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<!-- Foundation -->
+	<cache name="menuInfoCache" eternal="false"
+		maxEntriesLocalHeap="500" overflowToDisk="false"
+		diskPersistent="false" timeToIdleSeconds="0" timeToLiveSeconds="0"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<!-- Foundation -->
+	<cache name="lifeCycleInfoCache" eternal="false"
+		maxEntriesLocalHeap="300" overflowToDisk="false"
+		diskPersistent="false" timeToIdleSeconds="0" timeToLiveSeconds="0"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<!-- Foundation -->
+	<cache name="propertiesCache" eternal="false"
+		maxEntriesLocalHeap="10" overflowToDisk="false" diskPersistent="false"
+		timeToIdleSeconds="0" timeToLiveSeconds="600"
+		diskSpoolBufferSizeMB="10" memoryStoreEvictionPolicy="LRU" />
+
+	<!-- Application Area Definition Start -->
+	<cache name="commonCodeMasterCache" eternal="false"
+		maxEntriesLocalHeap="500" overflowToDisk="false"
+		diskPersistent="false" timeToIdleSeconds="0" timeToLiveSeconds="600"
+		diskSpoolBufferSizeMB="1" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="commonCodeCache" eternal="false"
+		maxEntriesLocalHeap="500" overflowToDisk="false"
+		diskPersistent="false" timeToIdleSeconds="0" timeToLiveSeconds="600"
+		diskSpoolBufferSizeMB="5" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="valueCache" eternal="false"
+		maxEntriesLocalHeap="1000" overflowToDisk="false"
+		diskPersistent="false" timeToIdleSeconds="0" timeToLiveSeconds="600"
+		diskSpoolBufferSizeMB="10" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="testCacheName" maxElementsInMemory="1000"
+		eternal="true" overflowToDisk="false" timeToLiveSeconds="300"
+		timeToIdleSeconds="0" memoryStoreEvictionPolicy="LFU"
+		transactionalMode="off">
+	</cache>
+
+</ehcache>

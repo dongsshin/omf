@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Common1">
+	<select id="retrieveKeyInfo1" resultType="java.lang.String">
+        <![CDATA[
+            select pclass_name
+			from ptobjecttable
+            where obid = #{obid}
+        ]]>
+	</select>
+    <insert id="masterTestInsert">
+        <![CDATA[
+            insert into test(obid)
+            values(#{obid})
+        ]]>
+	</insert>
+	<insert id="foundationTestInsert">
+        <![CDATA[
+            insert into test(obid)
+            values(#{obid})
+        ]]>
+	</insert>
+</mapper>

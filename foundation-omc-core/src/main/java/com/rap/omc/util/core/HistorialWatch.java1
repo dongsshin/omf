@@ -1,0 +1,81 @@
+package com.rap.omc.util.core;
+
+import java.text.DecimalFormat;
+/*     */ import java.util.Iterator;
+/*     */ import java.util.LinkedHashMap;
+/*     */ import java.util.Map;
+@SuppressWarnings({"unchecked","rawtypes"})
+public class HistorialWatch
+{
+	private final long start = System.currentTimeMillis();
+    private final Map history = new LinkedHashMap();
+    private static final DecimalFormat TIME_FORMAT = new DecimalFormat("###,##0.000 sec");
+    private static final DecimalFormat INDEX_FORMAT = new DecimalFormat("[000]");
+    public HistorialWatch()
+    {
+        tick("watch start");
+    }
+    public void tick()
+    {
+        this.history.put("", new Long(System.currentTimeMillis()));
+    }
+    
+	public void tick(String desc)
+    {
+        this.history.put(desc, new Long(System.currentTimeMillis()));
+    }
+    private long findMaxElapsed(){
+        long max = 0L;
+		Iterator iterator = this.history.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry entry = (Map.Entry)iterator.next();
+            long time = ((Long)entry.getValue()).longValue();
+            if (time <= max) continue;
+            max = time;
+        }
+        return max;
+    }
+    private String formatData(int index, String desc, long lap, long accumul, boolean max){
+        StringBuilder strBuffer = new StringBuilder();
+        strBuffer.append(" *");
+        if (max) strBuffer.append("*");
+        else {
+            strBuffer.append(" ");
+        }
+        strBuffer.append(INDEX_FORMAT.format(index)).append(" ");
+        strBuffer.append("section: ").append(TIME_FORMAT.format(lap / 1000.0D)).append(", ");
+        
+        strBuffer.append("accumulation: ").append(TIME_FORMAT.format(accumul / 1000.0D));
+        if (desc.length() > 0) strBuffer.append(" [").append(desc).append("]");
+        return strBuffer.toString();
+    }
+    private String formatData(long accumul){
+        StringBuilder strBuffer = new StringBuilder();
+        strBuffer.append(" * total: ").append(TIME_FORMAT.format(accumul / 1000.0D));
+        return strBuffer.toString();
+    }
+    public String toString()
+    {
+        StringBuilder strBuffer = new StringBuilder();
+        long current = System.currentTimeMillis();
+        if (!(this.history.isEmpty())) {
+            long max = findMaxElapsed();
+            long before = 0L;
+            long accumul = 0L;
+            int index = 0;
+            Iterator iter = this.history.entrySet().iterator();
+            while (iter.hasNext()) {
+                Map.Entry entry = (Map.Entry)iter.next();
+                String key = (String)entry.getKey();
+                long time = ((Long)entry.getValue()).longValue();
+                long lap = (before == 0L) ? 0L : time - before;
+                accumul += lap;
+                strBuffer.append(formatData(index++, key, lap, accumul, max == time));
+                strBuffer.append("\n");
+                before = time;
+            }
+        }
+        strBuffer.append(formatData(current - this.start));
+        return strBuffer.toString();
+    }
+}

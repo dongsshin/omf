@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ClassInfo">
+	<select id="retrieveDynamicBizClassInfo"
+		resultType="com.rap.omc.foundation.classes.model.ClassInfo">
+        <![CDATA[
+            ${sql}
+        ]]>
+	</select>
+
+	<select id="retrieveDynamicRelClassInfo"
+		resultType="com.rap.omc.foundation.classes.model.ClassInfo">
+        <![CDATA[
+            ${sql}
+        ]]>
+	</select>
+
+	<select id="retrieveDynamicAllowedClassInfo"
+		resultType="com.rap.omc.foundation.classes.model.AllowedClassInfo">
+        <![CDATA[
+            ${sql}
+        ]]>
+	</select>
+
+	<select id="retrieveColumnList"
+		resultType="com.rap.omc.foundation.classes.model.ColumnInfo">
+        <![CDATA[
+            select a.pattribute_name as attribute_name,
+                   a.pdbms_column    as dbms_column   ,
+                   a.pcolumn_alias   as column_alias  ,
+                   a.pdata_type      as data_type     ,
+                   a.pflags_attribute  as flags ,
+                   a.pdefault_value  as default_value ,
+                   a.pvalue_setting_info as value_setting_info,
+                   a.plengths  as lengths,
+                   case when a.pclass_name = a.pdefined_class_name then 'N' else 'Y' end is_inherited
+            from psysattrref a
+            where a.pclass_name =  #{className}
+            order by a.psorting
+        ]]>
+	</select>
+
+	<select id="retrieveDyancmicTableColumn"
+		resultType="com.rap.omc.schema.object.model.OmcSchemaTableColumnVO">
+        <![CDATA[
+            ${sql}
+        ]]>
+	</select>
+
+	<select id="retrieveLowerClassList" resultType="String">
+        <![CDATA[
+            select b.pclass_name   as class_name
+            from psysclassinfo a left outer join psysclassinfo b
+            on a.pclass_parent_obid = b.pclass_obid
+            where a.pclass_name =  #{className}
+        ]]>
+	</select>
+
+	<select id="getBizClassName"
+		resultType="com.rap.omc.foundation.classes.model.ClassInfo">
+        <![CDATA[
+        select pnames as names,a.pclass_icon as class_icon,a.pclass_icon_small as class_icon_small
+        from psysbizobjectclassinfo a
+        where a.pnames in
+        ]]>
+		<choose>
+			<when test="namesList != null">
+				<foreach collection="namesList" item="item" index="index"
+					open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</when>
+			<when test="names != null">
+				(#{obid})
+			</when>
+		</choose>
+	</select>
+
+	<select id="getInstantiableClassList"
+		resultType="com.rap.omc.foundation.classes.model.ClassDbmsTableVO">
+        <![CDATA[
+        select a.pclass_name  as class_name
+        	  ,a.pdbms_table as  dbms_table
+        from psysclassinfo a
+        where omcBitAnd(a.pflags,#{flags}) = #{flags}
+        and   a.pclass_name in
+        ]]>
+		<foreach collection="namesList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<select id="getChildClassListForDisplay"
+		resultType="com.rap.omc.foundation.classes.model.ClassDbmsTableVO">
+        <![CDATA[
+        select a.pnames             as class_name
+        	  ,a.pdisplayed_name    as displayed_name
+              ,a.pdisplayed_name_kr as displayed_name_kr
+              ,a.pdefault_policy    as default_policy
+        from psysbizobjectclassinfo a
+        where omcBitAnd(a.pflags,#{flags}) = #{flags}
+        and   a.pnames in
+        ]]>
+		<foreach collection="namesList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item}
+		</foreach>
+		order by a.pdisplayed_name
+	</select>
+
+	<select id="getLifeCycleListForClass"
+		resultType="java.lang.String">
+        <![CDATA[
+        select c.pnames   as life_cycle_name
+        from psysbizobjectclassinfo a, psyslifecycleinfo b, psyslifecycle c
+        where a.obid        = b.pto_obid
+        and   b.pfrom_obid  = c.obid
+        and   omcBitAnd(a.pflags,#{flagsClass})     = #{flagsClass}
+        and   omcBitAnd(a.pflags,#{flagsRelation})  = #{flagsRelation}
+        and   omcBitAnd(b.pkinds,#{kindsRelation})  = #{kindsRelation}
+        and   omcBitAnd(c.pflags,#{flagsLifeCycle}) = #{flagsLifeCycle}
+        and   a.pnames in
+        ]]>
+		<foreach collection="namesList" item="item" index="index"
+			open="(" separator="," close=")">
+			#{item}
+		</foreach>
+		order by a.pdisplayed_name
+	</select>
+
+	<select id="getObjectTableForClassChange"
+		resultType="com.rap.omc.foundation.classes.model.ObjectTableVO">
+        <![CDATA[
+		    select a.obid as obid, b.pdbms_table as dbms_table, 1 as is_from
+		    from ptrelationtable a, psysclassinfo b
+		    where a.pfrom_obid  = #{obid}
+		    and   a.pclass_name = b.pclass_name
+		    union all
+		    select a.obid as obid, b.pdbms_table as dbms_table, 0 as is_from
+		    from ptrelationtable a, psysclassinfo b
+		    where a.pto_obid    = #{obid}
+		    and   a.pclass_name = b.pclass_name;
+        ]]>
+	</select>
+	<update id="updateRelationFromClass"
+		parameterType="java.util.Map">
+		<foreach collection="list" item="key" index="index"
+			separator=";">
+        <![CDATA[
+            update ${key.dbmsTable}
+            set pfrom_class = #{newClassName}
+            where obid = #{key.obid};
+            update ptrelationtable
+            set pfrom_class = #{newClassName}
+            where obid = #{key.obid}
+        ]]>
+		</foreach>
+	</update>
+	<update id="updateRelationToClass" parameterType="java.util.Map">
+		<foreach collection="list" item="key" index="index"
+			separator=";">
+        <![CDATA[
+            update ${key.dbmsTable}
+            set pto_class = #{newClassName}
+            where obid = #{key.obid};
+            update ptrelationtable
+            set pfrom_class = #{newClassName}
+            where obid = #{key.obid}
+        ]]>
+		</foreach>
+	</update>
+</mapper>

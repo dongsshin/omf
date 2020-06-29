@@ -1,0 +1,67 @@
+2019-07-22 18:33:17.412 [main] INFO  com.RapBusinessDomApplication - Starting RapBusinessDomApplication on LCNC06V0064 with PID 7800 (C:\SpringBoot\workspace\rap-business-dom\target\classes started by 62972 in C:\SpringBoot\workspace\rap-business-dom)
+2019-07-22 18:33:17.441 [main] INFO  com.RapBusinessDomApplication - No active profile set, falling back to default profiles: default
+2019-07-22 18:33:23.409 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-07-22 18:33:23.414 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-22 18:33:24.728 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1288ms. Found 0 repository interfaces.
+2019-07-22 18:33:25.754 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - Loaded jar:file:/C:/Users/62972/.m2/repository/com/atomikos/transactions/4.0.6/transactions-4.0.6.jar!/transactions-defaults.properties
+2019-07-22 18:33:25.773 [main] WARN  c.a.icatch.provider.imp.AssemblerImp - Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips & advice
+2019-07-22 18:33:25.785 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2019-07-22 18:33:25.785 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.allow_subtransactions = true
+2019-07-22 18:33:25.786 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.recovery_delay = 10000
+2019-07-22 18:33:25.786 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.automatic_resource_registration = true
+2019-07-22 18:33:25.786 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.oltp_max_retries = 5
+2019-07-22 18:33:25.786 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.client_demarcation = false
+2019-07-22 18:33:25.787 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.threaded_2pc = true
+2019-07-22 18:33:25.787 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.serial_jta_transactions = true
+2019-07-22 18:33:25.787 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.log_base_dir = ./
+2019-07-22 18:33:25.787 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.rmi_export_class = none
+2019-07-22 18:33:25.789 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.max_actives = 50
+2019-07-22 18:33:25.791 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.checkpoint_interval = 500
+2019-07-22 18:33:25.791 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.enable_logging = true
+2019-07-22 18:33:25.791 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.log_base_name = tmlog
+2019-07-22 18:33:25.791 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.max_timeout = 360000000000
+2019-07-22 18:33:25.791 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.trust_client_tm = false
+2019-07-22 18:33:25.791 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2019-07-22 18:33:25.791 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.tm_unique_name = 10.64.184.49.tm
+2019-07-22 18:33:25.791 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2019-07-22 18:33:25.791 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2019-07-22 18:33:25.791 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: java.naming.provider.url = rmi://localhost:1099
+2019-07-22 18:33:25.791 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2019-07-22 18:33:25.791 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - USING: com.atomikos.icatch.default_jta_timeout = 100000000000
+2019-07-22 18:33:25.793 [main] INFO  c.a.icatch.provider.imp.AssemblerImp - Using default (local) logging and recovery...
+2019-07-22 18:33:25.832 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransactionServiceImp' of type [com.atomikos.icatch.config.UserTransactionServiceImp] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 18:33:25.850 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransaction' of type [com.atomikos.icatch.jta.UserTransactionImp] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 18:33:25.859 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userTransactionManager' of type [com.atomikos.icatch.jta.UserTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 18:33:25.878 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManager' of type [org.springframework.transaction.jta.JtaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 18:33:25.914 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagementConfiguration' of type [com.rap.config.datasource.TransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9798415b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 18:33:25.928 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 18:33:25.930 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'txAdviceAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 18:33:25.956 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$13d40b8a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 18:33:27.057 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-07-22 18:33:27.087 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-22 18:33:27.102 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-07-22 18:33:27.103 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-07-22 18:33:27.400 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-22 18:33:27.400 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 9850 ms
+2019-07-22 18:33:28.203 [main] INFO  o.s.b.web.servlet.RegistrationBean - Filter characterEncodingFilter was not registered (possibly already registered?)
+2019-07-22 18:33:28.370 [main] INFO  c.a.d.xa.XATransactionalResource - schemaDataSource: refreshed XAResource
+2019-07-22 18:33:28.517 [main] INFO  c.r.c.d.SchemaSqlSessionConfig - schema.maxSqlCount:200000
+2019-07-22 18:33:29.259 [main] INFO  c.a.d.xa.XATransactionalResource - foundationDataSource: refreshed XAResource
+2019-07-22 18:33:29.297 [main] INFO  c.r.c.d.FoundationSqlSessionConfig - foundation.maxSqlCount:200000
+2019-07-22 18:33:29.565 [main] INFO  c.a.d.xa.XATransactionalResource - masterDataSource: refreshed XAResource
+2019-07-22 18:33:29.606 [main] INFO  c.r.c.d.MasterSqlSessionConfig - master.maxSqlCount:200000
+2019-07-22 18:33:31.291 [main] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-07-22 18:33:31.298 [main] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-07-22 18:33:32.274 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-22 18:33:32.396 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a0df38e, org.springframework.security.web.context.SecurityContextPersistenceFilter@3816efab, org.springframework.security.web.header.HeaderWriterFilter@1415f18d, org.springframework.security.web.authentication.logout.LogoutFilter@7fb28ed, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@62fa4a88, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@321c01c2, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@64821706, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e04c89d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62075e3d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8aa3013, org.springframework.security.web.session.SessionManagementFilter@75708130, org.springframework.security.web.access.ExceptionTranslationFilter@373c8f35, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7c7b27c]
+2019-07-22 18:33:32.891 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-22 18:33:34.825 [main] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-07-22 18:33:34.848 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-07-22 18:33:34.907 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-22 18:33:34.912 [main] INFO  com.RapBusinessDomApplication - Started RapBusinessDomApplication in 18.391 seconds (JVM running for 22.77)
+2019-07-22 18:34:24.727 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-22 18:34:24.729 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-07-22 18:34:24.763 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 34 ms
+2019-07-22 18:34:38.288 [http-nio-8080-exec-5] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************
+2019-07-22 18:35:55.243 [http-nio-8080-exec-8] INFO  c.r.o.d.m.i.QueryLoggingInterceptor - ********************************QueryLoggingInterceptor intercepted*******************************

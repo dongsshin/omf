@@ -1,0 +1,95 @@
+package com.rap.omc.util.core;
+
+import java.math.BigDecimal;
+/*     */ import java.security.SecureRandom;
+/*     */ import java.text.NumberFormat;
+
+/*     */
+/*     */ public class NumberUtil
+/*     */ {
+
+    /*     */ public static String convertCommaOfNumber(Object inNumber)
+    /*     */ {
+        /*  58 */ NumberFormat numberFormat = NumberFormat.getInstance();
+        /*  59 */ numberFormat.setMaximumFractionDigits(2147483647);
+        /*  60 */ numberFormat.setMinimumFractionDigits(0);
+        /*  61 */ if (inNumber instanceof String) return numberFormat.format(new BigDecimal((String)inNumber));
+        /*  62 */ return numberFormat.format(inNumber);
+        /*     */ }
+
+    /*     */
+    /*     */ public static int getRandomNumber(int startNum, int endNum)
+    /*     */ {
+        /*  73 */ int randomNum = 0;
+        /*     */
+        /*  76 */ SecureRandom rnd = new SecureRandom();
+        /*     */ do
+        /*     */ {
+            /*  80 */ randomNum = rnd.nextInt(endNum + 1);
+            /*     */ }
+        /*  78 */ while (
+        /*  81 */ randomNum < startNum);
+        /*     */
+        /*  83 */ return randomNum;
+        /*     */ }
+
+    /*     */
+    /*     */ public static Boolean containNumber(int sourceInt, int searchInt)
+    /*     */ {
+        /*  94 */ String sourceStr = String.valueOf(sourceInt);
+        /*  95 */ String searchStr = String.valueOf(searchInt);
+        /*     */
+        /*  98 */ if (sourceStr.indexOf(searchStr) != -1) return Boolean.valueOf(true);
+        return Boolean.valueOf(false);
+        /*     */ }
+
+    /*     */
+    /*     */ public static Boolean checkValidNumber(String checkStr)
+    /*     */ {
+        /* 109 */ int checkStrLt = checkStr.length();
+        /*     */
+        /* 111 */ for (int idx = 0; idx < checkStrLt; ++idx)
+        /*     */ {
+            /* 113 */ if ((checkStr.charAt(idx) <= '/') || (checkStr.charAt(idx) >= ':')) return Boolean.valueOf(false);
+            /*     */ }
+        /* 115 */ return Boolean.valueOf(true);
+        /*     */ }
+
+    /*     */
+    /*     */ public static int convertContainNumber(int srcNumber, int cnvrSrcNumber, int cnvrTrgtNumber)
+    /*     */ {
+        /* 130 */ String source = String.valueOf(srcNumber);
+        /* 131 */ String subject = String.valueOf(cnvrSrcNumber);
+        /* 132 */ String object = String.valueOf(cnvrTrgtNumber);
+        /*     */
+        /* 134 */ StringBuilder rtnStr = new StringBuilder();
+        /* 135 */ String preStr = "";
+        /* 136 */ String nextStr = source;
+        /*     */
+        /* 139 */ while (source.indexOf(subject) >= 0) {
+            /* 140 */ preStr = source.substring(0, source.indexOf(subject));
+            /* 141 */ nextStr = source.substring(source.indexOf(subject) + subject.length(), source.length());
+            /* 142 */ source = nextStr;
+            /* 143 */ rtnStr.append(preStr).append(object);
+            /*     */ }
+        /* 145 */ rtnStr.append(nextStr);
+        /*     */
+        /* 147 */ return Integer.parseInt(rtnStr.toString());
+        /*     */ }
+
+    /*     */
+    /*     */ public static int checkNumberType(double srcNumber)
+    /*     */ {
+        /* 167 */ String cnvrString = null;
+        /*     */
+        /* 169 */ if (srcNumber < 0.0D) {
+            /* 170 */ return -1;
+            /*     */ }
+        /* 172 */ cnvrString = String.valueOf(srcNumber);
+        /* 173 */ String subNum = cnvrString.substring(cnvrString.indexOf(".") + 1);
+        /* 174 */ if ("0".equals(subNum)) {
+            /* 175 */ return 0;
+            /*     */ }
+        /* 177 */ return 1;
+        /*     */ }
+    /*     */ }

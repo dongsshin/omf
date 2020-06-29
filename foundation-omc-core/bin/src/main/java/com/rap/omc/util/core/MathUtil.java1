@@ -1,0 +1,82 @@
+package com.rap.omc.util.core;
+
+import java.math.BigDecimal;
+/*     */ import java.text.DecimalFormat;
+
+/*     */
+/*     */ public class MathUtil
+/*     */ {
+
+    /*     */ public static Float roundUp(Float value, int scale)
+    /*     */ {
+        /*  36 */ assertNotNull(value, "roundUp");
+        /*  37 */ BigDecimal b = new BigDecimal(toString(value));
+        /*  38 */ return new Float(b.setScale(scale, 0).toString());
+        /*     */ }
+
+    /*     */
+    /*     */ public static Float roundDown(Float value, int scale)
+    /*     */ {
+        /*  49 */ assertNotNull(value, "roundDown");
+        /*  50 */ BigDecimal b = new BigDecimal(toString(value));
+        /*  51 */ return new Float(b.setScale(scale, 1).toString());
+        /*     */ }
+
+    /*     */
+    /*     */ public static Float roundHalfUp(Float value, int scale)
+    /*     */ {
+        /*  62 */ assertNotNull(value, "roundHalfUp");
+        /*  63 */ BigDecimal b = new BigDecimal(toString(value));
+        /*  64 */ return new Float(b.setScale(scale, 4).toString());
+        /*     */ }
+
+    /*     */
+    /*     */ public static Double roundUp(Double value, int scale)
+    /*     */ {
+        /*  75 */ assertNotNull(value, "roundUp");
+        /*  76 */ BigDecimal b = new BigDecimal(toString(value));
+        /*  77 */ return new Double(b.setScale(scale, 0).toString());
+        /*     */ }
+
+    /*     */
+    /*     */ public static Double roundDown(Double value, int scale)
+    /*     */ {
+        /*  88 */ assertNotNull(value, "roundDown");
+        /*  89 */ BigDecimal b = new BigDecimal(toString(value));
+        /*  90 */ return new Double(b.setScale(scale, 1).toString());
+        /*     */ }
+
+    /*     */
+    /*     */ public static Double roundHalfUp(Double value, int scale)
+    /*     */ {
+        /* 101 */ assertNotNull(value, "roundHalfUp");
+        /* 102 */ BigDecimal b = new BigDecimal(toString(value));
+        /* 103 */ return new Double(b.setScale(scale, 4).toString());
+        /*     */ }
+
+    /*     */
+    /*     */ protected static String toString(Float f)
+    /*     */ {
+        /* 113 */ DecimalFormat df = new DecimalFormat("#0.0#################");
+        /* 114 */ return df.format(f.floatValue());
+        /*     */ }
+
+    /*     */
+    /*     */ protected static String toString(Double d)
+    /*     */ {
+        /* 124 */ DecimalFormat df = new DecimalFormat("#0.0#################");
+        /* 125 */ return df.format(d.doubleValue());
+        /*     */ }
+
+    /*     */
+    /*     */ public static boolean isNone(Number value)
+    /*     */ {
+        /* 135 */ return (value == null);
+        /*     */ }
+
+    /*     */
+    /*     */ private static void assertNotNull(Object value, String methodName){
+        /* 139 */ if (value != null) return;
+        throw new IllegalArgumentException(methodName + "() doesn't support null value.");
+        /*     */ }
+    /*     */ }

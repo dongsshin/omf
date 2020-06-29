@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Relation">
+
+	<select id="checkDuplicate" resultType="java.lang.Integer">
+        <![CDATA[
+            SELECT count(*) 
+            FROM psysdummy
+			WHERE exists (SELECT *
+						FROM ${targetDbmsTable}
+					    WHERE pclass_name = #{relationship}
+							AND pfrom_obid = #{fromObid}
+							AND pto_obid = #{toObid})
+        ]]>
+	</select>
+
+	<select id="checkCardinality" resultType="java.lang.Integer">
+        <![CDATA[
+            SELECT count(*) 
+            FROM psysdummy
+			WHERE exists ( SELECT *
+						FROM ${targetDbmsTable}
+					    WHERE pclass_name = #{relationship}
+        ]]>
+		<if
+			test="strFromTo != null and strFromTo != '' and strFromTo == 'From'">
+			AND pfrom_obid = #{fromObid}
+		</if>
+		<if
+			test="strFromTo != null and strFromTo != '' and strFromTo == 'To'">
+			AND pto_obid = #{toObid}
+		</if>
+		)
+	</select>
+
+	<select id="retrieveRelatedObjectList"
+		resultType="java.lang.String">
+        <![CDATA[
+           SELECT DISTINCT
+           ]]>
+		<if test="bFrom == true">
+			pto_obid as obid
+		</if>
+		<if test="bTo == true">
+			pfrom_obid as obid
+		</if>
+        <![CDATA[
+		    FROM ${dbmsTable}
+		    WHERE pclass_name = #{pclassName}
+		]]>
+		<if test="bFrom == true">
+			AND pfrom_obid = #{obid}
+		</if>
+		<if test="bTo == true">
+			AND pto_obid = #{obid}
+		</if>
+		<if
+			test="fromClassNames != null and fromClassNames != '' and fromClassNames != 'ALL'">
+			AND pfrom_class IN ( ${fromClassNames} )
+		</if>
+		<if
+			test="toClassNames != null and toClassNames != '' and toClassNames != 'ALL'">
+			AND pto_class IN ( ${toClassNames} )
+		</if>
+		ORDER BY obid
+	</select>
+
+	<select id="retrieveRelationList"
+		resultType="com.rap.omc.api.object.model.CastMap">
+        <![CDATA[
+           SELECT ${sql}
+		    FROM ${dbmsTable}
+		    WHERE pclass_name = #{pclassName}
+		]]>
+		<if test="bFrom == true">
+			AND pfrom_obid = #{obid}
+		</if>
+		<if test="bTo == true">
+			AND pto_obid = #{obid}
+		</if>
+		<if
+			test="fromClassNames != null and fromClassNames != '' and fromClassNames != 'ALL'">
+			AND pfrom_class IN ( ${fromClassNames} )
+		</if>
+		<if
+			test="toClassNames != null and toClassNames != '' and toClassNames != 'ALL'">
+			AND pto_class IN ( ${toClassNames} )
+		</if>
+		ORDER BY obid
+	</select>
+
+	<select id="countClassNameOfReferredRelation"
+		resultType="java.lang.Integer">
+        <![CDATA[
+            SELECT count(*) 
+            FROM psysdummy
+			WHERE exists (SELECT *
+						FROM ${dbmsTable}
+		    WHERE pclass_name = #{pclassName}
+		]]>
+		<if test="bFrom == true">
+			AND pfrom_obid = #{obid}
+		</if>
+		<if test="bTo == true">
+			AND pto_obid = #{obid}
+		</if>
+		<if test="fromClassNames != null and fromClassNames != ''">
+			AND pfrom_class = #{fromClassNames}
+		</if>
+		<if test="toClassNames != null and toClassNames != ''">
+			AND pto_class = #{toClassNames}
+		</if>
+		)
+	</select>
+
+	<update id="updateClassNameOfReferredRelation">
+        <![CDATA[
+        UPDATE ${dbmsTable}
+           SET 
+		]]>
+		<if test="bFrom == true">
+			pfrom_class = #{newClassName}
+		</if>
+		<if test="bTo == true">
+			pto_class = #{newClassName}
+		</if>
+		<![CDATA[
+         WHERE pclass_name = #{pclassName}
+		]]>
+		<if test="bFrom == true">
+			AND pfrom_obid = #{obid}
+		</if>
+		<if test="bTo == true">
+			AND pto_obid = #{obid}
+		</if>
+		<if test="fromClassNames != null and fromClassNames != ''">
+			AND pfrom_class = #{fromClassNames}
+		</if>
+		<if test="toClassNames != null and toClassNames != ''">
+			AND pto_class = #{toClassNames}
+		</if>
+	</update>
+</mapper>
